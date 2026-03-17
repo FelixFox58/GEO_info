@@ -1414,8 +1414,6 @@ const _FALLBACK = {
     adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
   },
 };
-
-};
 // Always pre-load fallback so page works immediately (before fetch resolves)
 Object.assign(GEO_DATA, _FALLBACK);
 GEOS_ARRAY = Object.values(_FALLBACK);
