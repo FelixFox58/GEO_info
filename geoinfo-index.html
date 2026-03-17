@@ -1168,7 +1168,38 @@
 </div>
 
 <script>
-const GEO_DATA = {
+// Data loaded from geos.json
+let GEO_DATA = {};
+let GEOS_ARRAY = [];
+
+async function initData() {
+  try {
+    const res = await fetch('geos.json');
+    GEOS_ARRAY = await res.json();
+    // Build lookup map by id
+    GEO_DATA = Object.fromEntries(GEOS_ARRAY.map(g => [g.id, g]));
+  } catch(e) {
+    // Fallback to empty
+    console.warn('Could not load geos.json, using empty data');
+  }
+  renderGeoCards();
+  updateCompare();
+  populateSelects();
+}
+
+function populateSelects() {
+  ['compare-a','compare-b'].forEach((selId, i) => {
+    const sel = document.getElementById(selId);
+    sel.innerHTML = `<option value="">Select country ${i===0?'A':'B'}</option>` +
+      GEOS_ARRAY.map(g => `<option value="${g.id}">${g.flag} ${g.name}</option>`).join('');
+    if (i === 0 && GEOS_ARRAY[0]) sel.value = GEOS_ARRAY[0].id;
+    if (i === 1 && GEOS_ARRAY[1]) sel.value = GEOS_ARRAY[1].id;
+  });
+  updateCompare();
+}
+
+// ---- original hardcoded data kept as fallback inside GEO_DATA ----
+const _FALLBACK = {
   us: {
     name: 'United States', code: 'US', flag: '🇺🇸', tier: 1, region: 'North America',
     language: 'English', capital: 'Washington D.C.',
@@ -1338,6 +1369,10 @@ const GEO_DATA = {
     adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
   },
 };
+
+};
+// Merge fallback into GEO_DATA so page works even without geos.json (file:// dev)
+Object.assign(GEO_DATA, _FALLBACK);
 
 const FEATURED_GEOS = ['gb', 'pl', 'br', 'de'];
 
@@ -1605,8 +1640,7 @@ function filterSearch(val) {
 }
 
 // INIT
-renderGeoCards();
-updateCompare();
+initData();
 </script>
 </body>
 </html>
