@@ -985,7 +985,7 @@
             </div>
           </div>
           <div style="margin-left: auto;">
-            <button onclick="openGeo('gb')" style="background: var(--accent); color: white; border: none; padding: 8px 18px; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">Full Profile →</button>
+            <button onclick="gotoGeo('gb')" style="background: var(--accent); color: white; border: none; padding: 8px 18px; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">Full Profile →</button>
           </div>
         </div>
         <div class="geo-detail-grid">
@@ -1039,11 +1039,11 @@
         <div class="tier-column">
           <div class="tier-column-header t1">Tier 1 — Premium GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" onclick="openGeo('us')"><span class="tier-flag">🇺🇸</span> USA</a>
-            <a class="tier-country" onclick="openGeo('gb')"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
-            <a class="tier-country" onclick="openGeo('de')"><span class="tier-flag">🇩🇪</span> Germany</a>
-            <a class="tier-country" onclick="openGeo('ca')"><span class="tier-flag">🇨🇦</span> Canada</a>
-            <a class="tier-country" onclick="openGeo('au')"><span class="tier-flag">🇦🇺</span> Australia</a>
+            <a class="tier-country" onclick="gotoGeo('us')"><span class="tier-flag">🇺🇸</span> USA</a>
+            <a class="tier-country" onclick="gotoGeo('gb')"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
+            <a class="tier-country" onclick="gotoGeo('de')"><span class="tier-flag">🇩🇪</span> Germany</a>
+            <a class="tier-country" onclick="gotoGeo('ca')"><span class="tier-flag">🇨🇦</span> Canada</a>
+            <a class="tier-country" onclick="gotoGeo('au')"><span class="tier-flag">🇦🇺</span> Australia</a>
             <a class="tier-country"><span class="tier-flag">🇫🇷</span> France</a>
             <a class="tier-country"><span class="tier-flag">🇯🇵</span> Japan</a>
             <a class="tier-country"><span class="tier-flag">🇳🇴</span> Norway</a>
@@ -1052,8 +1052,8 @@
         <div class="tier-column">
           <div class="tier-column-header t2">Tier 2 — Mid GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" onclick="openGeo('pl')"><span class="tier-flag">🇵🇱</span> Poland</a>
-            <a class="tier-country" onclick="openGeo('br')"><span class="tier-flag">🇧🇷</span> Brazil</a>
+            <a class="tier-country" onclick="gotoGeo('pl')"><span class="tier-flag">🇵🇱</span> Poland</a>
+            <a class="tier-country" onclick="gotoGeo('br')"><span class="tier-flag">🇧🇷</span> Brazil</a>
             <a class="tier-country"><span class="tier-flag">🇮🇹</span> Italy</a>
             <a class="tier-country"><span class="tier-flag">🇪🇸</span> Spain</a>
             <a class="tier-country"><span class="tier-flag">🇷🇺</span> Russia</a>
@@ -1218,12 +1218,14 @@ let GEOS_ARRAY = [];
 async function initData() {
   try {
     const res = await fetch('geos.json');
-    GEOS_ARRAY = await res.json();
-    // Build lookup map by id
-    GEO_DATA = Object.fromEntries(GEOS_ARRAY.map(g => [g.id, g]));
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const fetched = await res.json();
+    // Override fallback with fetched data
+    GEOS_ARRAY = fetched;
+    GEO_DATA = Object.fromEntries(fetched.map(g => [g.id, g]));
   } catch(e) {
-    // Fallback to empty
-    console.warn('Could not load geos.json, using empty data');
+    console.warn('Could not load geos.json, using built-in fallback:', e.message);
+    // GEOS_ARRAY and GEO_DATA already set from _FALLBACK above
   }
   renderGeoCards();
   updateCompare();
@@ -1414,8 +1416,9 @@ const _FALLBACK = {
 };
 
 };
-// Merge fallback into GEO_DATA so page works even without geos.json (file:// dev)
+// Always pre-load fallback so page works immediately (before fetch resolves)
 Object.assign(GEO_DATA, _FALLBACK);
+GEOS_ARRAY = Object.values(_FALLBACK);
 
 const FEATURED_GEOS = ['gb', 'pl', 'br', 'de'];
 
@@ -1424,7 +1427,7 @@ function renderGeoCards() {
   grid.innerHTML = FEATURED_GEOS.map(id => {
     const g = GEO_DATA[id];
     return `
-    <a class="geo-card" onclick="openGeo('${id}')">
+    <a class="geo-card" onclick="gotoGeo('${id}')">
       <div class="geo-card-header">
         <div class="geo-card-flag">${g.flag}</div>
         <div class="geo-card-info">
