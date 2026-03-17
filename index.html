@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoInfo — GEO Intelligence for Affiliate Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F4F1;
+    --surface: #FFFFFF;
+    --surface-2: #EDECE9;
+    --border: #E2E0DB;
+    --text-primary: #0F0E0C;
+    --text-secondary: #6B6860;
+    --text-muted: #9B9890;
+    --accent: #5B4FE8;
+    --accent-light: #EBE9FC;
+    --accent-hover: #4A3FD4;
+    --green: #1A9E5C;
+    --green-light: #E3F5EC;
+    --orange: #E07A30;
+    --orange-light: #FDF0E5;
+    --red: #D94040;
+    --red-light: #FDE8E8;
+    --tier1: #5B4FE8;
+    --tier1-bg: #EBE9FC;
+    --tier2: #E07A30;
+    --tier2-bg: #FDF0E5;
+    --tier3: #6B6860;
+    --tier3-bg: #EDECE9;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    flex: 1;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: all 0.15s;
+  }
+  .nav-links a:hover { color: var(--text-primary); background: var(--surface-2); }
+  .nav-links a.active { color: var(--accent); background: var(--accent-light); }
+  .nav-actions { display: flex; gap: 8px; align-items: center; }
+  .btn-ghost {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 16px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+  }
+  .btn-ghost:hover { background: var(--surface-2); color: var(--text-primary); }
+
+  /* HERO */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px 56px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-primary);
+    max-width: 640px;
+    margin: 0 auto 12px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 .highlight { color: var(--accent); }
+  .hero p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+  .search-bar {
+    display: flex;
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-bar:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+  }
+  .search-bar input {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 13px 20px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+  }
+  .search-bar input::placeholder { color: var(--text-muted); }
+  .btn-search {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 100px;
+    margin: 4px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .btn-search:hover { background: var(--accent-hover); }
+  .search-hints {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .hint-tag {
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid var(--border);
+  }
+  .hint-tag:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 48px 0; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+  .section-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .section-link:hover { text-decoration: underline; }
+
+  /* GEO CARDS */
+  .geo-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .geo-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .geo-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .geo-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .geo-card-flag {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: var(--bg);
+  }
+  .geo-card-info { flex: 1; min-width: 0; }
+  .geo-card-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tier-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 100px;
+    font-family: var(--font-display);
+  }
+  .tier-badge.t1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-badge.t2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-badge.t3 { background: var(--tier3-bg); color: var(--tier3); }
+  .geo-card-stats { display: flex; flex-direction: column; gap: 6px; }
+  .geo-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+  }
+  .geo-stat-icon { color: var(--text-muted); font-size: 13px; width: 16px; text-align: center; }
+  .geo-stat-label { color: var(--text-muted); flex: 1; }
+  .geo-stat-value { font-weight: 600; color: var(--text-primary); }
+
+  /* GEO INFO DETAIL */
+  .geo-detail-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .geo-detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .geo-detail-flag {
+    font-size: 48px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .geo-detail-name {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .geo-detail-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+  .geo-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .detail-item { }
+  .detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+  .detail-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  /* TIER LIST */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .tier-column {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .tier-column-header {
+    padding: 12px 16px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tier-column-header.t1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-column-header.t2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-column-header.t3 { background: var(--tier3-bg); color: var(--tier3); }
+  .tier-country-list { padding: 8px 0; }
+  .tier-country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.12s;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .tier-country:hover { background: var(--bg); }
+  .tier-flag { font-size: 18px; }
+
+  /* COMPARE SECTION */
+  .compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+  }
+  .compare-selectors {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .compare-vs {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .geo-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6860' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .geo-select:focus { border-color: var(--accent); }
+
+  .compare-table { width: 100%; border-collapse: collapse; }
+  .compare-table th {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 16px;
+    text-align: center;
+    color: var(--text-primary);
+    background: var(--bg);
+  }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+    text-align: center;
+  }
+  .compare-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    width: 180px;
+  }
+  .compare-table tr:hover td { background: var(--bg); }
+  .compare-winner { font-weight: 700; color: var(--green); }
+  .payment-tags { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
+  .payment-tag {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* STATS STRIP */
+  .stats-strip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-number .accent { color: var(--accent); }
+  .stat-desc { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+
+  /* RANKINGS */
+  .rankings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ranking-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .ranking-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ranking-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .ranking-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  .ranking-subtitle { font-size: 11px; color: var(--text-muted); }
+  .ranking-list { padding: 8px 0; }
+  .ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .ranking-item:hover { background: var(--bg); }
+  .ranking-num {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    width: 16px;
+  }
+  .ranking-num.gold { color: #F5A623; }
+  .ranking-num.silver { color: #9B9890; }
+  .ranking-num.bronze { color: #CD7F4A; }
+  .ranking-flag { font-size: 16px; }
+  .ranking-country { flex: 1; font-weight: 500; }
+  .ranking-value { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--text-secondary); }
+  .footer-copy { font-size: 12px; color: var(--text-muted); }
+
+  /* MODAL / GEO DETAIL PAGE */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Animate in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { animation: fadeUp 0.4s ease forwards; }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 0 -24px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .geo-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .tier-grid { grid-template-columns: 1fr; }
+    .rankings-grid { grid-template-columns: 1fr; }
+    .compare-selectors { grid-template-columns: 1fr; }
+    .compare-vs { display: none; }
+    .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .geo-cards-grid { grid-template-columns: 1fr; }
+    .geo-detail-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-strip { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+
+  /* GEO DETAIL PAGE STYLES */
+  .detail-page { padding: 40px 0 64px; }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .back-btn:hover { color: var(--text-primary); }
+
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    align-items: start;
+  }
+  .detail-left { display: flex; flex-direction: column; gap: 16px; }
+  .detail-right { display: flex; flex-direction: column; gap: 16px; }
+
+  .detail-hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+  .detail-hero-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .detail-flag-lg { font-size: 56px; line-height: 1; }
+  .detail-title-block { flex: 1; }
+  .detail-country-name {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .detail-country-code {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-muted);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .detail-badges { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .info-card-title {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .info-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .info-item {}
+  .info-item-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .info-item-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+  .tags-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-secondary);
+  }
+
+  .payment-grid { display: flex; flex-direction: column; gap: 12px; }
+  .payment-group-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .payment-icons-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .payment-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+  }
+  .stat-box-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .stat-box-value {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .stat-box-value.accent { color: var(--accent); }
+  .stat-box-value.green { color: var(--green); }
+
+  .vertical-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .vertical-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .restriction-row { display: flex; flex-direction: column; gap: 8px; }
+  .restriction-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .restriction-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .restriction-dot.allowed { background: var(--green); }
+  .restriction-dot.limited { background: var(--orange); }
+  .restriction-dot.banned { background: var(--red); }
+  .restriction-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+  .restriction-status.allowed { background: var(--green-light); color: var(--green); }
+  .restriction-status.limited { background: var(--orange-light); color: var(--orange); }
+  .restriction-status.banned { background: var(--red-light); color: var(--red); }
+
+  .section-note {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+  .section-note:first-child { margin-top: 0; }
+
+  @media (max-width: 900px) {
+    .detail-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#" onclick="showPage('home')">
+      <div class="logo-icon">🌍</div>
+      Geo<span>Info</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active" onclick="showPage('home')">GEO Database</a></li>
+      <li><a href="#" onclick="scrollToCompare()">Compare GEO</a></li>
+      <li><a href="#rankings">Rankings</a></li>
+      <li><a href="#">API</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-ghost" title="Search">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="btn-ghost" title="Account">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home-page" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">🎯 For Affiliate Marketers</div>
+    <h1>GEO <span class="highlight">Intelligence</span> Tool for Affiliate Marketing</h1>
+    <p>Find currency, banks, salary, CPM and marketing insights for any country.</p>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search country or GEO code..." oninput="filterSearch(this.value)" onkeydown="if(event.key==='Enter')doSearch()">
+      <button class="btn-search" onclick="doSearch()">Search</button>
+    </div>
+    <div class="search-hints">
+      <span class="hint-tag" onclick="openGeo('us')">🇺🇸 USA</span>
+      <span class="hint-tag" onclick="openGeo('gb')">🇬🇧 United Kingdom</span>
+      <span class="hint-tag" onclick="openGeo('de')">🇩🇪 Germany</span>
+      <span class="hint-tag" onclick="openGeo('br')">🇧🇷 Brazil</span>
+      <span class="hint-tag" onclick="openGeo('in')">🇮🇳 India</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- STATS STRIP -->
+    <div class="section" style="padding-bottom: 0;">
+      <div class="stats-strip animate-in">
+        <div class="stat-item">
+          <div class="stat-number">200<span class="accent">+</span></div>
+          <div class="stat-desc">Countries & territories</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15<span class="accent">+</span></div>
+          <div class="stat-desc">Data points per GEO</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-desc">Traffic tiers tracked</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Free</div>
+          <div class="stat-desc">Always free to use</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED GEO CARDS -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Featured GEO Cards</h2>
+        <a href="#" class="section-link">View all →</a>
+      </div>
+      <div class="geo-cards-grid" id="geo-cards-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+
+    <!-- GEO INFO PREVIEW -->
+    <div class="section" style="padding-top: 0;">
+      <div class="section-header">
+        <h2 class="section-title">GEO Info Section</h2>
+      </div>
+      <div class="geo-detail-card animate-in">
+        <div class="geo-detail-header">
+          <div class="geo-detail-flag">🇬🇧</div>
+          <div>
+            <div class="geo-detail-name">United Kingdom</div>
+            <div class="geo-detail-meta">
+              <span class="tier-badge t1">Tier 1</span>
+              <span class="meta-badge">Europe</span>
+              <span class="meta-badge">English</span>
+              <span class="meta-badge">GBP</span>
+            </div>
+          </div>
+          <div style="margin-left: auto;">
+            <button onclick="openGeo('gb')" style="background: var(--accent); color: white; border: none; padding: 8px 18px; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">Full Profile →</button>
+          </div>
+        </div>
+        <div class="geo-detail-grid">
+          <div class="detail-item">
+            <div class="detail-label">Language</div>
+            <div class="detail-value">English</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Population</div>
+            <div class="detail-value">~67 Million</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Currency</div>
+            <div class="detail-value">GBP (£) — Pound Sterling</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Internet Penetration</div>
+            <div class="detail-value">95%</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Popular Banks</div>
+            <div class="detail-value">HSBC, Barclays, Lloyds, NatWest</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Mobile Operators</div>
+            <div class="detail-value">EE, O2, Vodafone, Three</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Average Salary</div>
+            <div class="detail-value">$35,000 / year (Approx.)</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Popular Payment Methods</div>
+            <div class="detail-value">Visa, Mastercard, PayPal, Apple Pay</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Facebook CPM Estimate</div>
+            <div class="detail-value">$4.50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIER LIST -->
+    <div class="section" style="padding-top: 0;">
+      <div class="section-header">
+        <h2 class="section-title">Tier List Section</h2>
+        <a href="#" class="section-link">Full Rankings →</a>
+      </div>
+      <div class="tier-grid">
+        <div class="tier-column">
+          <div class="tier-column-header t1">Tier 1 — Premium GEOs</div>
+          <div class="tier-country-list">
+            <a class="tier-country" onclick="openGeo('us')"><span class="tier-flag">🇺🇸</span> USA</a>
+            <a class="tier-country" onclick="openGeo('gb')"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
+            <a class="tier-country" onclick="openGeo('de')"><span class="tier-flag">🇩🇪</span> Germany</a>
+            <a class="tier-country" onclick="openGeo('ca')"><span class="tier-flag">🇨🇦</span> Canada</a>
+            <a class="tier-country" onclick="openGeo('au')"><span class="tier-flag">🇦🇺</span> Australia</a>
+            <a class="tier-country"><span class="tier-flag">🇫🇷</span> France</a>
+            <a class="tier-country"><span class="tier-flag">🇯🇵</span> Japan</a>
+            <a class="tier-country"><span class="tier-flag">🇳🇴</span> Norway</a>
+          </div>
+        </div>
+        <div class="tier-column">
+          <div class="tier-column-header t2">Tier 2 — Mid GEOs</div>
+          <div class="tier-country-list">
+            <a class="tier-country" onclick="openGeo('pl')"><span class="tier-flag">🇵🇱</span> Poland</a>
+            <a class="tier-country" onclick="openGeo('br')"><span class="tier-flag">🇧🇷</span> Brazil</a>
+            <a class="tier-country"><span class="tier-flag">🇮🇹</span> Italy</a>
+            <a class="tier-country"><span class="tier-flag">🇪🇸</span> Spain</a>
+            <a class="tier-country"><span class="tier-flag">🇷🇺</span> Russia</a>
+            <a class="tier-country"><span class="tier-flag">🇲🇽</span> Mexico</a>
+            <a class="tier-country"><span class="tier-flag">🇰🇷</span> South Korea</a>
+            <a class="tier-country"><span class="tier-flag">🇮🇳</span> India</a>
+          </div>
+        </div>
+        <div class="tier-column">
+          <div class="tier-column-header t3">Tier 3 — Volume GEOs</div>
+          <div class="tier-country-list">
+            <a class="tier-country"><span class="tier-flag">🇳🇬</span> Nigeria</a>
+            <a class="tier-country"><span class="tier-flag">🇪🇬</span> Egypt</a>
+            <a class="tier-country"><span class="tier-flag">🇻🇳</span> Vietnam</a>
+            <a class="tier-country"><span class="tier-flag">🇵🇰</span> Pakistan</a>
+            <a class="tier-country"><span class="tier-flag">🇧🇩</span> Bangladesh</a>
+            <a class="tier-country"><span class="tier-flag">🇮🇩</span> Indonesia</a>
+            <a class="tier-country"><span class="tier-flag">🇨🇴</span> Colombia</a>
+            <a class="tier-country"><span class="tier-flag">🇵🇭</span> Philippines</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARE SECTION -->
+    <div class="section" style="padding-top: 0;" id="compare-section">
+      <div class="section-header">
+        <h2 class="section-title">Compare GEO Section</h2>
+      </div>
+      <div class="compare-card">
+        <div class="compare-selectors">
+          <select class="geo-select" id="compare-a" onchange="updateCompare()">
+            <option value="">Select country A</option>
+            <option value="us" selected>🇺🇸 United States</option>
+            <option value="gb">🇬🇧 United Kingdom</option>
+            <option value="de">🇩🇪 Germany</option>
+            <option value="ca">🇨🇦 Canada</option>
+            <option value="au">🇦🇺 Australia</option>
+            <option value="pl">🇵🇱 Poland</option>
+            <option value="br">🇧🇷 Brazil</option>
+          </select>
+          <div class="compare-vs">VS</div>
+          <select class="geo-select" id="compare-b" onchange="updateCompare()">
+            <option value="">Select country B</option>
+            <option value="us">🇺🇸 United States</option>
+            <option value="gb" selected>🇬🇧 United Kingdom</option>
+            <option value="de">🇩🇪 Germany</option>
+            <option value="ca">🇨🇦 Canada</option>
+            <option value="au">🇦🇺 Australia</option>
+            <option value="pl">🇵🇱 Poland</option>
+            <option value="br">🇧🇷 Brazil</option>
+          </select>
+        </div>
+        <div id="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th id="th-a">🇺🇸 USA</th>
+                <th id="th-b">🇬🇧 UK</th>
+              </tr>
+            </thead>
+            <tbody id="compare-body">
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- RANKINGS -->
+    <div class="section" style="padding-top: 0;" id="rankings">
+      <div class="section-header">
+        <h2 class="section-title">Best GEO Rankings</h2>
+        <a href="#" class="section-link">All rankings →</a>
+      </div>
+      <div class="rankings-grid">
+        <div class="ranking-card">
+          <div class="ranking-header">
+            <div class="ranking-icon" style="background:#FEF3E2;">🎰</div>
+            <div>
+              <div class="ranking-title">Best GEO for Gambling</div>
+              <div class="ranking-subtitle">By conversion rate & CPM</div>
+            </div>
+          </div>
+          <div class="ranking-list">
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇬🇧</span><span class="ranking-country">United Kingdom</span><span class="ranking-value">$4.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇦🇺</span><span class="ranking-country">Australia</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇨🇦</span><span class="ranking-country">Canada</span><span class="ranking-value">$4.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇸🇪</span><span class="ranking-country">Sweden</span><span class="ranking-value">$4.10 CPM</span></div>
+          </div>
+        </div>
+        <div class="ranking-card">
+          <div class="ranking-header">
+            <div class="ranking-icon" style="background:#E8F5E9;">💊</div>
+            <div>
+              <div class="ranking-title">Best GEO for Nutra</div>
+              <div class="ranking-subtitle">By market size & acceptance</div>
+            </div>
+          </div>
+          <div class="ranking-list">
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇺🇸</span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇫🇷</span><span class="ranking-country">France</span><span class="ranking-value">$3.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇧🇷</span><span class="ranking-country">Brazil</span><span class="ranking-value">$2.10 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇲🇽</span><span class="ranking-country">Mexico</span><span class="ranking-value">$1.90 CPM</span></div>
+          </div>
+        </div>
+        <div class="ranking-card">
+          <div class="ranking-header">
+            <div class="ranking-icon" style="background:#EEE8FF;">₿</div>
+            <div>
+              <div class="ranking-title">Best GEO for Crypto</div>
+              <div class="ranking-subtitle">By adoption & regulation</div>
+            </div>
+          </div>
+          <div class="ranking-list">
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇸🇬</span><span class="ranking-country">Singapore</span><span class="ranking-value">$6.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇦🇪</span><span class="ranking-country">UAE</span><span class="ranking-value">$5.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇨🇭</span><span class="ranking-country">Switzerland</span><span class="ranking-value">$6.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇺🇸</span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Affiliate Tools</a></li>
+      <li><a href="#">API</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 GeoInfo — GEO Intelligence for Affiliate Marketers</div>
+  </footer>
+
+</div>
+
+<!-- GEO DETAIL PAGE -->
+<div id="detail-page" class="page">
+  <div class="container detail-page">
+    <a class="back-btn" onclick="showPage('home')">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+      Back to GEO Database
+    </a>
+    <div class="detail-layout" id="detail-content">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
+<script>
+const GEO_DATA = {
+  us: {
+    name: 'United States', code: 'US', flag: '🇺🇸', tier: 1, region: 'North America',
+    language: 'English', capital: 'Washington D.C.',
+    currency: 'US Dollar', currencyCode: 'USD', currencySymbol: '$',
+    population: '331M', avgSalary: '$60,000', midCost: '$2,000',
+    internetPenetration: '93%', smartphoneUsage: '81%',
+    avgCpm: '$5.50', fbCpm: '$5.50', googleCpm: '$8.20', tiktokCpm: '$3.10',
+    banks: ['Chase', 'Bank of America', 'Wells Fargo', 'Citibank'],
+    operators: ['Verizon', 'AT&T', 'T-Mobile', 'Sprint'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
+    localPayments: ['Venmo', 'Zelle', 'Cash App'],
+    verticals: ['Nutra', 'Finance', 'Dating', 'E-commerce', 'Crypto'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'limited' },
+      { name: 'Crypto Ads', status: 'limited' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads', 'Push Networks'],
+    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'RichAds', 'MGID'],
+  },
+  gb: {
+    name: 'United Kingdom', code: 'GB', flag: '🇬🇧', tier: 1, region: 'Europe',
+    language: 'English', capital: 'London',
+    currency: 'British Pound', currencyCode: 'GBP', currencySymbol: '£',
+    population: '67M', avgSalary: '$35,000', midCost: '$1,500',
+    internetPenetration: '95%', smartphoneUsage: '88%',
+    avgCpm: '$4.50', fbCpm: '$4.50', googleCpm: '$7.10', tiktokCpm: '$2.80',
+    banks: ['HSBC', 'Barclays', 'Lloyds', 'NatWest'],
+    operators: ['EE', 'Vodafone', 'O2', 'Three'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
+    localPayments: ['Open Banking', 'Revolut', 'Monzo'],
+    verticals: ['Gambling', 'Nutra', 'Finance', 'Dating', 'Crypto'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'limited' },
+      { name: 'Crypto Ads', status: 'allowed' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'limited' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads', 'Push Networks'],
+    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'RichAds', 'MGID'],
+  },
+  de: {
+    name: 'Germany', code: 'DE', flag: '🇩🇪', tier: 1, region: 'Europe',
+    language: 'German', capital: 'Berlin',
+    currency: 'Euro', currencyCode: 'EUR', currencySymbol: '€',
+    population: '84M', avgSalary: '$45,000', midCost: '$1,800',
+    internetPenetration: '92%', smartphoneUsage: '80%',
+    avgCpm: '$5.20', fbCpm: '$5.20', googleCpm: '$7.80', tiktokCpm: '$3.50',
+    banks: ['Deutsche Bank', 'Commerzbank', 'DZ Bank', 'N26'],
+    operators: ['T-Mobile', 'Vodafone', 'O2', 'E-Plus'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
+    localPayments: ['SEPA', 'Klarna', 'Sofort'],
+    verticals: ['Nutra', 'Finance', 'E-commerce', 'Dating'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'limited' },
+      { name: 'Crypto Ads', status: 'limited' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'Native Ads', 'Display'],
+    adNetworks: ['Taboola', 'Outbrain', 'MGID', 'Ströer'],
+  },
+  pl: {
+    name: 'Poland', code: 'PL', flag: '🇵🇱', tier: 2, region: 'Europe',
+    language: 'Polish', capital: 'Warsaw',
+    currency: 'Polish Zloty', currencyCode: 'PLN', currencySymbol: 'zł',
+    population: '38M', avgSalary: '$17,000', midCost: '$700',
+    internetPenetration: '84%', smartphoneUsage: '72%',
+    avgCpm: '$2.80', fbCpm: '$2.80', googleCpm: '$3.90', tiktokCpm: '$1.60',
+    banks: ['PKO Bank Polski', 'Bank Pekao', 'mBank', 'ING Bank Śląski'],
+    operators: ['Orange', 'Play', 'T-Mobile', 'Plus'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
+    localPayments: ['BLIK', 'Przelewy24', 'PayU'],
+    verticals: ['Nutra', 'Dating', 'Finance', 'Gambling'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'limited' },
+      { name: 'Crypto Ads', status: 'allowed' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Push Networks'],
+    adNetworks: ['Taboola', 'PropellerAds', 'MGID', 'Zedo'],
+  },
+  br: {
+    name: 'Brazil', code: 'BR', flag: '🇧🇷', tier: 2, region: 'South America',
+    language: 'Portuguese', capital: 'Brasília',
+    currency: 'Brazilian Real', currencyCode: 'BRL', currencySymbol: 'R$',
+    population: '215M', avgSalary: '$8,000', midCost: '$600',
+    internetPenetration: '75%', smartphoneUsage: '71%',
+    avgCpm: '$2.10', fbCpm: '$2.10', googleCpm: '$3.20', tiktokCpm: '$1.20',
+    banks: ['Itaú', 'Bradesco', 'Caixa', 'Nubank'],
+    operators: ['Claro', 'Vivo', 'TIM', 'Oi'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
+    localPayments: ['Pix', 'Boleto', 'PicPay'],
+    verticals: ['Nutra', 'Dating', 'Finance', 'E-commerce'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'limited' },
+      { name: 'Crypto Ads', status: 'allowed' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Push Networks', 'Native Ads'],
+    adNetworks: ['Taboola', 'PropellerAds', 'MGID', 'RichAds'],
+  },
+  ca: {
+    name: 'Canada', code: 'CA', flag: '🇨🇦', tier: 1, region: 'North America',
+    language: 'English / French', capital: 'Ottawa',
+    currency: 'Canadian Dollar', currencyCode: 'CAD', currencySymbol: 'CA$',
+    population: '38M', avgSalary: '$48,000', midCost: '$1,700',
+    internetPenetration: '94%', smartphoneUsage: '82%',
+    avgCpm: '$4.80', fbCpm: '$4.80', googleCpm: '$7.40', tiktokCpm: '$3.00',
+    banks: ['RBC', 'TD Bank', 'Scotiabank', 'BMO'],
+    operators: ['Rogers', 'Bell', 'Telus', 'Shaw'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
+    localPayments: ['Interac', 'Koho'],
+    verticals: ['Gambling', 'Nutra', 'Finance', 'Crypto'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'allowed' },
+      { name: 'Crypto Ads', status: 'limited' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'Native Ads', 'Push Networks'],
+    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'MGID'],
+  },
+  au: {
+    name: 'Australia', code: 'AU', flag: '🇦🇺', tier: 1, region: 'Oceania',
+    language: 'English', capital: 'Canberra',
+    currency: 'Australian Dollar', currencyCode: 'AUD', currencySymbol: 'A$',
+    population: '26M', avgSalary: '$52,000', midCost: '$1,900',
+    internetPenetration: '91%', smartphoneUsage: '84%',
+    avgCpm: '$5.20', fbCpm: '$5.20', googleCpm: '$7.60', tiktokCpm: '$3.20',
+    banks: ['Commonwealth', 'Westpac', 'ANZ', 'NAB'],
+    operators: ['Telstra', 'Optus', 'Vodafone'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
+    localPayments: ['BPAY', 'PayID', 'Afterpay'],
+    verticals: ['Gambling', 'Nutra', 'Finance', 'Crypto', 'Dating'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'allowed' },
+      { name: 'Crypto Ads', status: 'limited' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads'],
+    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'MGID'],
+  },
+  in: {
+    name: 'India', code: 'IN', flag: '🇮🇳', tier: 2, region: 'Asia',
+    language: 'Hindi / English', capital: 'New Delhi',
+    currency: 'Indian Rupee', currencyCode: 'INR', currencySymbol: '₹',
+    population: '1.4B', avgSalary: '$3,000', midCost: '$300',
+    internetPenetration: '52%', smartphoneUsage: '54%',
+    avgCpm: '$0.80', fbCpm: '$0.80', googleCpm: '$1.20', tiktokCpm: '$0.50',
+    banks: ['SBI', 'HDFC', 'ICICI', 'Axis Bank'],
+    operators: ['Jio', 'Airtel', 'BSNL', 'Vi'],
+    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
+    localPayments: ['UPI', 'Paytm', 'PhonePe', 'Google Pay'],
+    verticals: ['Nutra', 'Finance', 'Dating', 'E-commerce'],
+    restrictions: [
+      { name: 'Gambling Ads', status: 'banned' },
+      { name: 'Crypto Ads', status: 'limited' },
+      { name: 'Dating Ads', status: 'allowed' },
+      { name: 'Finance Ads', status: 'allowed' },
+    ],
+    trafficSources: ['Facebook Ads', 'Google Ads', 'Push Networks', 'Native Ads'],
+    adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
+  },
+};
+
+const FEATURED_GEOS = ['gb', 'pl', 'br', 'de'];
+
+function renderGeoCards() {
+  const grid = document.getElementById('geo-cards-grid');
+  grid.innerHTML = FEATURED_GEOS.map(id => {
+    const g = GEO_DATA[id];
+    return `
+    <a class="geo-card" onclick="openGeo('${id}')">
+      <div class="geo-card-header">
+        <div class="geo-card-flag">${g.flag}</div>
+        <div class="geo-card-info">
+          <div class="geo-card-name">${g.name}</div>
+          <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
+        </div>
+      </div>
+      <div class="geo-card-stats">
+        <div class="geo-stat">
+          <span class="geo-stat-icon">$</span>
+          <span class="geo-stat-label">Currency</span>
+          <span class="geo-stat-value">${g.currencyCode} (${g.currencySymbol})</span>
+        </div>
+        <div class="geo-stat">
+          <span class="geo-stat-icon">💼</span>
+          <span class="geo-stat-label">Avg. Salary</span>
+          <span class="geo-stat-value">${g.avgSalary}</span>
+        </div>
+        ${g.internetPenetration ? `<div class="geo-stat">
+          <span class="geo-stat-icon">🌐</span>
+          <span class="geo-stat-label">Internet</span>
+          <span class="geo-stat-value">${g.internetPenetration}</span>
+        </div>` : ''}
+        ${g.fbCpm ? `<div class="geo-stat">
+          <span class="geo-stat-icon">📱</span>
+          <span class="geo-stat-label">FB CPM</span>
+          <span class="geo-stat-value">${g.fbCpm}</span>
+        </div>` : ''}
+      </div>
+    </a>`;
+  }).join('');
+}
+
+function openGeo(id) {
+  const g = GEO_DATA[id];
+  if (!g) return;
+  document.getElementById('detail-content').innerHTML = `
+    <div class="detail-left">
+      <!-- HERO -->
+      <div class="detail-hero animate-in">
+        <div class="detail-hero-top">
+          <div class="detail-flag-lg">${g.flag}</div>
+          <div class="detail-title-block">
+            <div class="detail-country-name">${g.name}<span class="detail-country-code">${g.code}</span></div>
+            <div class="detail-badges">
+              <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
+              <span class="meta-badge">${g.region}</span>
+              <span class="meta-badge">${g.language}</span>
+            </div>
+          </div>
+          <div style="margin-left: auto; text-align: right;">
+            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Language</div>
+            <div style="font-weight: 600; font-size: 14px;">${g.language}</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px; margin-bottom: 4px;">Capital</div>
+            <div style="font-weight: 600; font-size: 14px;">${g.capital}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BASIC INFO -->
+      <div class="info-card animate-in">
+        <div class="info-card-title">Basic Information</div>
+        <div class="info-grid-2">
+          <div class="info-item">
+            <div class="info-item-label">Currency</div>
+            <div class="info-item-value">${g.currency} (${g.currencyCode})</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Currency Symbol</div>
+            <div class="info-item-value" style="font-size: 20px; font-weight: 700;">${g.currencySymbol}</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Average Salary</div>
+            <div class="info-item-value">${g.avgSalary} / year</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Middle Cost of Living</div>
+            <div class="info-item-value">${g.midCost} / mo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANKS -->
+      <div class="info-card animate-in">
+        <div class="info-card-title">Banks</div>
+        <div class="tags-row">
+          ${g.banks.map(b => `<span class="tag">${b}</span>`).join('')}
+        </div>
+      </div>
+
+      <!-- PAYMENT METHODS -->
+      <div class="info-card animate-in">
+        <div class="info-card-title">Payment Methods</div>
+        <div class="payment-grid">
+          <div>
+            <div class="payment-group-label">Global</div>
+            <div class="payment-icons-row">
+              ${g.globalPayments.map(p => `<span class="payment-chip">${paymentIcon(p)} ${p}</span>`).join('')}
+            </div>
+          </div>
+          <div>
+            <div class="payment-group-label">Local Payments</div>
+            <div class="payment-icons-row">
+              ${g.localPayments.map(p => `<span class="payment-chip">${p}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <!-- KEY STATS -->
+      <div class="stat-box animate-in">
+        <div class="stat-box-label">Tier</div>
+        <div class="stat-box-value accent">${g.tier}</div>
+      </div>
+      <div class="stat-box animate-in">
+        <div class="stat-box-label">Population</div>
+        <div class="stat-box-value">${g.population}</div>
+      </div>
+      <div class="stat-box animate-in">
+        <div class="stat-box-label">Internet Penetration</div>
+        <div class="stat-box-value green">${g.internetPenetration}</div>
+      </div>
+      <div class="stat-box animate-in">
+        <div class="stat-box-label">Smartphone Usage</div>
+        <div class="stat-box-value">${g.smartphoneUsage}</div>
+      </div>
+      <div class="stat-box animate-in">
+        <div class="stat-box-label">Average CPM (Facebook)</div>
+        <div class="stat-box-value">${g.avgCpm}</div>
+      </div>
+
+      <!-- MOBILE OPERATORS -->
+      <div class="info-card animate-in">
+        <div class="info-card-title">Mobile Operators</div>
+        <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">Operators</div>
+        <div class="tags-row">
+          ${g.operators.map(o => `<span class="tag">${o}</span>`).join('')}
+        </div>
+      </div>
+
+      <!-- BEST VERTICALS -->
+      <div class="info-card animate-in">
+        <div class="section-note">Section 9 — Best Affiliate Verticals</div>
+        <div class="info-card-title" style="margin-bottom: 10px;">Best Affiliate Verticals</div>
+        <div class="vertical-tags">
+          ${g.verticals.map(v => `<span class="vertical-tag">${v}</span>`).join('')}
+        </div>
+      </div>
+
+      <!-- RESTRICTIONS -->
+      <div class="info-card animate-in">
+        <div class="section-note">Section 10 — Advertising Restrictions</div>
+        <div class="info-card-title" style="margin-bottom: 10px;">Advertising Restrictions</div>
+        <div class="restriction-row">
+          ${g.restrictions.map(r => `
+            <div class="restriction-item">
+              <span class="restriction-dot ${r.status}"></span>
+              <span>${r.name}</span>
+              <span class="restriction-status ${r.status}">${capitalize(r.status)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- TRAFFIC SOURCES -->
+      <div class="info-card animate-in">
+        <div class="section-note">Section 11 — Popular Traffic Sources</div>
+        <div class="info-card-title" style="margin-bottom: 10px;">Popular Traffic Sources</div>
+        <div class="tags-row">
+          ${g.trafficSources.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </div>
+
+      <!-- AD NETWORKS -->
+      <div class="info-card animate-in">
+        <div class="section-note">Section 12 — Top Ad Networks</div>
+        <div class="info-card-title" style="margin-bottom: 10px;">Top Ad Networks</div>
+        <div class="tags-row">
+          ${g.adNetworks.map(n => `<span class="tag">${n}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+  showPage('detail');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function paymentIcon(name) {
+  const icons = { 'Visa': '💳', 'Mastercard': '🔴', 'PayPal': '🅿️', 'Apple Pay': '🍎', 'Google Pay': 'G' };
+  return icons[name] || '💳';
+}
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+// COMPARE
+const COMPARE_DATA = {
+  us: { label: '🇺🇸 USA', cpm: '$5.50', salary: '$60,000', pop: '331M', inet: '93%', payments: ['Credit Cards', 'PayPal', 'Venmo'] },
+  gb: { label: '🇬🇧 UK', cpm: '$4.50', salary: '$35,000', pop: '67M', inet: '95%', payments: ['Credit Cards', 'PayPal', 'Apple Pay'] },
+  de: { label: '🇩🇪 DE', cpm: '$5.20', salary: '$45,000', pop: '84M', inet: '92%', payments: ['SEPA', 'Klarna', 'PayPal'] },
+  ca: { label: '🇨🇦 CA', cpm: '$4.80', salary: '$48,000', pop: '38M', inet: '94%', payments: ['Visa', 'Interac', 'PayPal'] },
+  au: { label: '🇦🇺 AU', cpm: '$5.20', salary: '$52,000', pop: '26M', inet: '91%', payments: ['Visa', 'Afterpay', 'BPAY'] },
+  pl: { label: '🇵🇱 PL', cpm: '$2.80', salary: '$17,000', pop: '38M', inet: '84%', payments: ['BLIK', 'Visa', 'PayU'] },
+  br: { label: '🇧🇷 BR', cpm: '$2.10', salary: '$8,000', pop: '215M', inet: '75%', payments: ['Pix', 'Boleto', 'PayPal'] },
+};
+
+function updateCompare() {
+  const aVal = document.getElementById('compare-a').value || 'us';
+  const bVal = document.getElementById('compare-b').value || 'gb';
+  const a = COMPARE_DATA[aVal] || COMPARE_DATA.us;
+  const b = COMPARE_DATA[bVal] || COMPARE_DATA.gb;
+  document.getElementById('th-a').textContent = a.label;
+  document.getElementById('th-b').textContent = b.label;
+  const rows = [
+    ['CPM', a.cpm, b.cpm],
+    ['Salary', a.salary, b.salary],
+    ['Population', a.pop, b.pop],
+    ['Internet Penetration', a.inet, b.inet],
+  ];
+  const payRow = `<tr>
+    <td>Payment Methods</td>
+    <td><div class="payment-tags">${a.payments.map(p=>`<span class="payment-tag">${p}</span>`).join('')}</div></td>
+    <td><div class="payment-tags">${b.payments.map(p=>`<span class="payment-tag">${p}</span>`).join('')}</div></td>
+  </tr>`;
+  document.getElementById('compare-body').innerHTML = rows.map(([label, av, bv]) => {
+    const numA = parseFloat(av.replace(/[^0-9.]/g,''));
+    const numB = parseFloat(bv.replace(/[^0-9.]/g,''));
+    const aWin = numA > numB, bWin = numB > numA;
+    return `<tr>
+      <td>${label}</td>
+      <td class="${aWin ? 'compare-winner' : ''}">${av}</td>
+      <td class="${bWin ? 'compare-winner' : ''}">${bv}</td>
+    </tr>`;
+  }).join('') + payRow;
+}
+
+function showPage(name) {
+  document.getElementById('home-page').classList.toggle('active', name === 'home');
+  document.getElementById('detail-page').classList.toggle('active', name === 'detail');
+}
+
+function scrollToCompare() {
+  document.getElementById('compare-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function doSearch() {
+  const val = document.getElementById('search-input').value.trim().toLowerCase();
+  const match = Object.entries(GEO_DATA).find(([id, g]) =>
+    g.name.toLowerCase().includes(val) || g.code.toLowerCase() === val || id === val
+  );
+  if (match) openGeo(match[0]);
+}
+
+function filterSearch(val) {
+  // Could show dropdown suggestions — kept minimal for now
+}
+
+// INIT
+renderGeoCards();
+updateCompare();
+</script>
+</body>
+</html>
