@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoInfo — Loading...</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F4F1; --surface: #FFFFFF; --surface-2: #EDECE9;
+    --border: #E2E0DB; --text-primary: #0F0E0C; --text-secondary: #6B6860;
+    --text-muted: #9B9890; --accent: #5B4FE8; --accent-light: #EBE9FC;
+    --accent-hover: #4A3FD4; --green: #1A9E5C; --green-light: #E3F5EC;
+    --orange: #E07A30; --orange-light: #FDF0E5; --red: #D94040; --red-light: #FDE8E8;
+    --tier1: #5B4FE8; --tier1-bg: #EBE9FC; --tier2: #E07A30; --tier2-bg: #FDF0E5;
+    --tier3: #6B6860; --tier3-bg: #EDECE9;
+    --radius: 12px; --radius-sm: 8px; --radius-lg: 18px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+    --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    height: 60px; display: flex; align-items: center; gap: 24px;
+  }
+  .logo {
+    font-family: var(--font-display); font-weight: 700; font-size: 18px;
+    color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .logo-icon {
+    width: 28px; height: 28px; background: var(--accent); border-radius: 7px;
+    display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;
+  }
+  .logo span { color: var(--accent); }
+  .nav-back {
+    display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500;
+    color: var(--text-secondary); text-decoration: none; transition: color 0.15s;
+    margin-left: auto;
+  }
+  .nav-back:hover { color: var(--text-primary); }
+  .nav-breadcrumb {
+    display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted);
+  }
+  .nav-breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .nav-breadcrumb a:hover { color: var(--accent); }
+  .nav-breadcrumb .sep { color: var(--border); }
+  .nav-breadcrumb .current { color: var(--text-primary); font-weight: 500; }
+
+  /* LAYOUT */
+  .page { max-width: 1100px; margin: 0 auto; padding: 36px 24px 64px; }
+
+  .detail-layout { display: grid; grid-template-columns: 1fr 280px; gap: 20px; align-items: start; }
+  .detail-left { display: flex; flex-direction: column; gap: 16px; }
+  .detail-right { display: flex; flex-direction: column; gap: 14px; }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow);
+  }
+  .hero-top { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 24px; }
+  .hero-flag { font-size: 64px; line-height: 1; flex-shrink: 0; }
+  .hero-name-block { flex: 1; }
+  .hero-name {
+    font-family: var(--font-display); font-size: 36px; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 10px;
+  }
+  .hero-code-pill {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    padding: 3px 9px; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 5px; color: var(--text-muted); margin-left: 10px; vertical-align: middle;
+  }
+  .hero-badges { display: flex; gap: 7px; flex-wrap: wrap; }
+  .tier-badge {
+    display: inline-flex; align-items: center; font-size: 11px; font-weight: 700;
+    padding: 3px 9px; border-radius: 100px; font-family: var(--font-display);
+  }
+  .t1 { background: var(--tier1-bg); color: var(--tier1); }
+  .t2 { background: var(--tier2-bg); color: var(--tier2); }
+  .t3 { background: var(--tier3-bg); color: var(--tier3); }
+  .meta-badge {
+    font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 100px;
+    background: var(--bg); color: var(--text-secondary); border: 1px solid var(--border);
+  }
+  .hero-right { text-align: right; flex-shrink: 0; }
+  .hero-right-item { margin-bottom: 10px; }
+  .hero-right-label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+  .hero-right-value { font-size: 14px; font-weight: 600; }
+
+  /* KEY METRICS ROW */
+  .metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metric-box {
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px 16px;
+  }
+  .metric-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .metric-value { font-family: var(--font-display); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.green { color: var(--green); }
+
+  /* INFO CARDS */
+  .info-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 14px;
+  }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .info-item {}
+  .info-label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+  .info-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+  /* TAGS */
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 12px; font-weight: 500; padding: 4px 10px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 100px; color: var(--text-secondary);
+  }
+
+  /* PAYMENT */
+  .payment-section { margin-bottom: 14px; }
+  .payment-section:last-child { margin-bottom: 0; }
+  .payment-group-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+  }
+  .payment-chips { display: flex; gap: 7px; flex-wrap: wrap; }
+  .payment-chip {
+    display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; font-size: 12px; font-weight: 600;
+  }
+
+  /* CPM TABLE */
+  .cpm-table { width: 100%; border-collapse: collapse; }
+  .cpm-table td { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+  .cpm-table tr:last-child td { border-bottom: none; }
+  .cpm-table td:first-child { color: var(--text-muted); font-weight: 500; }
+  .cpm-table td:last-child { font-weight: 700; color: var(--text-primary); text-align: right; }
+
+  /* RIGHT COLUMN BOXES */
+  .stat-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow);
+  }
+  .stat-box-label { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+  .stat-box-val {
+    font-family: var(--font-display); font-size: 28px; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .stat-box-val.accent { color: var(--accent); }
+  .stat-box-val.green { color: var(--green); }
+
+  /* RESTRICTIONS */
+  .restriction-list { display: flex; flex-direction: column; gap: 8px; }
+  .restriction-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .r-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .r-dot.allowed { background: var(--green); }
+  .r-dot.limited { background: var(--orange); }
+  .r-dot.banned { background: var(--red); }
+  .r-name { flex: 1; }
+  .r-status {
+    font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 5px;
+  }
+  .r-status.allowed { background: var(--green-light); color: var(--green); }
+  .r-status.limited { background: var(--orange-light); color: var(--orange); }
+  .r-status.banned { background: var(--red-light); color: var(--red); }
+
+  /* SECTION NOTE */
+  .section-note {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 8px; margin-top: 4px;
+  }
+
+  /* LOADING / ERROR */
+  .state-screen {
+    min-height: 60vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    color: var(--text-muted);
+  }
+  .state-screen .icon { font-size: 48px; margin-bottom: 16px; }
+  .state-screen h2 { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+  .state-screen p { font-size: 14px; max-width: 360px; }
+  .btn-home {
+    margin-top: 20px; display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent); color: white; text-decoration: none;
+    padding: 10px 22px; border-radius: var(--radius-sm);
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+  }
+
+  /* ANIMATE */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  .fade-in { animation: fadeUp 0.35s ease both; }
+  .fade-in-2 { animation: fadeUp 0.35s 0.06s ease both; }
+  .fade-in-3 { animation: fadeUp 0.35s 0.12s ease both; }
+
+  @media (max-width: 860px) {
+    .detail-layout { grid-template-columns: 1fr; }
+    .detail-right { order: -1; display: grid; grid-template-columns: repeat(2, 1fr); }
+    .metrics-row { grid-template-columns: repeat(2, 1fr); }
+    .hero-flag { font-size: 48px; }
+    .hero-name { font-size: 28px; }
+  }
+  @media (max-width: 520px) {
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .detail-right { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">🌍</div>
+      Geo<span>Info</span>
+    </a>
+    <div class="nav-breadcrumb">
+      <a href="index.html">GEO Database</a>
+      <span class="sep">›</span>
+      <span class="current" id="breadcrumb-name">Loading...</span>
+    </div>
+    <a class="nav-back" href="index.html">← Back</a>
+  </div>
+</nav>
+
+<div class="page" id="page-content">
+  <div class="state-screen">
+    <div class="icon">⏳</div>
+    <h2>Loading GEO...</h2>
+    <p>Fetching data from geos.json</p>
+  </div>
+</div>
+
+<script>
+async function init() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id) { showError('No GEO specified', 'Add ?id=gb to the URL'); return; }
+
+  let geos;
+  try {
+    const res = await fetch('geos.json');
+    geos = await res.json();
+  } catch(e) {
+    showError('Could not load geos.json', 'Make sure the file exists in the project root.'); return;
+  }
+
+  const g = geos.find(x => x.id === id.toLowerCase());
+  if (!g) { showError(`GEO "${id}" not found`, 'It may not be in the database yet.'); return; }
+
+  renderPage(g);
+}
+
+function renderPage(g) {
+  document.title = `${g.flag} ${g.name} — GeoInfo`;
+  document.getElementById('breadcrumb-name').textContent = `${g.flag} ${g.name}`;
+
+  const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+
+  document.getElementById('page-content').innerHTML = `
+    <div class="detail-layout">
+
+      <!-- LEFT COLUMN -->
+      <div class="detail-left">
+
+        <!-- HERO -->
+        <div class="hero-card fade-in">
+          <div class="hero-top">
+            <div class="hero-flag">${g.flag}</div>
+            <div class="hero-name-block">
+              <div class="hero-name">${g.name}<span class="hero-code-pill">${g.code}</span></div>
+              <div class="hero-badges">
+                <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
+                ${g.region ? `<span class="meta-badge">${g.region}</span>` : ''}
+                ${g.language ? `<span class="meta-badge">${g.language}</span>` : ''}
+                ${g.capital ? `<span class="meta-badge">🏛 ${g.capital}</span>` : ''}
+              </div>
+            </div>
+          </div>
+
+          <!-- KEY METRICS -->
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div class="metric-label">Population</div>
+              <div class="metric-value">${g.population || '—'}</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Average Salary</div>
+              <div class="metric-value green">${g.avgSalary || '—'}</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Internet</div>
+              <div class="metric-value accent">${g.internetPenetration || '—'}</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Facebook CPM</div>
+              <div class="metric-value">${g.fbCpm || '—'}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BASIC INFO -->
+        <div class="info-card fade-in-2">
+          <div class="card-title">Basic Information</div>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-label">Currency</div>
+              <div class="info-value">${g.currency || '—'} (${g.currencyCode || '—'})</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Symbol</div>
+              <div class="info-value" style="font-size:20px;">${g.currencySymbol || '—'}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Cost of Living / mo</div>
+              <div class="info-value">${g.midCost || '—'}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Smartphone Usage</div>
+              <div class="info-value">${g.smartphoneUsage || '—'}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BANKS -->
+        ${g.banks && g.banks.length ? `
+        <div class="info-card fade-in-2">
+          <div class="card-title">Banks</div>
+          <div class="tags">${g.banks.map(b => `<span class="tag">${b}</span>`).join('')}</div>
+        </div>` : ''}
+
+        <!-- PAYMENTS -->
+        <div class="info-card fade-in-2">
+          <div class="card-title">Payment Methods</div>
+          ${g.globalPayments && g.globalPayments.length ? `
+          <div class="payment-section">
+            <div class="payment-group-label">Global</div>
+            <div class="payment-chips">${g.globalPayments.map(p => `<span class="payment-chip">${payIcon(p)} ${p}</span>`).join('')}</div>
+          </div>` : ''}
+          ${g.localPayments && g.localPayments.length ? `
+          <div class="payment-section">
+            <div class="payment-group-label">Local</div>
+            <div class="payment-chips">${g.localPayments.map(p => `<span class="payment-chip">${p}</span>`).join('')}</div>
+          </div>` : ''}
+        </div>
+
+        <!-- CPM TABLE -->
+        <div class="info-card fade-in-3">
+          <div class="card-title">CPM by Platform</div>
+          <table class="cpm-table">
+            ${g.fbCpm ? `<tr><td>📱 Facebook Ads</td><td>${g.fbCpm}</td></tr>` : ''}
+            ${g.googleCpm ? `<tr><td>🔍 Google Ads</td><td>${g.googleCpm}</td></tr>` : ''}
+            ${g.tiktokCpm ? `<tr><td>🎵 TikTok Ads</td><td>${g.tiktokCpm}</td></tr>` : ''}
+            ${g.avgCpm ? `<tr><td>📊 Average CPM</td><td>${g.avgCpm}</td></tr>` : ''}
+          </table>
+        </div>
+
+        <!-- MOBILE OPERATORS -->
+        ${g.operators && g.operators.length ? `
+        <div class="info-card fade-in-3">
+          <div class="card-title">Mobile Operators</div>
+          <div class="tags">${g.operators.map(o => `<span class="tag">${o}</span>`).join('')}</div>
+        </div>` : ''}
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="detail-right">
+
+        <div class="stat-box fade-in">
+          <div class="stat-box-label">Tier</div>
+          <div class="stat-box-val accent">${g.tier}</div>
+        </div>
+        <div class="stat-box fade-in">
+          <div class="stat-box-label">Population</div>
+          <div class="stat-box-val">${g.population || '—'}</div>
+        </div>
+        <div class="stat-box fade-in">
+          <div class="stat-box-label">Internet Penetration</div>
+          <div class="stat-box-val green">${g.internetPenetration || '—'}</div>
+        </div>
+        <div class="stat-box fade-in">
+          <div class="stat-box-label">Average CPM</div>
+          <div class="stat-box-val">${g.avgCpm || '—'}</div>
+        </div>
+
+        <!-- VERTICALS -->
+        ${g.verticals && g.verticals.length ? `
+        <div class="info-card fade-in-2">
+          <div class="section-note">Best Affiliate Verticals</div>
+          <div class="card-title" style="margin-bottom:10px;">Top Verticals</div>
+          <div class="tags">${g.verticals.map(v => `<span class="tag">${v}</span>`).join('')}</div>
+        </div>` : ''}
+
+        <!-- RESTRICTIONS -->
+        ${g.restrictions && g.restrictions.length ? `
+        <div class="info-card fade-in-2">
+          <div class="section-note">Advertising Restrictions</div>
+          <div class="restriction-list">
+            ${g.restrictions.map(r => `
+              <div class="restriction-item">
+                <span class="r-dot ${r.status}"></span>
+                <span class="r-name">${r.name}</span>
+                <span class="r-status ${r.status}">${cap(r.status)}</span>
+              </div>`).join('')}
+          </div>
+        </div>` : ''}
+
+        <!-- TRAFFIC SOURCES -->
+        ${g.trafficSources && g.trafficSources.length ? `
+        <div class="info-card fade-in-3">
+          <div class="section-note">Popular Traffic Sources</div>
+          <div class="tags">${g.trafficSources.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        </div>` : ''}
+
+        <!-- AD NETWORKS -->
+        ${g.adNetworks && g.adNetworks.length ? `
+        <div class="info-card fade-in-3">
+          <div class="section-note">Top Ad Networks</div>
+          <div class="tags">${g.adNetworks.map(n => `<span class="tag">${n}</span>`).join('')}</div>
+        </div>` : ''}
+
+      </div>
+    </div>
+  `;
+}
+
+function payIcon(name) {
+  const m = { Visa:'💳', Mastercard:'🔴', PayPal:'🅿️', 'Apple Pay':'🍎', 'Google Pay':'G' };
+  return m[name] || '💳';
+}
+
+function showError(title, desc) {
+  document.getElementById('page-content').innerHTML = `
+    <div class="state-screen">
+      <div class="icon">🌐</div>
+      <h2>${title}</h2>
+      <p>${desc}</p>
+      <a href="index.html" class="btn-home">← Back to GEO Database</a>
+    </div>`;
+}
+
+init();
+</script>
+</body>
+</html>

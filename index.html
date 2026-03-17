@@ -227,6 +227,43 @@
   }
   .hint-tag:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
 
+  /* SEARCH DROPDOWN */
+  .search-wrap { position: relative; max-width: 520px; margin: 0 auto; }
+  .search-wrap .search-bar { max-width: 100%; margin: 0; }
+  .search-dropdown {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-md);
+    z-index: 200; overflow: hidden; display: none;
+  }
+  .search-dropdown.open { display: block; }
+  .search-drop-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px; cursor: pointer; transition: background 0.1s;
+    text-decoration: none; color: var(--text-primary);
+  }
+  .search-drop-item:hover, .search-drop-item.focused { background: var(--accent-light); }
+  .search-drop-flag { font-size: 20px; flex-shrink: 0; }
+  .search-drop-info { flex: 1; min-width: 0; }
+  .search-drop-name { font-weight: 600; font-size: 13.5px; }
+  .search-drop-meta { font-size: 11px; color: var(--text-muted); }
+  .search-drop-code {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--text-muted); background: var(--bg); border: 1px solid var(--border);
+    padding: 2px 7px; border-radius: 4px; flex-shrink: 0;
+  }
+  .search-drop-tier { flex-shrink: 0; }
+  .search-no-results { padding: 16px; text-align: center; color: var(--text-muted); font-size: 13px; }
+  .search-drop-footer {
+    padding: 8px 16px; border-top: 1px solid var(--border);
+    font-size: 11px; color: var(--text-muted); background: var(--bg);
+    display: flex; gap: 12px;
+  }
+  .search-drop-footer kbd {
+    background: var(--border); border-radius: 3px; padding: 1px 5px;
+    font-family: var(--font-body); font-size: 10px; color: var(--text-secondary);
+  }
+
   /* MAIN LAYOUT */
   .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
   .section { padding: 48px 0; }
@@ -876,16 +913,22 @@
     <div class="hero-badge">🎯 For Affiliate Marketers</div>
     <h1>GEO <span class="highlight">Intelligence</span> Tool for Affiliate Marketing</h1>
     <p>Find currency, banks, salary, CPM and marketing insights for any country.</p>
-    <div class="search-bar">
-      <input type="text" id="search-input" placeholder="Search country or GEO code..." oninput="filterSearch(this.value)" onkeydown="if(event.key==='Enter')doSearch()">
-      <button class="btn-search" onclick="doSearch()">Search</button>
+    <div class="search-wrap" id="search-wrap">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Spain, ES, France, FR..." autocomplete="off"
+          oninput="onSearchInput(this.value)"
+          onkeydown="onSearchKey(event)"
+          onfocus="if(this.value) onSearchInput(this.value)">
+        <button class="btn-search" onclick="doSearch()">Search</button>
+      </div>
+      <div class="search-dropdown" id="search-dropdown"></div>
     </div>
     <div class="search-hints">
-      <span class="hint-tag" onclick="openGeo('us')">🇺🇸 USA</span>
-      <span class="hint-tag" onclick="openGeo('gb')">🇬🇧 United Kingdom</span>
-      <span class="hint-tag" onclick="openGeo('de')">🇩🇪 Germany</span>
-      <span class="hint-tag" onclick="openGeo('br')">🇧🇷 Brazil</span>
-      <span class="hint-tag" onclick="openGeo('in')">🇮🇳 India</span>
+      <span class="hint-tag" onclick="gotoGeo('us')">🇺🇸 USA</span>
+      <span class="hint-tag" onclick="gotoGeo('gb')">🇬🇧 United Kingdom</span>
+      <span class="hint-tag" onclick="gotoGeo('de')">🇩🇪 Germany</span>
+      <span class="hint-tag" onclick="gotoGeo('br')">🇧🇷 Brazil</span>
+      <span class="hint-tag" onclick="gotoGeo('in')">🇮🇳 India</span>
     </div>
   </div>
 
@@ -1627,17 +1670,100 @@ function scrollToCompare() {
   document.getElementById('compare-section').scrollIntoView({ behavior: 'smooth' });
 }
 
-function doSearch() {
-  const val = document.getElementById('search-input').value.trim().toLowerCase();
-  const match = Object.entries(GEO_DATA).find(([id, g]) =>
-    g.name.toLowerCase().includes(val) || g.code.toLowerCase() === val || id === val
-  );
-  if (match) openGeo(match[0]);
+// ── SEARCH AUTOCOMPLETE ───────────────────────────────────
+let searchFocusIdx = -1;
+
+function gotoGeo(id) {
+  window.open(`geo.html?id=${id}`, '_blank');
 }
 
-function filterSearch(val) {
-  // Could show dropdown suggestions — kept minimal for now
+function onSearchInput(val) {
+  const q = val.trim().toLowerCase();
+  const drop = document.getElementById('search-dropdown');
+  searchFocusIdx = -1;
+
+  if (!q) { drop.classList.remove('open'); return; }
+
+  const results = GEOS_ARRAY.filter(g =>
+    g.name.toLowerCase().includes(q) ||
+    g.code.toLowerCase().startsWith(q) ||
+    g.id.toLowerCase().startsWith(q)
+  ).slice(0, 8);
+
+  if (!results.length) {
+    drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
+    drop.classList.add('open');
+    return;
+  }
+
+  drop.innerHTML = results.map((g, i) => `
+    <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
+      <span class="search-drop-flag">${g.flag}</span>
+      <div class="search-drop-info">
+        <div class="search-drop-name">${hlMatch(g.name, q)}</div>
+        <div class="search-drop-meta">${g.region} · ${g.language}</div>
+      </div>
+      <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
+      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier}</span>
+    </a>
+  `).join('') + `
+    <div class="search-drop-footer">
+      <span><kbd>↑↓</kbd> navigate</span>
+      <span><kbd>Enter</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>`;
+  drop.classList.add('open');
 }
+
+function hlMatch(text, q) {
+  const idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if (idx === -1) return text;
+  return text.slice(0, idx) +
+    `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+q.length)}</mark>` +
+    text.slice(idx + q.length);
+}
+
+function onSearchKey(e) {
+  const drop = document.getElementById('search-dropdown');
+  const items = drop.querySelectorAll('.search-drop-item');
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    searchFocusIdx = Math.min(searchFocusIdx + 1, items.length - 1);
+    items.forEach((el, i) => el.classList.toggle('focused', i === searchFocusIdx));
+    if (items[searchFocusIdx]) items[searchFocusIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    searchFocusIdx = Math.max(searchFocusIdx - 1, 0);
+    items.forEach((el, i) => el.classList.toggle('focused', i === searchFocusIdx));
+    if (items[searchFocusIdx]) items[searchFocusIdx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (searchFocusIdx >= 0 && items[searchFocusIdx]) {
+      items[searchFocusIdx].click();
+    } else { doSearch(); }
+  } else if (e.key === 'Escape') {
+    drop.classList.remove('open');
+  }
+}
+
+function doSearch() {
+  const val = document.getElementById('search-input').value.trim().toLowerCase();
+  if (!val) return;
+  const match = GEOS_ARRAY.find(g =>
+    g.id === val || g.code.toLowerCase() === val ||
+    g.name.toLowerCase() === val || g.name.toLowerCase().startsWith(val)
+  );
+  if (match) window.open(`geo.html?id=${match.id}`, '_blank');
+  document.getElementById('search-dropdown').classList.remove('open');
+}
+
+function filterSearch(val) {} // compat stub
+
+document.addEventListener('click', e => {
+  const wrap = document.getElementById('search-wrap');
+  if (wrap && !wrap.contains(e.target))
+    document.getElementById('search-dropdown').classList.remove('open');
+});
 
 // INIT
 initData();
