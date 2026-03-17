@@ -6,7 +6,7 @@
 <title>GeoInfo — GEO Intelligence for Affiliate Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #F5F4F1;
@@ -36,7 +36,7 @@
     --radius-lg: 20px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
     --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
-    --font-display: 'Spartan', sans-serif;
+    --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
   }
 
@@ -1778,31 +1778,6 @@ function onSearchInput(val) {
       <span class="search-drop-flag">${g.flag}</span>
       <div class="search-drop-info">
         <div class="search-drop-name">${isUkr ? g.name : hlMatch(g.name, q)}</div>
-        <div class="search-drop-meta">${g.region} · ${g.language}</div>
-      </div>
-      <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
-      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier}</span>
-    </a>
-  `).join('') + `
-    <div class="search-drop-footer">
-      <span><kbd>↑↓</kbd> navigate</span>
-      <span><kbd>Enter</kbd> open</span>
-      <span><kbd>Esc</kbd> close</span>
-    </div>`;
-  drop.classList.add('open');
-}
-
-  if (!results.length) {
-    drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
-    drop.classList.add('open');
-    return;
-  }
-
-  drop.innerHTML = results.map((g, i) => `
-    <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
-      <span class="search-drop-flag">${g.flag}</span>
-      <div class="search-drop-info">
-        <div class="search-drop-name">${hlMatch(g.name, q)}</div>
         <div class="search-drop-meta">${g.region} · ${g.language}</div>
       </div>
       <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
