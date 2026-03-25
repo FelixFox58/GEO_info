@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1217,23 +1216,22 @@ let GEO_DATA = {};
 let GEOS_ARRAY = [];
 
 async function initData() {
-  // Always load fallback first so search works immediately
-  Object.entries(_FALLBACK).forEach(([key, g]) => { if (!g.id) g.id = key; });
+  // Inject id keys into fallback entries so search always works
+  Object.entries(_FALLBACK).forEach(([key, g]) => { g.id = key; });
   Object.assign(GEO_DATA, _FALLBACK);
   GEOS_ARRAY = Object.values(GEO_DATA);
 
   try {
-    const res = await fetch('geos.json'); // no cache-bust — breaks GitHub Pages
+    const res = await fetch('geos.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const fetched = await res.json();
     if (Array.isArray(fetched) && fetched.length) {
-      // ensure every entry has an id field
       fetched.forEach(g => { if (!g.id && g.code) g.id = g.code.toLowerCase(); });
       GEOS_ARRAY = fetched;
       GEO_DATA = Object.fromEntries(fetched.map(g => [g.id, g]));
     }
   } catch(e) {
-    console.warn('Could not load geos.json, using built-in fallback:', e.message);
+    console.warn('Could not load geos.json, using fallback:', e.message);
   }
   renderGeoCards();
   populateSelects();
@@ -1427,10 +1425,7 @@ const _FALLBACK = {
     adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
   },
 };
-
-};
-// Always pre-load fallback so page works immediately (before fetch resolves)
-// id is injected by initData() above
+// _FALLBACK loaded — id injected by initData()
 
 const FEATURED_GEOS = ['gb', 'pl', 'br', 'de'];
 
