@@ -21,7 +21,7 @@
     --font-display: 'Plus Jakarta Sans', sans-serif; --font-body: 'Inter', sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); font-size: 15px; -webkit-font-smoothing: antialiased; font-feature-settings: 'cv02','cv03','cv04','cv11'; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); font-size: 15px; -webkit-font-smoothing: antialiased; }
 
   /* NAV */
   nav {
@@ -301,7 +301,7 @@ function renderPage(g) {
             </div>
             <div class="metric-box">
               <div class="metric-label">Average Salary</div>
-              <div class="metric-value green">${g.avgSalary || '—'}</div>
+              <div class="metric-value green">${g.avgSalaryUSD || g.avgSalary || '—'}</div>
             </div>
             <div class="metric-box">
               <div class="metric-label">Internet</div>
@@ -326,14 +326,30 @@ function renderPage(g) {
               <div class="info-label">Symbol</div>
               <div class="info-value" style="font-size:20px;">${g.currencySymbol || '—'}</div>
             </div>
-            <div class="info-item">
+            ${g.midCost ? `<div class="info-item">
               <div class="info-label">Cost of Living / mo</div>
-              <div class="info-value">${g.midCost || '—'}</div>
-            </div>
-            <div class="info-item">
+              <div class="info-value">${g.midCost}</div>
+            </div>` : ''}
+            ${g.smartphoneUsage ? `<div class="info-item">
               <div class="info-label">Smartphone Usage</div>
-              <div class="info-value">${g.smartphoneUsage || '—'}</div>
-            </div>
+              <div class="info-value">${g.smartphoneUsage}</div>
+            </div>` : ''}
+            ${g.phoneCode ? `<div class="info-item">
+              <div class="info-label">Phone Code</div>
+              <div class="info-value">${g.phoneCode}</div>
+            </div>` : ''}
+            ${g.timezone ? `<div class="info-item">
+              <div class="info-label">Timezone</div>
+              <div class="info-value">${g.timezone}</div>
+            </div>` : ''}
+            ${g.capital ? `<div class="info-item">
+              <div class="info-label">Capital</div>
+              <div class="info-value">${g.capital}</div>
+            </div>` : ''}
+            ${g.majorCities && g.majorCities.length ? `<div class="info-item">
+              <div class="info-label">Major Cities</div>
+              <div class="info-value">${g.majorCities.join(', ')}</div>
+            </div>` : ''}
           </div>
         </div>
 
@@ -357,6 +373,10 @@ function renderPage(g) {
             <div class="payment-group-label">Local</div>
             <div class="payment-chips">${g.localPayments.map(p => `<span class="payment-chip">${p}</span>`).join('')}</div>
           </div>` : ''}
+          ${(!g.globalPayments && !g.localPayments) && g.payments && g.payments.length ? `
+          <div class="payment-section">
+            <div class="payment-chips">${g.payments.map(p => `<span class="payment-chip">${payIcon(p)} ${p}</span>`).join('')}</div>
+          </div>` : ''}
         </div>
 
         <!-- CPM TABLE -->
@@ -375,6 +395,31 @@ function renderPage(g) {
         <div class="info-card fade-in-3">
           <div class="card-title">Mobile Operators</div>
           <div class="tags">${g.operators.map(o => `<span class="tag">${o}</span>`).join('')}</div>
+        </div>` : ''}
+
+        <!-- DEVICE STATS -->
+        ${(g.desktopShare || g.mobileShare || g.iosShare || g.androidShare) ? `
+        <div class="info-card fade-in-3">
+          <div class="card-title">Device & OS Stats</div>
+          <div class="info-grid">
+            ${g.desktopShare ? `<div class="info-item"><div class="info-label">🖥 Desktop</div><div class="info-value">${g.desktopShare}</div></div>` : ''}
+            ${g.mobileShare ? `<div class="info-item"><div class="info-label">📱 Mobile</div><div class="info-value">${g.mobileShare}</div></div>` : ''}
+            ${g.iosShare ? `<div class="info-item"><div class="info-label"> iOS</div><div class="info-value">${g.iosShare}</div></div>` : ''}
+            ${g.androidShare ? `<div class="info-item"><div class="info-label">🤖 Android</div><div class="info-value">${g.androidShare}</div></div>` : ''}
+          </div>
+        </div>` : ''}
+
+        <!-- MESSENGERS & SOCIAL -->
+        ${g.messengers && g.messengers.length ? `
+        <div class="info-card fade-in-3">
+          <div class="card-title">Popular Messengers</div>
+          <div class="tags">${g.messengers.map(m => `<span class="tag">${m}</span>`).join('')}</div>
+        </div>` : ''}
+
+        ${g.socialNetworks && g.socialNetworks.length ? `
+        <div class="info-card fade-in-3">
+          <div class="card-title">Social Networks</div>
+          <div class="tags">${g.socialNetworks.map(s => `<span class="tag">${s}</span>`).join('')}</div>
         </div>` : ''}
 
       </div>
