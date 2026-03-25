@@ -246,22 +246,52 @@
 </div>
 
 <script>
+// Built-in fallback data for geo.html (same as index.html _FALLBACK)
+const FALLBACK_GEOS = [
+  { id:'us', name:'United States', code:'US', flag:'🇺🇸', tier:1, region:'North America', language:'English', capital:'Washington D.C.', currency:'US Dollar', currencyCode:'USD', currencySymbol:'$', population:'331M', avgSalary:'$60,000', midCost:'$2,000', internetPenetration:'93%', smartphoneUsage:'81%', avgCpm:'$5.50', fbCpm:'$5.50', googleCpm:'$8.20', tiktokCpm:'$3.10', banks:['Chase','Bank of America','Wells Fargo','Citibank'], operators:['Verizon','AT&T','T-Mobile','Sprint'], globalPayments:['Visa','Mastercard','PayPal','Apple Pay'], localPayments:['Venmo','Zelle','Cash App'], verticals:['Nutra','Finance','Dating','E-commerce','Crypto'], restrictions:[{name:'Gambling Ads',status:'limited'},{name:'Crypto Ads',status:'limited'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','TikTok Ads','Native Ads','Push Networks'], adNetworks:['Taboola','Outbrain','PropellerAds','RichAds','MGID'] },
+  { id:'gb', name:'United Kingdom', code:'GB', flag:'🇬🇧', tier:1, region:'Europe', language:'English', capital:'London', currency:'British Pound', currencyCode:'GBP', currencySymbol:'£', population:'67M', avgSalary:'$35,000', midCost:'$1,500', internetPenetration:'95%', smartphoneUsage:'88%', avgCpm:'$4.50', fbCpm:'$4.50', googleCpm:'$7.10', tiktokCpm:'$2.80', banks:['HSBC','Barclays','Lloyds','NatWest'], operators:['EE','Vodafone','O2','Three'], globalPayments:['Visa','Mastercard','PayPal','Apple Pay'], localPayments:['Open Banking','Revolut','Monzo'], verticals:['Gambling','Nutra','Finance','Dating','Crypto'], restrictions:[{name:'Gambling Ads',status:'limited'},{name:'Crypto Ads',status:'allowed'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'limited'}], trafficSources:['Facebook Ads','Google Ads','TikTok Ads','Native Ads'], adNetworks:['Taboola','Outbrain','PropellerAds','MGID'] },
+  { id:'de', name:'Germany', code:'DE', flag:'🇩🇪', tier:1, region:'Europe', language:'German', capital:'Berlin', currency:'Euro', currencyCode:'EUR', currencySymbol:'€', population:'84M', avgSalary:'$45,000', midCost:'$1,800', internetPenetration:'92%', smartphoneUsage:'80%', avgCpm:'$5.20', fbCpm:'$5.20', googleCpm:'$7.80', tiktokCpm:'$3.50', banks:['Deutsche Bank','Commerzbank','DZ Bank','N26'], operators:['T-Mobile','Vodafone','O2','E-Plus'], globalPayments:['Visa','Mastercard','PayPal','Apple Pay'], localPayments:['SEPA','Klarna','Sofort'], verticals:['Nutra','Finance','E-commerce','Dating'], restrictions:[{name:'Gambling Ads',status:'limited'},{name:'Crypto Ads',status:'limited'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','Native Ads','Display'], adNetworks:['Taboola','Outbrain','MGID'] },
+  { id:'pl', name:'Poland', code:'PL', flag:'🇵🇱', tier:2, region:'Europe', language:'Polish', capital:'Warsaw', currency:'Polish Zloty', currencyCode:'PLN', currencySymbol:'zł', population:'38M', avgSalary:'$17,000', midCost:'$700', internetPenetration:'84%', smartphoneUsage:'72%', avgCpm:'$2.80', fbCpm:'$2.80', googleCpm:'$3.90', tiktokCpm:'$1.60', banks:['PKO Bank Polski','Bank Pekao','mBank','ING'], operators:['Orange','Play','T-Mobile','Plus'], globalPayments:['Visa','Mastercard','PayPal'], localPayments:['BLIK','Przelewy24','PayU'], verticals:['Nutra','Dating','Finance','Gambling'], restrictions:[{name:'Gambling Ads',status:'limited'},{name:'Crypto Ads',status:'allowed'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','TikTok Ads','Push Networks'], adNetworks:['Taboola','PropellerAds','MGID'] },
+  { id:'br', name:'Brazil', code:'BR', flag:'🇧🇷', tier:2, region:'South America', language:'Portuguese', capital:'Brasília', currency:'Brazilian Real', currencyCode:'BRL', currencySymbol:'R$', population:'215M', avgSalary:'$8,000', midCost:'$600', internetPenetration:'75%', smartphoneUsage:'71%', avgCpm:'$2.10', fbCpm:'$2.10', googleCpm:'$3.20', tiktokCpm:'$1.20', banks:['Itaú','Bradesco','Caixa','Nubank'], operators:['Claro','Vivo','TIM','Oi'], globalPayments:['Visa','Mastercard','PayPal'], localPayments:['Pix','Boleto','PicPay'], verticals:['Nutra','Dating','Finance','E-commerce'], restrictions:[{name:'Gambling Ads',status:'limited'},{name:'Crypto Ads',status:'allowed'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','TikTok Ads','Push Networks'], adNetworks:['Taboola','PropellerAds','MGID'] },
+  { id:'ca', name:'Canada', code:'CA', flag:'🇨🇦', tier:1, region:'North America', language:'English / French', capital:'Ottawa', currency:'Canadian Dollar', currencyCode:'CAD', currencySymbol:'CA$', population:'38M', avgSalary:'$48,000', midCost:'$1,700', internetPenetration:'94%', smartphoneUsage:'82%', avgCpm:'$4.80', fbCpm:'$4.80', googleCpm:'$7.40', tiktokCpm:'$3.00', banks:['RBC','TD Bank','Scotiabank','BMO'], operators:['Rogers','Bell','Telus','Shaw'], globalPayments:['Visa','Mastercard','PayPal','Apple Pay'], localPayments:['Interac','Koho'], verticals:['Gambling','Nutra','Finance','Crypto'], restrictions:[{name:'Gambling Ads',status:'allowed'},{name:'Crypto Ads',status:'limited'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','Native Ads'], adNetworks:['Taboola','Outbrain','PropellerAds'] },
+  { id:'au', name:'Australia', code:'AU', flag:'🇦🇺', tier:1, region:'Oceania', language:'English', capital:'Canberra', currency:'Australian Dollar', currencyCode:'AUD', currencySymbol:'A$', population:'26M', avgSalary:'$52,000', midCost:'$1,900', internetPenetration:'91%', smartphoneUsage:'84%', avgCpm:'$5.20', fbCpm:'$5.20', googleCpm:'$7.60', tiktokCpm:'$3.20', banks:['Commonwealth','Westpac','ANZ','NAB'], operators:['Telstra','Optus','Vodafone'], globalPayments:['Visa','Mastercard','PayPal','Apple Pay'], localPayments:['BPAY','PayID','Afterpay'], verticals:['Gambling','Nutra','Finance','Crypto','Dating'], restrictions:[{name:'Gambling Ads',status:'allowed'},{name:'Crypto Ads',status:'limited'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','TikTok Ads','Native Ads'], adNetworks:['Taboola','Outbrain','PropellerAds'] },
+  { id:'in', name:'India', code:'IN', flag:'🇮🇳', tier:2, region:'Asia', language:'Hindi / English', capital:'New Delhi', currency:'Indian Rupee', currencyCode:'INR', currencySymbol:'₹', population:'1.4B', avgSalary:'$3,000', midCost:'$300', internetPenetration:'52%', smartphoneUsage:'54%', avgCpm:'$0.80', fbCpm:'$0.80', googleCpm:'$1.20', tiktokCpm:'$0.50', banks:['SBI','HDFC','ICICI','Axis Bank'], operators:['Jio','Airtel','BSNL','Vi'], globalPayments:['Visa','Mastercard','PayPal'], localPayments:['UPI','Paytm','PhonePe','Google Pay'], verticals:['Nutra','Finance','Dating','E-commerce'], restrictions:[{name:'Gambling Ads',status:'banned'},{name:'Crypto Ads',status:'limited'},{name:'Dating Ads',status:'allowed'},{name:'Finance Ads',status:'allowed'}], trafficSources:['Facebook Ads','Google Ads','Push Networks','Native Ads'], adNetworks:['PropellerAds','MGID','RichAds','Taboola'] },
+];
+
 async function init() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
   if (!id) { showError('No GEO specified', 'Add ?id=gb to the URL'); return; }
 
-  let geos;
+  const idLower = id.toLowerCase();
+  let geos = null;
+
+  // Try loading from geos.json first
   try {
     const res = await fetch('geos.json');
-    geos = await res.json();
+    if (res.ok) {
+      const fetched = await res.json();
+      if (Array.isArray(fetched) && fetched.length) {
+        fetched.forEach(g => { if (!g.id && g.code) g.id = g.code.toLowerCase(); });
+        geos = fetched;
+      }
+    }
   } catch(e) {
-    showError('Could not load geos.json', 'Make sure the file exists in the project root.'); return;
+    console.warn('geos.json not available, using fallback');
   }
 
-  const g = geos.find(x => x.id === id.toLowerCase());
-  if (!g) { showError(`GEO "${id}" not found`, 'It may not be in the database yet.'); return; }
+  // Fall back to built-in data
+  if (!geos) geos = FALLBACK_GEOS;
+
+  const g = geos.find(x => x.id === idLower);
+  if (!g) {
+    // Try fallback explicitly
+    const fb = FALLBACK_GEOS.find(x => x.id === idLower);
+    if (fb) { renderPage(fb); return; }
+    showError(`GEO "${id}" not found`, 'It may not be in the database yet.');
+    return;
+  }
 
   renderPage(g);
 }
