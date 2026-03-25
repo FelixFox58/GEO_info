@@ -6,7 +6,7 @@
 <title>GeoInfo — GEO Intelligence for Affiliate Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #F5F4F1;
@@ -36,8 +36,8 @@
     --radius-lg: 20px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
     --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,6 +51,7 @@
     line-height: 1.6;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv02','cv03','cv04','cv11';
   }
 
   /* NAV */
@@ -1414,6 +1415,8 @@ const _FALLBACK = {
     adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
   },
 };
+
+};
 // Always pre-load fallback so page works immediately (before fetch resolves)
 Object.assign(GEO_DATA, _FALLBACK);
 GEOS_ARRAY = Object.values(_FALLBACK);
@@ -1674,74 +1677,6 @@ function scrollToCompare() {
 // ── SEARCH AUTOCOMPLETE ───────────────────────────────────
 let searchFocusIdx = -1;
 
-// Ukrainian country names → geo id
-const UA_NAMES = {
-  'сша': 'us', 'сполучені штати': 'us', 'америка': 'us',
-  'великобританія': 'gb', 'англія': 'gb', 'британія': 'gb',
-  'німеччина': 'de',
-  'канада': 'ca',
-  'австралія': 'au',
-  'франція': 'fr',
-  'японія': 'jp',
-  'норвегія': 'no',
-  'польща': 'pl',
-  'бразилія': 'br',
-  'італія': 'it',
-  'іспанія': 'es',
-  'росія': 'ru',
-  'мексика': 'mx',
-  'південна корея': 'kr', 'корея': 'kr',
-  'індія': 'in',
-  'нігерія': 'ng',
-  'єгипет': 'eg',
-  'вєтнам': 'vn', "в'єтнам": 'vn',
-  'пакистан': 'pk',
-  'бангладеш': 'bd',
-  'індонезія': 'id',
-  'колумбія': 'co',
-  'філіппіни': 'ph',
-  'нідерланди': 'nl', 'голландія': 'nl',
-  'швеція': 'se',
-  'данія': 'dk',
-  'фінляндія': 'fi',
-  'швейцарія': 'ch',
-  'австрія': 'at',
-  'бельгія': 'be',
-  'португалія': 'pt',
-  'чехія': 'cz',
-  'румунія': 'ro',
-  'угорщина': 'hu',
-  'греція': 'gr',
-  'туреччина': 'tr',
-  'ізраїль': 'il',
-  'оае': 'ae', 'еміrati': 'ae',
-  'саудівська аравія': 'sa',
-  'сінгапур': 'sg',
-  'гонконг': 'hk',
-  'таїланд': 'th',
-  'малайзія': 'my',
-  'аргентина': 'ar',
-  'чилі': 'cl',
-  'перу': 'pe',
-  'колумбія': 'co',
-  'україна': 'ua',
-  'нова зеландія': 'nz',
-  'ірландія': 'ie',
-  'ірак': 'iq',
-  'іран': 'ir',
-  'китай': 'cn',
-  'тайвань': 'tw',
-  'казахстан': 'kz',
-};
-
-function searchUkr(q) {
-  // Find matching UA name keys
-  const matchedIds = Object.entries(UA_NAMES)
-    .filter(([ukrName]) => ukrName.includes(q))
-    .map(([, id]) => id);
-  return GEOS_ARRAY.filter(g => matchedIds.includes(g.id));
-}
-
 function gotoGeo(id) {
   window.open(`geo.html?id=${id}`, '_blank');
 }
@@ -1753,19 +1688,11 @@ function onSearchInput(val) {
 
   if (!q) { drop.classList.remove('open'); return; }
 
-  // Search: english name/code + ukrainian
-  const isUkr = /[а-яіїєґ]/i.test(q);
-  let results;
-  if (isUkr) {
-    results = searchUkr(q);
-  } else {
-    results = GEOS_ARRAY.filter(g =>
-      g.name.toLowerCase().includes(q) ||
-      g.code.toLowerCase().startsWith(q) ||
-      g.id.toLowerCase().startsWith(q)
-    );
-  }
-  results = results.slice(0, 8);
+  const results = GEOS_ARRAY.filter(g =>
+    g.name.toLowerCase().includes(q) ||
+    g.code.toLowerCase().startsWith(q) ||
+    g.id.toLowerCase().startsWith(q)
+  ).slice(0, 8);
 
   if (!results.length) {
     drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
@@ -1777,7 +1704,7 @@ function onSearchInput(val) {
     <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
       <span class="search-drop-flag">${g.flag}</span>
       <div class="search-drop-info">
-        <div class="search-drop-name">${isUkr ? g.name : hlMatch(g.name, q)}</div>
+        <div class="search-drop-name">${hlMatch(g.name, q)}</div>
         <div class="search-drop-meta">${g.region} · ${g.language}</div>
       </div>
       <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
