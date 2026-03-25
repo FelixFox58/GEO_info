@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1683,8 +1685,7 @@ function gotoGeo(id) {
   window.location.href = `geo.html?id=${id}`;
 }
 
-// ── ПОШУК ─────────────────────────────────────────────────────
-// Транслітерація кирилиці → латиниця (ИТ → IT, ФР → FR тощо)
+// Транслітерація: кирилиця → латиниця (ИТ→IT, ФР→FR, ЮС→YUS...)
 const _CYR = {'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','є':'e','ё':'e','ж':'zh','з':'z','и':'i','і':'i','ї':'i','й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f','х':'h','ц':'ts','ч':'ch','ш':'sh','щ':'sch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya'};
 function cyrToLat(s) { return s.toLowerCase().split('').map(c => _CYR[c] ?? c).join(''); }
 
@@ -1692,18 +1693,15 @@ function geoMatches(g, raw) {
   const q = raw.trim().toLowerCase();
   if (!q) return false;
   const qlat = cyrToLat(q);
-  // По коду (US, GB, ит, ИТ → it → IT)
   if (g.code.toLowerCase().startsWith(q)) return true;
-  if (g.code.toLowerCase().startsWith(qlat)) return true;
-  // По назві (будь-якою мовою)
+  if (qlat && g.code.toLowerCase().startsWith(qlat)) return true;
   if (g.name.toLowerCase().includes(q)) return true;
-  // По aliases (Италия, Italy, Італія, USA, America...)
   if (g.aliases && g.aliases.some(a => a.toLowerCase().includes(q))) return true;
   return false;
 }
 
 function hlMatch(text, q) {
-  if (!q) return text;
+  if (!q || !text) return text || '';
   const idx = text.toLowerCase().indexOf(q.toLowerCase());
   if (idx === -1) return text;
   return text.slice(0, idx) +
@@ -1728,13 +1726,13 @@ function onSearchInput(val) {
   const ql = q.toLowerCase();
   drop.innerHTML = results.map((g, i) => `
     <a class="search-drop-item" href="geo.html?id=${g.id}" data-idx="${i}">
-      <span class="search-drop-flag">${g.flag}</span>
+      <span class="search-drop-flag">${g.flag || ''}</span>
       <div class="search-drop-info">
         <div class="search-drop-name">${hlMatch(g.name, ql)}</div>
         <div class="search-drop-meta">${g.region || ''} · ${g.language || ''}</div>
       </div>
       <span class="search-drop-code">${hlMatch(g.code, ql.toUpperCase())}</span>
-      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier || '?'}</span>
+      <span class="search-drop-tier tier-badge t${g.tier || ''}">T${g.tier || '?'}</span>
     </a>
   `).join('') + `
     <div class="search-drop-footer">
