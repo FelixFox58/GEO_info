@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1681,37 +1680,61 @@ function scrollToCompare() {
 let searchFocusIdx = -1;
 
 function gotoGeo(id) {
-  window.open(`geo.html?id=${id}`, '_blank');
+  window.location.href = `geo.html?id=${id}`;
+}
+
+// ── ПОШУК ─────────────────────────────────────────────────────
+// Транслітерація кирилиці → латиниця (ИТ → IT, ФР → FR тощо)
+const _CYR = {'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','є':'e','ё':'e','ж':'zh','з':'z','и':'i','і':'i','ї':'i','й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f','х':'h','ц':'ts','ч':'ch','ш':'sh','щ':'sch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya'};
+function cyrToLat(s) { return s.toLowerCase().split('').map(c => _CYR[c] ?? c).join(''); }
+
+function geoMatches(g, raw) {
+  const q = raw.trim().toLowerCase();
+  if (!q) return false;
+  const qlat = cyrToLat(q);
+  // По коду (US, GB, ит, ИТ → it → IT)
+  if (g.code.toLowerCase().startsWith(q)) return true;
+  if (g.code.toLowerCase().startsWith(qlat)) return true;
+  // По назві (будь-якою мовою)
+  if (g.name.toLowerCase().includes(q)) return true;
+  // По aliases (Италия, Italy, Італія, USA, America...)
+  if (g.aliases && g.aliases.some(a => a.toLowerCase().includes(q))) return true;
+  return false;
+}
+
+function hlMatch(text, q) {
+  if (!q) return text;
+  const idx = text.toLowerCase().indexOf(q.toLowerCase());
+  if (idx === -1) return text;
+  return text.slice(0, idx) +
+    `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 2px">${text.slice(idx, idx + q.length)}</mark>` +
+    text.slice(idx + q.length);
 }
 
 function onSearchInput(val) {
-  const q = val.trim().toLowerCase();
+  const q = val.trim();
   const drop = document.getElementById('search-dropdown');
   searchFocusIdx = -1;
-
   if (!q) { drop.classList.remove('open'); return; }
 
-  const results = GEOS_ARRAY.filter(g =>
-    g.name.toLowerCase().includes(q) ||
-    g.code.toLowerCase().startsWith(q) ||
-    g.id.toLowerCase().startsWith(q)
-  ).slice(0, 8);
+  const results = GEOS_ARRAY.filter(g => geoMatches(g, q)).slice(0, 8);
 
   if (!results.length) {
-    drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
+    drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${q}</strong>"</div>`;
     drop.classList.add('open');
     return;
   }
 
+  const ql = q.toLowerCase();
   drop.innerHTML = results.map((g, i) => `
-    <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
+    <a class="search-drop-item" href="geo.html?id=${g.id}" data-idx="${i}">
       <span class="search-drop-flag">${g.flag}</span>
       <div class="search-drop-info">
-        <div class="search-drop-name">${hlMatch(g.name, q)}</div>
-        <div class="search-drop-meta">${g.region} · ${g.language}</div>
+        <div class="search-drop-name">${hlMatch(g.name, ql)}</div>
+        <div class="search-drop-meta">${g.region || ''} · ${g.language || ''}</div>
       </div>
-      <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
-      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier}</span>
+      <span class="search-drop-code">${hlMatch(g.code, ql.toUpperCase())}</span>
+      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier || '?'}</span>
     </a>
   `).join('') + `
     <div class="search-drop-footer">
@@ -1720,14 +1743,6 @@ function onSearchInput(val) {
       <span><kbd>Esc</kbd> close</span>
     </div>`;
   drop.classList.add('open');
-}
-
-function hlMatch(text, q) {
-  const idx = text.toLowerCase().indexOf(q.toLowerCase());
-  if (idx === -1) return text;
-  return text.slice(0, idx) +
-    `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+q.length)}</mark>` +
-    text.slice(idx + q.length);
 }
 
 function onSearchKey(e) {
@@ -1754,17 +1769,12 @@ function onSearchKey(e) {
 }
 
 function doSearch() {
-  const val = document.getElementById('search-input').value.trim().toLowerCase();
+  const val = document.getElementById('search-input').value.trim();
   if (!val) return;
-  const match = GEOS_ARRAY.find(g =>
-    g.id === val || g.code.toLowerCase() === val ||
-    g.name.toLowerCase() === val || g.name.toLowerCase().startsWith(val)
-  );
-  if (match) window.open(`geo.html?id=${match.id}`, '_blank');
+  const match = GEOS_ARRAY.find(g => geoMatches(g, val));
+  if (match) window.location.href = `geo.html?id=${match.id}`;
   document.getElementById('search-dropdown').classList.remove('open');
 }
-
-function filterSearch(val) {} // compat stub
 
 document.addEventListener('click', e => {
   const wrap = document.getElementById('search-wrap');
