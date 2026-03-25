@@ -6,7 +6,7 @@
 <title>GeoInfo — GEO Intelligence for Affiliate Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #F5F4F1;
@@ -36,8 +36,8 @@
     --radius-lg: 20px;
     --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
     --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
-    --font-display: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -51,7 +51,6 @@
     line-height: 1.6;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: 'cv02','cv03','cv04','cv11';
   }
 
   /* NAV */
@@ -1218,19 +1217,22 @@ let GEOS_ARRAY = [];
 
 async function initData() {
   try {
-    const res = await fetch('geos.json');
+    const res = await fetch('geos.json?v=' + Date.now()); // cache-bust
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const fetched = await res.json();
-    // Override fallback with fetched data
     GEOS_ARRAY = fetched;
     GEO_DATA = Object.fromEntries(fetched.map(g => [g.id, g]));
   } catch(e) {
     console.warn('Could not load geos.json, using built-in fallback:', e.message);
-    // GEOS_ARRAY and GEO_DATA already set from _FALLBACK above
   }
   renderGeoCards();
-  updateCompare();
   populateSelects();
+  updateCompare();
+}
+
+// Хелпер: зарплата сумісна з обома форматами полів
+function getSalary(g) {
+  return g.avgSalaryUSD || g.avgSalary || '—';
 }
 
 function populateSelects() {
@@ -1445,7 +1447,7 @@ function renderGeoCards() {
         <div class="geo-stat">
           <span class="geo-stat-icon">💼</span>
           <span class="geo-stat-label">Avg. Salary</span>
-          <span class="geo-stat-value">${g.avgSalary}</span>
+          <span class="geo-stat-value">${getSalary(g)}</span>
         </div>
         ${g.internetPenetration ? `<div class="geo-stat">
           <span class="geo-stat-icon">🌐</span>
@@ -1502,12 +1504,12 @@ function openGeo(id) {
           </div>
           <div class="info-item">
             <div class="info-item-label">Average Salary</div>
-            <div class="info-item-value">${g.avgSalary} / year</div>
+            <div class="info-item-value">${g.avgSalaryUSD || g.avgSalary || '—'}</div>
           </div>
-          <div class="info-item">
+          ${(g.midCost) ? `<div class="info-item">
             <div class="info-item-label">Middle Cost of Living</div>
             <div class="info-item-value">${g.midCost} / mo</div>
-          </div>
+          </div>` : ''}
         </div>
       </div>
 
