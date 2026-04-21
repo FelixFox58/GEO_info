@@ -10,8 +10,8 @@
     "capital": "Canberra",
     "currency": "Australian Dollar",
     "currencyCode": "AUD",
-    "currencySymbol": "$",
-    "population": "27.2M",
+    "currencySymbol": "A$",
+    "population": "26M",
     "avgSalary": "$52,000",
     "midCost": "$1,900",
     "internetPenetration": "91%",
@@ -108,9 +108,7 @@
     "celebrities": [],
     "aliases": [
       "Австралия",
-      "Австралія",
-      "Australia",
-      "Commonwealth of Australia"
+      "Австралія"
     ]
   },
   {
@@ -118,10 +116,10 @@
     "code": "AT",
     "name": "Австрия",
     "tier": 1,
-    "population": "9.2M",
+    "population": "9 млн",
     "phoneCode": "+43 (xxx) xxx-xxxx",
     "internetPenetration": "87%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Немецкий",
     "languageSecondary": "",
     "currency": "Евро",
@@ -158,20 +156,18 @@
     "flag": "🇦🇹",
     "aliases": [
       "Австрія",
-      "Austria",
-      "Republic of Austria"
-    ],
-    "region": "Europe"
+      "Austria"
+    ]
   },
   {
     "id": "ad",
     "code": "AD",
     "name": "Андорра",
     "tier": 1,
-    "population": "81.9K",
+    "population": "0.08 млн",
     "phoneCode": "+376 xxx-xxx",
     "internetPenetration": "85%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Каталонский",
     "languageSecondary": "Испанский",
     "currency": "Евро",
@@ -207,20 +203,18 @@
     "celebrities": [],
     "flag": "🇦🇩",
     "aliases": [
-      "Andorra",
-      "Principality of Andorra"
-    ],
-    "region": "Europe"
+      "Andorra"
+    ]
   },
   {
     "id": "bh",
     "code": "BH",
     "name": "Бахрейн",
     "tier": 1,
-    "population": "1.6M",
+    "population": "1.7 млн",
     "phoneCode": "+973 xxx-xxxx",
     "internetPenetration": "99%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Бахрейнский динар",
@@ -256,20 +250,18 @@
     "celebrities": [],
     "flag": "🇧🇭",
     "aliases": [
-      "Bahrain",
-      "Kingdom of Bahrain"
-    ],
-    "region": "Asia"
+      "Bahrain"
+    ]
   },
   {
     "id": "be",
     "code": "BE",
     "name": "Бельгия",
     "tier": 1,
-    "population": "11.9M",
+    "population": "11.7 млн",
     "phoneCode": "+32 (xx) xxx-xx-xx",
     "internetPenetration": "91%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Нидерландский",
     "languageSecondary": "Французский, Немецкий",
     "currency": "Евро",
@@ -306,20 +298,18 @@
     "flag": "🇧🇪",
     "aliases": [
       "Бельгія",
-      "Belgium",
-      "Kingdom of Belgium"
-    ],
-    "region": "Europe"
+      "Belgium"
+    ]
   },
   {
     "id": "bn",
     "code": "BN",
     "name": "Бруней",
     "tier": 1,
-    "population": "462.7K",
+    "population": "0.44 млн",
     "phoneCode": "+673 xxx-xxxx",
     "internetPenetration": "95%",
-    "timezone": "UTC+08:00",
+    "timezone": "BNT (UTC+8)",
     "language": "Малайский",
     "languageSecondary": "Английский",
     "currency": "Брунейский доллар",
@@ -355,10 +345,8 @@
     "celebrities": [],
     "flag": "🇧🇳",
     "aliases": [
-      "Brunei",
-      "Nation of Brunei, Abode of Peace"
-    ],
-    "region": "Asia"
+      "Brunei"
+    ]
   },
   {
     "id": "gb",
@@ -372,7 +360,7 @@
     "currency": "British Pound",
     "currencyCode": "GBP",
     "currencySymbol": "£",
-    "population": "69.2M",
+    "population": "67M",
     "avgSalary": "$35,000",
     "midCost": "$1,500",
     "internetPenetration": "95%",
@@ -474,9 +462,7 @@
       "Великобритания",
       "Великобританія",
       "UK",
-      "England",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "England"
     ]
   },
   {
@@ -491,7 +477,7 @@
     "currency": "Euro",
     "currencyCode": "EUR",
     "currencySymbol": "€",
-    "population": "83.5M",
+    "population": "84M",
     "avgSalary": "$45,000",
     "midCost": "$1,800",
     "internetPenetration": "92%",
@@ -560,7 +546,7 @@
       "Ströer"
     ],
     "phoneCode": "+49 (xxx) xxx-xxxx",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "languageSecondary": "",
     "currencyExample": "€100",
     "avgSalaryLocal": "3,200 EUR",
@@ -588,9 +574,7 @@
     "celebrities": [],
     "aliases": [
       "Германия",
-      "Німеччина",
-      "Germany",
-      "Federal Republic of Germany"
+      "Німеччина"
     ]
   },
   {
@@ -598,10 +582,10 @@
     "code": "GR",
     "name": "Греция",
     "tier": 1,
-    "population": "10.4M",
+    "population": "10 млн",
     "phoneCode": "+30 (xxx) xxx-xxxx",
     "internetPenetration": "82%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Греческий",
     "languageSecondary": "",
     "currency": "Евро",
@@ -638,17 +622,15 @@
     "flag": "🇬🇷",
     "aliases": [
       "Греція",
-      "Greece",
-      "Hellenic Republic"
-    ],
-    "region": "Europe"
+      "Greece"
+    ]
   },
   {
     "id": "dk",
     "code": "DK",
     "name": "Дания",
     "tier": 1,
-    "population": "6M",
+    "population": "6 млн",
     "phoneCode": "+45 xx-xx-xx-xx",
     "internetPenetration": "97%",
     "timezone": "CET (UTC+1)",
@@ -657,7 +639,7 @@
     "currency": "Датская крона",
     "currencyCode": "DKK",
     "currencySymbol": "kr",
-    "currencyExample": "kr100",
+    "currencyExample": "100kr",
     "avgSalaryLocal": "35,000 DKK",
     "avgSalaryUSD": "5,140 USD",
     "payments": [
@@ -688,20 +670,18 @@
     "flag": "🇩🇰",
     "aliases": [
       "Данія",
-      "Denmark",
-      "Kingdom of Denmark"
-    ],
-    "region": "Europe"
+      "Denmark"
+    ]
   },
   {
     "id": "il",
     "code": "IL",
     "name": "Израиль",
     "tier": 1,
-    "population": "10M",
+    "population": "9.5 млн",
     "phoneCode": "+972 (xx) xxx-xxxx",
     "internetPenetration": "88%",
-    "timezone": "UTC+02:00",
+    "timezone": "IST (UTC+2)",
     "language": "Иврит",
     "languageSecondary": "Арабский",
     "currency": "Израильский новый шекель",
@@ -738,20 +718,18 @@
     "flag": "🇮🇱",
     "aliases": [
       "Ізраїль",
-      "Israel",
-      "State of Israel"
-    ],
-    "region": "Asia"
+      "Israel"
+    ]
   },
   {
     "id": "ie",
     "code": "IE",
     "name": "Ирландия",
     "tier": 1,
-    "population": "5.4M",
+    "population": "5.2 млн",
     "phoneCode": "+353 (xx) xxx-xxxx",
     "internetPenetration": "93%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Английский",
     "languageSecondary": "Ирландский",
     "currency": "Евро",
@@ -788,26 +766,24 @@
     "flag": "🇮🇪",
     "aliases": [
       "Ірландія",
-      "Ireland",
-      "Republic of Ireland"
-    ],
-    "region": "Europe"
+      "Ireland"
+    ]
   },
   {
     "id": "is",
     "code": "IS",
     "name": "Исландия",
     "tier": 1,
-    "population": "386.5K",
+    "population": "0.38 млн",
     "phoneCode": "+354 xxx-xxxx",
     "internetPenetration": "98%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Исландский",
     "languageSecondary": "",
     "currency": "Исландская крона",
     "currencyCode": "ISK",
     "currencySymbol": "kr",
-    "currencyExample": "kr100",
+    "currencyExample": "100kr",
     "avgSalaryLocal": "800,000 ISK",
     "avgSalaryUSD": "5,860 USD",
     "payments": [
@@ -839,15 +815,14 @@
     "aliases": [
       "Ісландія",
       "Iceland"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "es",
     "code": "ES",
     "name": "Испания",
     "tier": 1,
-    "population": "48.8M",
+    "population": "47 млн",
     "phoneCode": "+34 (xxx) xxx-xxx",
     "internetPenetration": "92%",
     "timezone": "CET (UTC+1)",
@@ -887,22 +862,20 @@
     "flag": "🇪🇸",
     "aliases": [
       "Іспанія",
-      "Spain",
-      "Kingdom of Spain"
-    ],
-    "region": "Europe"
+      "Spain"
+    ]
   },
   {
     "id": "it",
     "code": "IT",
     "name": "Италия",
     "tier": 1,
-    "population": "59M",
+    "population": "58 млн",
     "phoneCode": "+39 (xxx) xxx-xxxx",
     "internetPenetration": "89%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Итальянский",
-    "languageSecondary": "Catalan",
+    "languageSecondary": "",
     "currency": "Евро",
     "currencyCode": "EUR",
     "currencySymbol": "€",
@@ -939,10 +912,8 @@
     "flag": "🇮🇹",
     "aliases": [
       "Італія",
-      "Italy",
-      "Italian Republic"
-    ],
-    "region": "Europe"
+      "Italy"
+    ]
   },
   {
     "id": "ca",
@@ -950,13 +921,13 @@
     "code": "CA",
     "flag": "🇨🇦",
     "tier": 1,
-    "region": "Americas",
+    "region": "North America",
     "language": "English / French",
     "capital": "Ottawa",
     "currency": "Canadian Dollar",
     "currencyCode": "CAD",
-    "currencySymbol": "$",
-    "population": "41.3M",
+    "currencySymbol": "CA$",
+    "population": "38M",
     "avgSalary": "$48,000",
     "midCost": "$1,700",
     "internetPenetration": "94%",
@@ -1051,8 +1022,7 @@
     "youtubeChannels": [],
     "celebrities": [],
     "aliases": [
-      "Канада",
-      "Canada"
+      "Канада"
     ]
   },
   {
@@ -1060,16 +1030,16 @@
     "code": "QA",
     "name": "Катар",
     "tier": 1,
-    "population": "2.9M",
+    "population": "3 млн",
     "phoneCode": "+974 xxxx-xxxx",
     "internetPenetration": "99%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Катарский риал",
     "currencyCode": "QAR",
     "currencySymbol": "ر.ق",
-    "currencyExample": "ر.ق100",
+    "currencyExample": "100ر.ق",
     "avgSalaryLocal": "15,000 QAR",
     "avgSalaryUSD": "4,120 USD",
     "payments": [
@@ -1099,20 +1069,18 @@
     "celebrities": [],
     "flag": "🇶🇦",
     "aliases": [
-      "Qatar",
-      "State of Qatar"
-    ],
-    "region": "Asia"
+      "Qatar"
+    ]
   },
   {
     "id": "cy",
     "code": "CY",
     "name": "Кипр",
     "tier": 1,
-    "population": "1.4M",
+    "population": "1.2 млн",
     "phoneCode": "+357 xx-xxx-xxx",
     "internetPenetration": "89%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Греческий",
     "languageSecondary": "Турецкий",
     "currency": "Евро",
@@ -1149,20 +1117,18 @@
     "flag": "🇨🇾",
     "aliases": [
       "Кіпр",
-      "Cyprus",
-      "Republic of Cyprus"
-    ],
-    "region": "Europe"
+      "Cyprus"
+    ]
   },
   {
     "id": "cn",
     "code": "CN",
     "name": "Китай",
     "tier": 1,
-    "population": "1.4B",
+    "population": "1.4 млрд",
     "phoneCode": "+86 (xxx) xxxx-xxxx",
     "internetPenetration": "70%",
-    "timezone": "UTC+08:00",
+    "timezone": "CST (UTC+8)",
     "language": "Китайский (мандарин)",
     "languageSecondary": "",
     "currency": "Китайский юань",
@@ -1198,26 +1164,24 @@
     "celebrities": [],
     "flag": "🇨🇳",
     "aliases": [
-      "China",
-      "People's Republic of China"
-    ],
-    "region": "Asia"
+      "China"
+    ]
   },
   {
     "id": "kw",
     "code": "KW",
     "name": "Кувейт",
     "tier": 1,
-    "population": "4.9M",
+    "population": "4.6 млн",
     "phoneCode": "+965 xxxx-xxxx",
     "internetPenetration": "99%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Кувейтский динар",
     "currencyCode": "KWD",
     "currencySymbol": "د.ك",
-    "currencyExample": "د.ك100",
+    "currencyExample": "100د.ك",
     "avgSalaryLocal": "1,000 KWD",
     "avgSalaryUSD": "3,280 USD",
     "payments": [
@@ -1247,26 +1211,24 @@
     "celebrities": [],
     "flag": "🇰🇼",
     "aliases": [
-      "Kuwait",
-      "State of Kuwait"
-    ],
-    "region": "Asia"
+      "Kuwait"
+    ]
   },
   {
     "id": "li",
     "code": "LI",
     "name": "Лихтенштейн",
     "tier": 1,
-    "population": "40.5K",
+    "population": "0.04 млн",
     "phoneCode": "+423 xxx-xx-xx",
     "internetPenetration": "98%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Немецкий",
     "languageSecondary": "",
     "currency": "Швейцарский франк",
     "currencyCode": "CHF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "6,000 CHF",
     "avgSalaryUSD": "6,550 USD",
     "payments": [
@@ -1296,20 +1258,18 @@
     "celebrities": [],
     "flag": "🇱🇮",
     "aliases": [
-      "Liechtenstein",
-      "Principality of Liechtenstein"
-    ],
-    "region": "Europe"
+      "Liechtenstein"
+    ]
   },
   {
     "id": "lu",
     "code": "LU",
     "name": "Люксембург",
     "tier": 1,
-    "population": "677K",
+    "population": "0.7 млн",
     "phoneCode": "+352 xxx-xxxxx",
     "internetPenetration": "98%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Люксембургский",
     "languageSecondary": "Французский, Немецкий",
     "currency": "Евро",
@@ -1345,20 +1305,18 @@
     "celebrities": [],
     "flag": "🇱🇺",
     "aliases": [
-      "Luxembourg",
-      "Grand Duchy of Luxembourg"
-    ],
-    "region": "Europe"
+      "Luxembourg"
+    ]
   },
   {
     "id": "mt",
     "code": "MT",
     "name": "Мальта",
     "tier": 1,
-    "population": "568.8K",
+    "population": "0.52 млн",
     "phoneCode": "+356 xxxx-xxxx",
     "internetPenetration": "91%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Мальтийский",
     "languageSecondary": "Английский",
     "currency": "Евро",
@@ -1394,20 +1352,18 @@
     "celebrities": [],
     "flag": "🇲🇹",
     "aliases": [
-      "Malta",
-      "Republic of Malta"
-    ],
-    "region": "Europe"
+      "Malta"
+    ]
   },
   {
     "id": "mc",
     "code": "MC",
     "name": "Монако",
     "tier": 1,
-    "population": "38.6K",
+    "population": "0.04 млн",
     "phoneCode": "+377 xx-xxx-xxx",
     "internetPenetration": "100%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Евро",
@@ -1443,20 +1399,18 @@
     "celebrities": [],
     "flag": "🇲🇨",
     "aliases": [
-      "Monaco",
-      "Principality of Monaco"
-    ],
-    "region": "Europe"
+      "Monaco"
+    ]
   },
   {
     "id": "nl",
     "code": "NL",
     "name": "Нидерланды",
     "tier": 1,
-    "population": "18M",
+    "population": "17.5 млн",
     "phoneCode": "+31 xx-xxx-xxxx",
     "internetPenetration": "96%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Нидерландский",
     "languageSecondary": "",
     "currency": "Евро",
@@ -1495,17 +1449,15 @@
     "aliases": [
       "Нідерланди",
       "Netherlands",
-      "Holland",
-      "Kingdom of the Netherlands"
-    ],
-    "region": "Europe"
+      "Holland"
+    ]
   },
   {
     "id": "nz",
     "code": "NZ",
     "name": "Новая Зеландия",
     "tier": 1,
-    "population": "5.3M",
+    "population": "5.1 млн",
     "phoneCode": "+64 (xxx) xxx-xxx",
     "internetPenetration": "94%",
     "timezone": "NZDT (UTC+13)",
@@ -1546,24 +1498,23 @@
     "aliases": [
       "Нова Зеландія",
       "New Zealand"
-    ],
-    "region": "Oceania"
+    ]
   },
   {
     "id": "no",
     "code": "NO",
     "name": "Норвегия",
     "tier": 1,
-    "population": "5.6M",
+    "population": "5.5 млн",
     "phoneCode": "+47 xx-xx-xx-xx",
     "internetPenetration": "98%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Норвежский",
-    "languageSecondary": "Norwegian Bokmål",
+    "languageSecondary": "",
     "currency": "Норвежская крона",
     "currencyCode": "NOK",
     "currencySymbol": "kr",
-    "currencyExample": "kr100",
+    "currencyExample": "100kr",
     "avgSalaryLocal": "45,000 NOK",
     "avgSalaryUSD": "4,300 USD",
     "payments": [
@@ -1594,26 +1545,24 @@
     "flag": "🇳🇴",
     "aliases": [
       "Норвегія",
-      "Norway",
-      "Kingdom of Norway"
-    ],
-    "region": "Europe"
+      "Norway"
+    ]
   },
   {
     "id": "ae",
     "code": "AE",
     "name": "ОАЭ",
     "tier": 1,
-    "population": "11M",
+    "population": "10 млн",
     "phoneCode": "+971 (x) xxx-xxxx",
     "internetPenetration": "99%",
-    "timezone": "UTC+04:00",
+    "timezone": "GST (UTC+4)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Дирхам ОАЭ",
     "currencyCode": "AED",
     "currencySymbol": "د.إ",
-    "currencyExample": "د.إ100",
+    "currencyExample": "100د.إ",
     "avgSalaryLocal": "15,000 AED",
     "avgSalaryUSD": "4,080 USD",
     "payments": [
@@ -1647,24 +1596,23 @@
       "UAE",
       "United Arab Emirates",
       "Dubai"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "om",
     "code": "OM",
     "name": "Оман",
     "tier": 1,
-    "population": "5.3M",
+    "population": "5.3 млн",
     "phoneCode": "+968 xxxx-xxxx",
     "internetPenetration": "95%",
-    "timezone": "UTC+04:00",
+    "timezone": "GST (UTC+4)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Оманский риал",
     "currencyCode": "OMR",
-    "currencySymbol": "ر.ع.",
-    "currencyExample": "ر.ع.100",
+    "currencySymbol": "ر.ع",
+    "currencyExample": "100ر.ع",
     "avgSalaryLocal": "1,000 OMR",
     "avgSalaryUSD": "2,600 USD",
     "payments": [
@@ -1694,17 +1642,15 @@
     "celebrities": [],
     "flag": "🇴🇲",
     "aliases": [
-      "Oman",
-      "Sultanate of Oman"
-    ],
-    "region": "Asia"
+      "Oman"
+    ]
   },
   {
     "id": "pt",
     "code": "PT",
     "name": "Португалия",
     "tier": 1,
-    "population": "10.7M",
+    "population": "10 млн",
     "phoneCode": "+351 (xx) xxx-xxxx",
     "internetPenetration": "83%",
     "timezone": "WET (UTC+0)",
@@ -1744,20 +1690,18 @@
     "flag": "🇵🇹",
     "aliases": [
       "Португалія",
-      "Portugal",
-      "Portuguese Republic"
-    ],
-    "region": "Europe"
+      "Portugal"
+    ]
   },
   {
     "id": "kr",
     "code": "KR",
     "name": "Республика Корея",
     "tier": 1,
-    "population": "51.8M",
+    "population": "52 млн",
     "phoneCode": "+82 (xx) xxx-xxxx",
     "internetPenetration": "96%",
-    "timezone": "UTC+09:00",
+    "timezone": "KST (UTC+9)",
     "language": "Корейский",
     "languageSecondary": "",
     "currency": "Южнокорейская вона",
@@ -1795,17 +1739,15 @@
     "aliases": [
       "Южная Корея",
       "Південна Корея",
-      "South Korea",
-      "Republic of Korea"
-    ],
-    "region": "Asia"
+      "South Korea"
+    ]
   },
   {
     "id": "ru",
     "code": "RU",
     "name": "Россия",
     "tier": 1,
-    "population": "143.5M",
+    "population": "145 млн",
     "phoneCode": "+7 (xxx) xxx-xx-xx",
     "internetPenetration": "82%",
     "timezone": "MSK (UTC+3), + другие часовые пояса",
@@ -1814,7 +1756,7 @@
     "currency": "Российский рубль",
     "currencyCode": "RUB",
     "currencySymbol": "₽",
-    "currencyExample": "₽100",
+    "currencyExample": "100₽",
     "avgSalaryLocal": "70,000 RUB",
     "avgSalaryUSD": "950 USD",
     "payments": [
@@ -1844,20 +1786,18 @@
     "flag": "🇷🇺",
     "aliases": [
       "Росія",
-      "Russia",
-      "Russian Federation"
-    ],
-    "region": "Europe"
+      "Russia"
+    ]
   },
   {
     "id": "sm",
     "code": "SM",
     "name": "Сан-Марино",
     "tier": 1,
-    "population": "34K",
+    "population": "0.03 млн",
     "phoneCode": "+378 xxx-xxxx",
     "internetPenetration": "95%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Итальянский",
     "languageSecondary": "",
     "currency": "Евро",
@@ -1893,26 +1833,24 @@
     "celebrities": [],
     "flag": "🇸🇲",
     "aliases": [
-      "San Marino",
-      "Republic of San Marino"
-    ],
-    "region": "Europe"
+      "San Marino"
+    ]
   },
   {
     "id": "sa",
     "code": "SA",
     "name": "Саудовская Аравия",
     "tier": 1,
-    "population": "35.3M",
+    "population": "36 млн",
     "phoneCode": "+966 (x) xxx-xxxx",
     "internetPenetration": "95%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Саудовский риял",
     "currencyCode": "SAR",
     "currencySymbol": "ر.س",
-    "currencyExample": "ر.س100",
+    "currencyExample": "100ر.س",
     "avgSalaryLocal": "8,000 SAR",
     "avgSalaryUSD": "2,130 USD",
     "payments": [
@@ -1943,20 +1881,18 @@
     "flag": "🇸🇦",
     "aliases": [
       "Саудівська Аравія",
-      "Saudi Arabia",
-      "Kingdom of Saudi Arabia"
-    ],
-    "region": "Asia"
+      "Saudi Arabia"
+    ]
   },
   {
     "id": "sg",
     "code": "SG",
     "name": "Сингапур",
     "tier": 1,
-    "population": "6M",
+    "population": "5.7 млн",
     "phoneCode": "+65 xxxx-xxxx",
     "internetPenetration": "98%",
-    "timezone": "UTC+08:00",
+    "timezone": "SGT (UTC+8)",
     "language": "Английский",
     "languageSecondary": "Малайский, Китайский, Тамильский",
     "currency": "Сингапурский доллар",
@@ -1990,20 +1926,18 @@
     "celebrities": [],
     "flag": "🇸🇬",
     "aliases": [
-      "Singapore",
-      "Republic of Singapore"
-    ],
-    "region": "Asia"
+      "Singapore"
+    ]
   },
   {
     "id": "sk",
     "code": "SK",
     "name": "Словакия",
     "tier": 1,
-    "population": "5.4M",
+    "population": "5.4 млн",
     "phoneCode": "+421 (xx) xxx-xxxx",
     "internetPenetration": "88%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Словацкий",
     "languageSecondary": "",
     "currency": "Евро",
@@ -2040,20 +1974,18 @@
     "flag": "🇸🇰",
     "aliases": [
       "Словаччина",
-      "Slovakia",
-      "Slovak Republic"
-    ],
-    "region": "Europe"
+      "Slovakia"
+    ]
   },
   {
     "id": "si",
     "code": "SI",
     "name": "Словения",
     "tier": 1,
-    "population": "2.1M",
+    "population": "2.1 млн",
     "phoneCode": "+386 (xx) xxx-xxx",
     "internetPenetration": "86%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Словенский",
     "languageSecondary": "",
     "currency": "Евро",
@@ -2090,10 +2022,8 @@
     "flag": "🇸🇮",
     "aliases": [
       "Словенія",
-      "Slovenia",
-      "Republic of Slovenia"
-    ],
-    "region": "Europe"
+      "Slovenia"
+    ]
   },
   {
     "id": "us",
@@ -2101,13 +2031,13 @@
     "code": "US",
     "flag": "🇺🇸",
     "tier": 1,
-    "region": "Americas",
+    "region": "North America",
     "language": "English",
     "capital": "Washington D.C.",
     "currency": "US Dollar",
     "currencyCode": "USD",
     "currencySymbol": "$",
-    "population": "340.1M",
+    "population": "331M",
     "avgSalary": "$60,000",
     "midCost": "$2,000",
     "internetPenetration": "93%",
@@ -2207,10 +2137,9 @@
     "celebrities": [],
     "aliases": [
       "США",
+      "США",
       "USA",
-      "America",
-      "United States",
-      "United States of America"
+      "America"
     ]
   },
   {
@@ -2218,10 +2147,10 @@
     "code": "FI",
     "name": "Финляндия",
     "tier": 1,
-    "population": "5.6M",
+    "population": "5.6 млн",
     "phoneCode": "+358 (xx) xxx-xxxx",
     "internetPenetration": "95%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Финский",
     "languageSecondary": "Шведский",
     "currency": "Евро",
@@ -2260,17 +2189,15 @@
     "flag": "🇫🇮",
     "aliases": [
       "Фінляндія",
-      "Finland",
-      "Republic of Finland"
-    ],
-    "region": "Europe"
+      "Finland"
+    ]
   },
   {
     "id": "fr",
     "code": "FR",
     "name": "Франция",
     "tier": 1,
-    "population": "68.6M",
+    "population": "67 млн",
     "phoneCode": "+33 (xx) xxx-xxxx",
     "internetPenetration": "89%",
     "timezone": "CET (UTC+1)",
@@ -2311,26 +2238,24 @@
     "flag": "🇫🇷",
     "aliases": [
       "Франція",
-      "France",
-      "French Republic"
-    ],
-    "region": "Europe"
+      "France"
+    ]
   },
   {
     "id": "cz",
     "code": "CZ",
     "name": "Чехия",
     "tier": 1,
-    "population": "10.9M",
+    "population": "10.5 млн",
     "phoneCode": "+420 (xx) xxx-xxxx",
     "internetPenetration": "88%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Чешский",
-    "languageSecondary": "Slovak",
+    "languageSecondary": "",
     "currency": "Чешская крона",
     "currencyCode": "CZK",
     "currencySymbol": "Kč",
-    "currencyExample": "Kč100",
+    "currencyExample": "100Kč",
     "avgSalaryLocal": "40,000 CZK",
     "avgSalaryUSD": "1,760 USD",
     "payments": [
@@ -2363,24 +2288,23 @@
       "Чехія",
       "Czech Republic",
       "Czechia"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "ch",
     "code": "CH",
     "name": "Швейцария",
     "tier": 1,
-    "population": "9M",
+    "population": "9 млн",
     "phoneCode": "+41 (xx) xxx-xx-xx",
     "internetPenetration": "96%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Немецкий",
     "languageSecondary": "Французский, Итальянский, Ретороманский",
     "currency": "Швейцарский франк",
     "currencyCode": "CHF",
-    "currencySymbol": "Fr.",
-    "currencyExample": "Fr.100",
+    "currencySymbol": "Fr",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "6,500 CHF",
     "avgSalaryUSD": "7,090 USD",
     "payments": [
@@ -2411,26 +2335,24 @@
     "flag": "🇨🇭",
     "aliases": [
       "Швейцарія",
-      "Switzerland",
-      "Swiss Confederation"
-    ],
-    "region": "Europe"
+      "Switzerland"
+    ]
   },
   {
     "id": "se",
     "code": "SE",
     "name": "Швеция",
     "tier": 1,
-    "population": "10.6M",
+    "population": "10.5 млн",
     "phoneCode": "+46 (xx) xxx-xxxx",
     "internetPenetration": "96%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Шведский",
     "languageSecondary": "",
     "currency": "Шведская крона",
     "currencyCode": "SEK",
     "currencySymbol": "kr",
-    "currencyExample": "kr100",
+    "currencyExample": "100kr",
     "avgSalaryLocal": "35,000 SEK",
     "avgSalaryUSD": "3,360 USD",
     "payments": [
@@ -2461,20 +2383,18 @@
     "flag": "🇸🇪",
     "aliases": [
       "Швеція",
-      "Sweden",
-      "Kingdom of Sweden"
-    ],
-    "region": "Europe"
+      "Sweden"
+    ]
   },
   {
     "id": "jp",
     "code": "JP",
     "name": "Япония",
     "tier": 1,
-    "population": "124M",
+    "population": "124 млн",
     "phoneCode": "81 (xx) xxxx-xxxx",
     "internetPenetration": "91%",
-    "timezone": "UTC+09:00",
+    "timezone": "JST (UTC+9)",
     "language": "Японский",
     "languageSecondary": "",
     "currency": "Японская иена",
@@ -2512,24 +2432,23 @@
     "aliases": [
       "Японія",
       "Japan"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "az",
     "code": "AZ",
     "name": "Азербайджан",
     "tier": 2,
-    "population": "10.2M",
+    "population": "10 млн",
     "phoneCode": "+994 (xx) xxx-xx-xx",
     "internetPenetration": "81%",
-    "timezone": "UTC+04:00",
+    "timezone": "AZT (UTC+4)",
     "language": "Азербайджанский",
     "languageSecondary": "Русский",
     "currency": "Азербайджанский манат",
     "currencyCode": "AZN",
     "currencySymbol": "₼",
-    "currencyExample": "₼100",
+    "currencyExample": "100₼",
     "avgSalaryLocal": "700 AZN",
     "avgSalaryUSD": "410 USD",
     "payments": [
@@ -2559,20 +2478,18 @@
     "celebrities": [],
     "flag": "🇦🇿",
     "aliases": [
-      "Azerbaijan",
-      "Republic of Azerbaijan"
-    ],
-    "region": "Asia"
+      "Azerbaijan"
+    ]
   },
   {
     "id": "ag",
     "code": "AG",
     "name": "Антигуа и Барбуда",
     "tier": 2,
-    "population": "93.8K",
+    "population": "0.1 млн",
     "phoneCode": "+1 (268) xxx-xxxx",
     "internetPenetration": "87%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Восточнокарибский доллар",
@@ -2610,20 +2527,19 @@
     "aliases": [
       "Антигуа і Барбуда",
       "Antigua and Barbuda"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "ar",
     "code": "AR",
     "name": "Аргентина",
     "tier": 2,
-    "population": "45.7M",
+    "population": "45 млн",
     "phoneCode": "+54 (xx) xxxx-xxxx",
     "internetPenetration": "85%",
-    "timezone": "UTC-03:00",
+    "timezone": "ART (UTC-3)",
     "language": "Испанский",
-    "languageSecondary": "Spanish",
+    "languageSecondary": "",
     "currency": "Аргентинское песо",
     "currencyCode": "ARS",
     "currencySymbol": "$",
@@ -2657,26 +2573,24 @@
     "celebrities": [],
     "flag": "🇦🇷",
     "aliases": [
-      "Argentina",
-      "Argentine Republic"
-    ],
-    "region": "Americas"
+      "Argentina"
+    ]
   },
   {
     "id": "am",
     "code": "AM",
     "name": "Армения",
     "tier": 2,
-    "population": "3M",
+    "population": "3 млн",
     "phoneCode": "+374 (xx) xxx-xxx",
     "internetPenetration": "75%",
-    "timezone": "UTC+04:00",
+    "timezone": "AMT (UTC+4)",
     "language": "Армянский",
     "languageSecondary": "Русский",
     "currency": "Армянский драм",
     "currencyCode": "AMD",
-    "currencySymbol": "֏",
-    "currencyExample": "֏100",
+    "currencySymbol": "դր",
+    "currencyExample": "դր100",
     "avgSalaryLocal": "300,000 AMD",
     "avgSalaryUSD": "780 USD",
     "payments": [
@@ -2707,20 +2621,18 @@
     "flag": "🇦🇲",
     "aliases": [
       "Вірменія",
-      "Armenia",
-      "Republic of Armenia"
-    ],
-    "region": "Asia"
+      "Armenia"
+    ]
   },
   {
     "id": "bs",
     "code": "BS",
     "name": "Багамы",
     "tier": 2,
-    "population": "401.3K",
+    "population": "0.4 млн",
     "phoneCode": "+1 (242) xxx-xxxx",
     "internetPenetration": "85%",
-    "timezone": "UTC-05:00",
+    "timezone": "EST (UTC-5)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Багамский доллар",
@@ -2757,20 +2669,18 @@
     "flag": "🇧🇸",
     "aliases": [
       "Багами",
-      "Bahamas",
-      "Commonwealth of the Bahamas"
-    ],
-    "region": "Americas"
+      "Bahamas"
+    ]
   },
   {
     "id": "bb",
     "code": "BB",
     "name": "Барбадос",
     "tier": 2,
-    "population": "282.5K",
+    "population": "0.3 млн",
     "phoneCode": "+1 (246) xxx-xxxx",
     "internetPenetration": "80%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Барбадосский доллар",
@@ -2807,24 +2717,23 @@
     "flag": "🇧🇧",
     "aliases": [
       "Barbados"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "by",
     "code": "BY",
     "name": "Белоруссия",
     "tier": 2,
-    "population": "9.1M",
+    "population": "9 млн",
     "phoneCode": "+375 (xx) xxx-xx-xx",
     "internetPenetration": "83%",
-    "timezone": "UTC+03:00",
+    "timezone": "FET (UTC+3)",
     "language": "Русский",
     "languageSecondary": "Белорусский",
     "currency": "Белорусский рубль",
     "currencyCode": "BYN",
     "currencySymbol": "Br",
-    "currencyExample": "Br100",
+    "currencyExample": "100Br",
     "avgSalaryLocal": "2,000 BYN",
     "avgSalaryUSD": "790 USD",
     "payments": [
@@ -2856,26 +2765,24 @@
     "aliases": [
       "Беларусь",
       "Білорусь",
-      "Belarus",
-      "Republic of Belarus"
-    ],
-    "region": "Europe"
+      "Belarus"
+    ]
   },
   {
     "id": "bg",
     "code": "BG",
     "name": "Болгария",
     "tier": 2,
-    "population": "6.4M",
+    "population": "6.5 млн",
     "phoneCode": "+359 (x) xxx-xxxx",
     "internetPenetration": "72%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Болгарский",
     "languageSecondary": "",
     "currency": "Болгарский лев",
     "currencyCode": "BGN",
     "currencySymbol": "лв",
-    "currencyExample": "лв100",
+    "currencyExample": "100лв",
     "avgSalaryLocal": "1,500 BGN",
     "avgSalaryUSD": "850 USD",
     "payments": [
@@ -2906,26 +2813,24 @@
     "flag": "🇧🇬",
     "aliases": [
       "Болгарія",
-      "Bulgaria",
-      "Republic of Bulgaria"
-    ],
-    "region": "Europe"
+      "Bulgaria"
+    ]
   },
   {
     "id": "ba",
     "code": "BA",
     "name": "Босния и Герцеговина",
     "tier": 2,
-    "population": "3.2M",
+    "population": "3.2 млн",
     "phoneCode": "+387 (xx) xxx-xxx",
     "internetPenetration": "75%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Боснийский",
     "languageSecondary": "Сербский, Хорватский",
     "currency": "Конвертируемая марка",
     "currencyCode": "BAM",
-    "currencySymbol": "KM",
-    "currencyExample": "KM100",
+    "currencySymbol": "КМ",
+    "currencyExample": "100КМ",
     "avgSalaryLocal": "1,000 BAM",
     "avgSalaryUSD": "580 USD",
     "payments": [
@@ -2957,18 +2862,17 @@
     "aliases": [
       "Боснія і Герцеговина",
       "Bosnia and Herzegovina"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "bw",
     "code": "BW",
     "name": "Ботсвана",
     "tier": 2,
-    "population": "2.5M",
+    "population": "2.5 млн",
     "phoneCode": "+267 xx-xxx-xxx",
     "internetPenetration": "47%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Английский",
     "languageSecondary": "Тсвана",
     "currency": "Ботсванская пула",
@@ -3004,10 +2908,8 @@
     "celebrities": [],
     "flag": "🇧🇼",
     "aliases": [
-      "Botswana",
-      "Republic of Botswana"
-    ],
-    "region": "Africa"
+      "Botswana"
+    ]
   },
   {
     "id": "br",
@@ -3015,13 +2917,13 @@
     "code": "BR",
     "flag": "🇧🇷",
     "tier": 2,
-    "region": "Americas",
+    "region": "South America",
     "language": "Portuguese",
     "capital": "Brasília",
     "currency": "Brazilian Real",
     "currencyCode": "BRL",
     "currencySymbol": "R$",
-    "population": "212M",
+    "population": "215M",
     "avgSalary": "$8,000",
     "midCost": "$600",
     "internetPenetration": "75%",
@@ -3118,9 +3020,7 @@
     "celebrities": [],
     "aliases": [
       "Бразилия",
-      "Бразилія",
-      "Brazil",
-      "Federative Republic of Brazil"
+      "Бразилія"
     ]
   },
   {
@@ -3128,16 +3028,16 @@
     "code": "HU",
     "name": "Венгрия",
     "tier": 2,
-    "population": "9.6M",
+    "population": "9.5 млн",
     "phoneCode": "+36 (xx) xxx-xxxx",
     "internetPenetration": "85%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Венгерский",
     "languageSecondary": "",
     "currency": "Венгерский форинт",
     "currencyCode": "HUF",
     "currencySymbol": "Ft",
-    "currencyExample": "Ft100",
+    "currencyExample": "100Ft",
     "avgSalaryLocal": "600,000 HUF",
     "avgSalaryUSD": "1,800 USD",
     "payments": [
@@ -3169,24 +3069,23 @@
     "aliases": [
       "Угорщина",
       "Hungary"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "vn",
     "code": "VN",
     "name": "Вьетнам",
     "tier": 2,
-    "population": "101M",
+    "population": "99 млн",
     "phoneCode": "+84 (xx) xxxx-xxxx",
     "internetPenetration": "75%",
-    "timezone": "UTC+07:00",
+    "timezone": "ICT (UTC+7)",
     "language": "Вьетнамский",
     "languageSecondary": "Английский",
     "currency": "Вьетнамский донг",
     "currencyCode": "VND",
     "currencySymbol": "₫",
-    "currencyExample": "₫100",
+    "currencyExample": "100₫",
     "avgSalaryLocal": "7,000,000 VND",
     "avgSalaryUSD": "300 USD",
     "payments": [
@@ -3217,26 +3116,24 @@
     "flag": "🇻🇳",
     "aliases": [
       "В'єтнам",
-      "Vietnam",
-      "Socialist Republic of Vietnam"
-    ],
-    "region": "Asia"
+      "Vietnam"
+    ]
   },
   {
     "id": "ga",
     "code": "GA",
     "name": "Габон",
     "tier": 2,
-    "population": "2.5M",
+    "population": "2.4 млн",
     "phoneCode": "+241 x-xx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "300,000 XAF",
     "avgSalaryUSD": "480 USD",
     "payments": [
@@ -3266,20 +3163,18 @@
     "celebrities": [],
     "flag": "🇬🇦",
     "aliases": [
-      "Gabon",
-      "Gabonese Republic"
-    ],
-    "region": "Africa"
+      "Gabon"
+    ]
   },
   {
     "id": "gd",
     "code": "GD",
     "name": "Гренада",
     "tier": 2,
-    "population": "117.2K",
+    "population": "0.12 млн",
     "phoneCode": "+1 (473) xxx-xxxx",
     "internetPenetration": "63%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Восточнокарибский доллар",
@@ -3316,18 +3211,17 @@
     "flag": "🇬🇩",
     "aliases": [
       "Grenada"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "ge",
     "code": "GE",
     "name": "Грузия",
     "tier": 2,
-    "population": "3.7M",
+    "population": "3.7 млн",
     "phoneCode": "+995 (xx) xxx-xx-xx",
     "internetPenetration": "75%",
-    "timezone": "UTC+04:00",
+    "timezone": "GET (UTC+4)",
     "language": "Грузинский",
     "languageSecondary": "Русский",
     "currency": "Грузинский лари",
@@ -3365,18 +3259,17 @@
     "aliases": [
       "Грузія",
       "Georgia"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "dm",
     "code": "DM",
     "name": "Доминика",
     "tier": 2,
-    "population": "66.2K",
+    "population": "0.07 млн",
     "phoneCode": "+1 (767) xxx-xxxx",
     "internetPenetration": "74%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "Французский креольский",
     "currency": "Восточнокарибский доллар",
@@ -3413,20 +3306,18 @@
     "flag": "🇩🇲",
     "aliases": [
       "Домініка",
-      "Dominica",
-      "Commonwealth of Dominica"
-    ],
-    "region": "Americas"
+      "Dominica"
+    ]
   },
   {
     "id": "do",
     "code": "DO",
     "name": "Доминиканская Республика",
     "tier": 2,
-    "population": "11.4M",
+    "population": "11 млн",
     "phoneCode": "+1 (809) xxx-xxxx",
     "internetPenetration": "74%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Доминиканское песо",
@@ -3464,18 +3355,17 @@
     "aliases": [
       "Домініканська Республіка",
       "Dominican Republic"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "eg",
     "code": "EG",
     "name": "Египет",
     "tier": 2,
-    "population": "116.5M",
+    "population": "110 млн",
     "phoneCode": "+20 (xx) xxx-xxxx",
     "internetPenetration": "54%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Египетский фунт",
@@ -3512,10 +3402,8 @@
     "flag": "🇪🇬",
     "aliases": [
       "Єгипет",
-      "Egypt",
-      "Arab Republic of Egypt"
-    ],
-    "region": "Africa"
+      "Egypt"
+    ]
   },
   {
     "id": "in",
@@ -3529,7 +3417,7 @@
     "currency": "Indian Rupee",
     "currencyCode": "INR",
     "currencySymbol": "₹",
-    "population": "1.5B",
+    "population": "1.4B",
     "avgSalary": "$3,000",
     "midCost": "$300",
     "internetPenetration": "52%",
@@ -3598,7 +3486,7 @@
       "Taboola"
     ],
     "phoneCode": "+91 (xxxx) xxx-xxx",
-    "timezone": "UTC+05:30",
+    "timezone": "IST (UTC+5:30)",
     "languageSecondary": "Английский, Хинглиш",
     "currencyExample": "₹100",
     "avgSalaryLocal": "25,000 INR",
@@ -3626,9 +3514,7 @@
     "celebrities": [],
     "aliases": [
       "Индия",
-      "Індія",
-      "India",
-      "Republic of India"
+      "Індія"
     ]
   },
   {
@@ -3636,7 +3522,7 @@
     "code": "ID",
     "name": "Индонезия",
     "tier": 2,
-    "population": "283.5M",
+    "population": "280 млн",
     "phoneCode": "+62 (xx) xxx-xxx",
     "internetPenetration": "70%",
     "timezone": "WIB (UTC+7), WITA (UTC+8), WIT (UTC+9)",
@@ -3676,20 +3562,18 @@
     "flag": "🇮🇩",
     "aliases": [
       "Індонезія",
-      "Indonesia",
-      "Republic of Indonesia"
-    ],
-    "region": "Asia"
+      "Indonesia"
+    ]
   },
   {
     "id": "jo",
     "code": "JO",
     "name": "Иордания",
     "tier": 2,
-    "population": "11.6M",
+    "population": "11 млн",
     "phoneCode": "+962 (xx) xxx-xxxx",
     "internetPenetration": "66%",
-    "timezone": "UTC+03:00",
+    "timezone": "EET (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Иорданский динар",
@@ -3726,26 +3610,24 @@
     "flag": "🇯🇴",
     "aliases": [
       "Йорданія",
-      "Jordan",
-      "Hashemite Kingdom of Jordan"
-    ],
-    "region": "Asia"
+      "Jordan"
+    ]
   },
   {
     "id": "ir",
     "code": "IR",
     "name": "Иран",
     "tier": 2,
-    "population": "91.6M",
+    "population": "88 млн",
     "phoneCode": "+98 (xx) xxx-xxxx",
     "internetPenetration": "70%",
-    "timezone": "UTC+03:30",
+    "timezone": "IRST (UTC+3:30)",
     "language": "Персидский",
     "languageSecondary": "",
     "currency": "Иранский риал",
     "currencyCode": "IRR",
     "currencySymbol": "﷼",
-    "currencyExample": "﷼100",
+    "currencyExample": "100﷼",
     "avgSalaryLocal": "20,000,000 IRR",
     "avgSalaryUSD": "470 USD",
     "payments": [
@@ -3776,26 +3658,24 @@
     "flag": "🇮🇷",
     "aliases": [
       "Іран",
-      "Iran",
-      "Islamic Republic of Iran"
-    ],
-    "region": "Asia"
+      "Iran"
+    ]
   },
   {
     "id": "cv",
     "code": "CV",
     "name": "Кабо-Верде",
     "tier": 2,
-    "population": "524.9K",
+    "population": "0.6 млн",
     "phoneCode": "+238 xxx-xx-xx",
     "internetPenetration": "57%",
-    "timezone": "UTC-01:00",
+    "timezone": "CVT (UTC-1)",
     "language": "Португальский",
     "languageSecondary": "Креольский",
     "currency": "Кабо-Верде эскудо",
     "currencyCode": "CVE",
-    "currencySymbol": "Esc",
-    "currencyExample": "Esc100",
+    "currencySymbol": "$",
+    "currencyExample": "100$",
     "avgSalaryLocal": "25,000 CVE",
     "avgSalaryUSD": "240 USD",
     "payments": [
@@ -3827,17 +3707,15 @@
     "celebrities": [],
     "flag": "🇨🇻",
     "aliases": [
-      "Cape Verde",
-      "Republic of Cabo Verde"
-    ],
-    "region": "Africa"
+      "Cape Verde"
+    ]
   },
   {
     "id": "kz",
     "code": "KZ",
     "name": "Казахстан",
     "tier": 2,
-    "population": "20.6M",
+    "population": "19 млн",
     "phoneCode": "+7 (xxx) xxx-xx-xx",
     "internetPenetration": "85%",
     "timezone": "ALMT (UTC+6), AQTT (UTC+5)",
@@ -3846,7 +3724,7 @@
     "currency": "Казахстанский тенге",
     "currencyCode": "KZT",
     "currencySymbol": "₸",
-    "currencyExample": "₸100",
+    "currencyExample": "100₸",
     "avgSalaryLocal": "250,000 KZT",
     "avgSalaryUSD": "540 USD",
     "payments": [
@@ -3876,20 +3754,18 @@
     "celebrities": [],
     "flag": "🇰🇿",
     "aliases": [
-      "Kazakhstan",
-      "Republic of Kazakhstan"
-    ],
-    "region": "Asia"
+      "Kazakhstan"
+    ]
   },
   {
     "id": "co",
     "code": "CO",
     "name": "Колумбия",
     "tier": 2,
-    "population": "52.9M",
+    "population": "53 млн",
     "phoneCode": "+57 (xxx) xxx-xxxx",
     "internetPenetration": "65%",
-    "timezone": "UTC-05:00",
+    "timezone": "COT (UTC-5)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Колумбийское песо",
@@ -3926,20 +3802,18 @@
     "flag": "🇨🇴",
     "aliases": [
       "Колумбія",
-      "Colombia",
-      "Republic of Colombia"
-    ],
-    "region": "Americas"
+      "Colombia"
+    ]
   },
   {
     "id": "cr",
     "code": "CR",
     "name": "Коста-Рика",
     "tier": 2,
-    "population": "5.1M",
+    "population": "5.4 млн",
     "phoneCode": "+506 xxxx-xxxx",
     "internetPenetration": "78%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Костариканский колон",
@@ -3975,24 +3849,22 @@
     "celebrities": [],
     "flag": "🇨🇷",
     "aliases": [
-      "Costa Rica",
-      "Republic of Costa Rica"
-    ],
-    "region": "Americas"
+      "Costa Rica"
+    ]
   },
   {
     "id": "cu",
     "code": "CU",
     "name": "Куба",
     "tier": 2,
-    "population": "11M",
+    "population": "11 млн",
     "phoneCode": "+53 (xx) xxx-xxxx",
     "internetPenetration": "45%",
-    "timezone": "UTC-05:00",
+    "timezone": "CST (UTC-5)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Кубинский песо",
-    "currencyCode": "CUC",
+    "currencyCode": "CUP",
     "currencySymbol": "$",
     "currencyExample": "$100",
     "avgSalaryLocal": "1,000 CUP",
@@ -4024,20 +3896,18 @@
     "celebrities": [],
     "flag": "🇨🇺",
     "aliases": [
-      "Cuba",
-      "Republic of Cuba"
-    ],
-    "region": "Americas"
+      "Cuba"
+    ]
   },
   {
     "id": "lv",
     "code": "LV",
     "name": "Латвия",
     "tier": 2,
-    "population": "1.9M",
+    "population": "1.8 млн",
     "phoneCode": "+371 xxxx-xxxx",
     "internetPenetration": "87%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Латышский",
     "languageSecondary": "Русский",
     "currency": "Евро",
@@ -4074,20 +3944,18 @@
     "flag": "🇱🇻",
     "aliases": [
       "Латвія",
-      "Latvia",
-      "Republic of Latvia"
-    ],
-    "region": "Europe"
+      "Latvia"
+    ]
   },
   {
     "id": "lt",
     "code": "LT",
     "name": "Литва",
     "tier": 2,
-    "population": "2.9M",
+    "population": "2.6 млн",
     "phoneCode": "+370 (xxx) xx-xxx",
     "internetPenetration": "82%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Литовский",
     "languageSecondary": "Русский",
     "currency": "Евро",
@@ -4123,20 +3991,18 @@
     "celebrities": [],
     "flag": "🇱🇹",
     "aliases": [
-      "Lithuania",
-      "Republic of Lithuania"
-    ],
-    "region": "Europe"
+      "Lithuania"
+    ]
   },
   {
     "id": "mu",
     "code": "MU",
     "name": "Маврикий",
     "tier": 2,
-    "population": "1.2M",
+    "population": "1.3 млн",
     "phoneCode": "+230 xxx-xxxx",
     "internetPenetration": "59%",
-    "timezone": "UTC+04:00",
+    "timezone": "MUT (UTC+4)",
     "language": "Английский",
     "languageSecondary": "Французский",
     "currency": "Маврикийская рупия",
@@ -4173,20 +4039,18 @@
     "flag": "🇲🇺",
     "aliases": [
       "Маврикій",
-      "Mauritius",
-      "Republic of Mauritius"
-    ],
-    "region": "Africa"
+      "Mauritius"
+    ]
   },
   {
     "id": "my",
     "code": "MY",
     "name": "Малайзия",
     "tier": 2,
-    "population": "35.6M",
+    "population": "33 млн",
     "phoneCode": "+60 (xx) xxx-xxxx",
     "internetPenetration": "84%",
-    "timezone": "UTC+08:00",
+    "timezone": "MYT (UTC+8)",
     "language": "Малайский",
     "languageSecondary": "Английский, Китайский, Тамильский",
     "currency": "Малайзийский ринггит",
@@ -4224,24 +4088,23 @@
     "aliases": [
       "Малайзія",
       "Malaysia"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "mv",
     "code": "MV",
     "name": "Мальдивы",
     "tier": 2,
-    "population": "527.8K",
+    "population": "0.55 млн",
     "phoneCode": "+960 xxx-xxxx",
     "internetPenetration": "63%",
-    "timezone": "UTC+05:00",
+    "timezone": "MVT (UTC+5)",
     "language": "Мальдивский",
     "languageSecondary": "Английский",
     "currency": "Мальдивская руфия",
     "currencyCode": "MVR",
-    "currencySymbol": ".ރ",
-    "currencyExample": ".ރ100",
+    "currencySymbol": "Rf",
+    "currencyExample": "Rf100",
     "avgSalaryLocal": "15,000 MVR",
     "avgSalaryUSD": "970 USD",
     "payments": [
@@ -4272,26 +4135,24 @@
     "flag": "🇲🇻",
     "aliases": [
       "Мальдіви",
-      "Maldives",
-      "Republic of the Maldives"
-    ],
-    "region": "Asia"
+      "Maldives"
+    ]
   },
   {
     "id": "ma",
     "code": "MA",
     "name": "Марокко",
     "tier": 2,
-    "population": "38.1M",
+    "population": "38 млн",
     "phoneCode": "+212 (xxx) xxx-xxx",
     "internetPenetration": "66%",
-    "timezone": "UTC",
+    "timezone": "WET (UTC+0)",
     "language": "Арабский",
     "languageSecondary": "Французский",
     "currency": "Марокканский дирхам",
     "currencyCode": "MAD",
-    "currencySymbol": "د.م.",
-    "currencyExample": "د.م.100",
+    "currencySymbol": "د.م",
+    "currencyExample": "100د.م",
     "avgSalaryLocal": "6,000 MAD",
     "avgSalaryUSD": "600 USD",
     "payments": [
@@ -4322,20 +4183,18 @@
     "celebrities": [],
     "flag": "🇲🇦",
     "aliases": [
-      "Morocco",
-      "Kingdom of Morocco"
-    ],
-    "region": "Africa"
+      "Morocco"
+    ]
   },
   {
     "id": "pw",
     "code": "PW",
     "name": "Палау",
     "tier": 2,
-    "population": "17.7K",
+    "population": "0.02 млн",
     "phoneCode": "+680 xxx-xxxx",
     "internetPenetration": "70%",
-    "timezone": "UTC+09:00",
+    "timezone": "PWT (UTC+9)",
     "language": "Английский",
     "languageSecondary": "Палауанский",
     "currency": "Доллар США",
@@ -4371,20 +4230,18 @@
     "celebrities": [],
     "flag": "🇵🇼",
     "aliases": [
-      "Palau",
-      "Republic of Palau"
-    ],
-    "region": "Oceania"
+      "Palau"
+    ]
   },
   {
     "id": "pa",
     "code": "PA",
     "name": "Панама",
     "tier": 2,
-    "population": "4.5M",
+    "population": "4.6 млн",
     "phoneCode": "+507 xxx-xxxx",
     "internetPenetration": "63%",
-    "timezone": "UTC-05:00",
+    "timezone": "EST (UTC-5)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Бальбоа",
@@ -4420,26 +4277,24 @@
     "celebrities": [],
     "flag": "🇵🇦",
     "aliases": [
-      "Panama",
-      "Republic of Panama"
-    ],
-    "region": "Americas"
+      "Panama"
+    ]
   },
   {
     "id": "pe",
     "code": "PE",
     "name": "Перу",
     "tier": 2,
-    "population": "34.2M",
+    "population": "34 млн",
     "phoneCode": "+51 (xxx) xxx-xxx",
     "internetPenetration": "65%",
-    "timezone": "UTC-05:00",
+    "timezone": "PET (UTC-5)",
     "language": "Испанский",
     "languageSecondary": "Кечуа",
     "currency": "Перуанский соль",
     "currencyCode": "PEN",
-    "currencySymbol": "S/ ",
-    "currencyExample": "S/ 100",
+    "currencySymbol": "S/",
+    "currencyExample": "S/100",
     "avgSalaryLocal": "2,000 PEN",
     "avgSalaryUSD": "530 USD",
     "payments": [
@@ -4469,10 +4324,8 @@
     "celebrities": [],
     "flag": "🇵🇪",
     "aliases": [
-      "Peru",
-      "Republic of Peru"
-    ],
-    "region": "Americas"
+      "Peru"
+    ]
   },
   {
     "id": "pl",
@@ -4486,7 +4339,7 @@
     "currency": "Polish Zloty",
     "currencyCode": "PLN",
     "currencySymbol": "zł",
-    "population": "36.6M",
+    "population": "38M",
     "avgSalary": "$17,000",
     "midCost": "$700",
     "internetPenetration": "84%",
@@ -4554,9 +4407,9 @@
       "Zedo"
     ],
     "phoneCode": "+48 (xx) xxx-xx-xx",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "languageSecondary": "",
-    "currencyExample": "zł100",
+    "currencyExample": "100zł",
     "avgSalaryLocal": "5,000 PLN",
     "avgSalaryUSD": "1,200 USD",
     "payments": [
@@ -4582,9 +4435,7 @@
     "celebrities": [],
     "aliases": [
       "Польша",
-      "Польща",
-      "Poland",
-      "Republic of Poland"
+      "Польща"
     ]
   },
   {
@@ -4592,16 +4443,16 @@
     "code": "MK",
     "name": "Республика Македония",
     "tier": 2,
-    "population": "1.8M",
+    "population": "2 млн",
     "phoneCode": "+389 (xx) xxx-xxx",
     "internetPenetration": "82%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Македонский",
     "languageSecondary": "Албанский",
     "currency": "Македонский денар",
     "currencyCode": "MKD",
-    "currencySymbol": "den",
-    "currencyExample": "den100",
+    "currencySymbol": "ден",
+    "currencyExample": "ден100",
     "avgSalaryLocal": "30,000 MKD",
     "avgSalaryUSD": "520 USD",
     "payments": [
@@ -4633,26 +4484,24 @@
     "aliases": [
       "Северная Македония",
       "Північна Македонія",
-      "North Macedonia",
-      "Republic of North Macedonia"
-    ],
-    "region": "Europe"
+      "North Macedonia"
+    ]
   },
   {
     "id": "ro",
     "code": "RO",
     "name": "Румыния",
     "tier": 2,
-    "population": "19.1M",
+    "population": "19 млн",
     "phoneCode": "+40 (xx) xxx-xxxx",
     "internetPenetration": "78%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Румынский",
     "languageSecondary": "",
     "currency": "Румынский лей",
     "currencyCode": "RON",
     "currencySymbol": "lei",
-    "currencyExample": "lei100",
+    "currencyExample": "100lei",
     "avgSalaryLocal": "3,000 RON",
     "avgSalaryUSD": "660 USD",
     "payments": [
@@ -4684,18 +4533,17 @@
     "aliases": [
       "Румунія",
       "Romania"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "sc",
     "code": "SC",
     "name": "Сейшелы",
     "tier": 2,
-    "population": "121.4K",
+    "population": "0.1 млн",
     "phoneCode": "+248 x-xx-xx",
     "internetPenetration": "58%",
-    "timezone": "UTC+04:00",
+    "timezone": "SCT (UTC+4)",
     "language": "Сейшельский креольский",
     "languageSecondary": "Французский, Английский",
     "currency": "Сейшельская рупия",
@@ -4732,20 +4580,18 @@
     "flag": "🇸🇨",
     "aliases": [
       "Сейшели",
-      "Seychelles",
-      "Republic of Seychelles"
-    ],
-    "region": "Africa"
+      "Seychelles"
+    ]
   },
   {
     "id": "vc",
     "code": "VC",
     "name": "Сент-Винсент и Гренадины",
     "tier": 2,
-    "population": "100.6K",
+    "population": "0.11 млн",
     "phoneCode": "+1 (784) xxx-xxxx",
     "internetPenetration": "62%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Восточнокарибский доллар",
@@ -4782,18 +4628,17 @@
     "flag": "🇻🇨",
     "aliases": [
       "Saint Vincent and the Grenadines"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "kn",
     "code": "KN",
     "name": "Сент-Китс и Невис",
     "tier": 2,
-    "population": "46.8K",
+    "population": "0.05 млн",
     "phoneCode": "+1 (869) xxx-xxxx",
     "internetPenetration": "76%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Восточнокарибский доллар",
@@ -4829,20 +4674,18 @@
     "celebrities": [],
     "flag": "🇰🇳",
     "aliases": [
-      "Saint Kitts and Nevis",
-      "Federation of Saint Christopher and Nevis"
-    ],
-    "region": "Americas"
+      "Saint Kitts and Nevis"
+    ]
   },
   {
     "id": "lc",
     "code": "LC",
     "name": "Сент-Люсия",
     "tier": 2,
-    "population": "179.7K",
+    "population": "0.18 млн",
     "phoneCode": "+1 (758) xxx-xxxx",
     "internetPenetration": "64%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "Французский креольский",
     "currency": "Восточнокарибский доллар",
@@ -4879,24 +4722,23 @@
     "flag": "🇱🇨",
     "aliases": [
       "Saint Lucia"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "rs",
     "code": "RS",
     "name": "Сербия",
     "tier": 2,
-    "population": "6.6M",
+    "population": "6.6 млн",
     "phoneCode": "+381 (xx) xxx-xxxx",
     "internetPenetration": "76%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Сербский",
     "languageSecondary": "",
     "currency": "Сербский динар",
     "currencyCode": "RSD",
-    "currencySymbol": "дин.",
-    "currencyExample": "дин.100",
+    "currencySymbol": "дин",
+    "currencyExample": "дин100",
     "avgSalaryLocal": "60,000 RSD",
     "avgSalaryUSD": "570 USD",
     "payments": [
@@ -4927,20 +4769,18 @@
     "flag": "🇷🇸",
     "aliases": [
       "Сербія",
-      "Serbia",
-      "Republic of Serbia"
-    ],
-    "region": "Europe"
+      "Serbia"
+    ]
   },
   {
     "id": "sr",
     "code": "SR",
     "name": "Суринам",
     "tier": 2,
-    "population": "634.4K",
+    "population": "0.6 млн",
     "phoneCode": "+597 xxx-xxxx",
     "internetPenetration": "55%",
-    "timezone": "UTC-03:00",
+    "timezone": "SRT (UTC-3)",
     "language": "Нидерландский",
     "languageSecondary": "",
     "currency": "Суринамский доллар",
@@ -4976,20 +4816,18 @@
     "celebrities": [],
     "flag": "🇸🇷",
     "aliases": [
-      "Suriname",
-      "Republic of Suriname"
-    ],
-    "region": "Americas"
+      "Suriname"
+    ]
   },
   {
     "id": "th",
     "code": "TH",
     "name": "Таиланд",
     "tier": 2,
-    "population": "71.7M",
+    "population": "70 млн",
     "phoneCode": "+66 (xx) xxx-xxxx",
     "internetPenetration": "72%",
-    "timezone": "UTC+07:00",
+    "timezone": "ICT (UTC+7)",
     "language": "Тайский",
     "languageSecondary": "",
     "currency": "Тайский бат",
@@ -5026,20 +4864,18 @@
     "flag": "🇹🇭",
     "aliases": [
       "Таїланд",
-      "Thailand",
-      "Kingdom of Thailand"
-    ],
-    "region": "Asia"
+      "Thailand"
+    ]
   },
   {
     "id": "tt",
     "code": "TT",
     "name": "Тринидад и Тобаго",
     "tier": 2,
-    "population": "1.4M",
+    "population": "1.4 млн",
     "phoneCode": "+1 (868) xxx-xxxx",
     "internetPenetration": "77%",
-    "timezone": "UTC-04:00",
+    "timezone": "AST (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Доллар Тринидада и Тобаго",
@@ -5076,26 +4912,24 @@
     "flag": "🇹🇹",
     "aliases": [
       "Тринідад і Тобаго",
-      "Trinidad and Tobago",
-      "Republic of Trinidad and Tobago"
-    ],
-    "region": "Americas"
+      "Trinidad and Tobago"
+    ]
   },
   {
     "id": "tn",
     "code": "TN",
     "name": "Тунис",
     "tier": 2,
-    "population": "12.3M",
+    "population": "12 млн",
     "phoneCode": "+216 xx-xxx-xxx",
     "internetPenetration": "64%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Арабский",
     "languageSecondary": "Французский",
     "currency": "Тунисский динар",
     "currencyCode": "TND",
     "currencySymbol": "د.ت",
-    "currencyExample": "د.ت100",
+    "currencyExample": "100د.ت",
     "avgSalaryLocal": "1,500 TND",
     "avgSalaryUSD": "470 USD",
     "payments": [
@@ -5126,26 +4960,24 @@
     "flag": "🇹🇳",
     "aliases": [
       "Туніс",
-      "Tunisia",
-      "Tunisian Republic"
-    ],
-    "region": "Africa"
+      "Tunisia"
+    ]
   },
   {
     "id": "tr",
     "code": "TR",
     "name": "Турция",
     "tier": 2,
-    "population": "85.5M",
+    "population": "86 млн",
     "phoneCode": "+90 (xxx) xxx-xxxx",
     "internetPenetration": "82%",
-    "timezone": "UTC+03:00",
+    "timezone": "TRT (UTC+3)",
     "language": "Турецкий",
     "languageSecondary": "",
     "currency": "Турецкая лира",
     "currencyCode": "TRY",
     "currencySymbol": "₺",
-    "currencyExample": "₺100",
+    "currencyExample": "100₺",
     "avgSalaryLocal": "15,000 TRY",
     "avgSalaryUSD": "650 USD",
     "payments": [
@@ -5176,20 +5008,18 @@
     "aliases": [
       "Туреччина",
       "Turkey",
-      "Türkiye",
-      "Republic of Turkey"
-    ],
-    "region": "Asia"
+      "Türkiye"
+    ]
   },
   {
     "id": "uy",
     "code": "UY",
     "name": "Уругвай",
     "tier": 2,
-    "population": "3.4M",
+    "population": "3.6 млн",
     "phoneCode": "+598 (xxx) xxx-xxx",
     "internetPenetration": "80%",
-    "timezone": "UTC-03:00",
+    "timezone": "UYT (UTC-3)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Уругвайское песо",
@@ -5225,20 +5055,18 @@
     "celebrities": [],
     "flag": "🇺🇾",
     "aliases": [
-      "Uruguay",
-      "Oriental Republic of Uruguay"
-    ],
-    "region": "Americas"
+      "Uruguay"
+    ]
   },
   {
     "id": "ph",
     "code": "PH",
     "name": "Филиппины",
     "tier": 2,
-    "population": "115.8M",
+    "population": "117 млн",
     "phoneCode": "+63 (xx) xxx-xxxx",
     "internetPenetration": "73%",
-    "timezone": "UTC+08:00",
+    "timezone": "PHT (UTC+8)",
     "language": "Филиппинский",
     "languageSecondary": "Английский",
     "currency": "Филиппинское песо",
@@ -5275,20 +5103,18 @@
     "flag": "🇵🇭",
     "aliases": [
       "Філіппіни",
-      "Philippines",
-      "Republic of the Philippines"
-    ],
-    "region": "Asia"
+      "Philippines"
+    ]
   },
   {
     "id": "hr",
     "code": "HR",
     "name": "Хорватия",
     "tier": 2,
-    "population": "3.9M",
+    "population": "3.8 млн",
     "phoneCode": "+385 (xx) xxx-xxx",
     "internetPenetration": "86%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Хорватский",
     "languageSecondary": "",
     "currency": "Евро",
@@ -5325,20 +5151,18 @@
     "flag": "🇭🇷",
     "aliases": [
       "Хорватія",
-      "Croatia",
-      "Republic of Croatia"
-    ],
-    "region": "Europe"
+      "Croatia"
+    ]
   },
   {
     "id": "me",
     "code": "ME",
     "name": "Черногория",
     "tier": 2,
-    "population": "623.5K",
+    "population": "0.6 млн",
     "phoneCode": "+382 xx-xxx-xxx",
     "internetPenetration": "73%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Черногорский",
     "languageSecondary": "Сербский, Хорватский, Боснийский, Албанский",
     "currency": "Евро",
@@ -5376,15 +5200,14 @@
     "aliases": [
       "Чорногорія",
       "Montenegro"
-    ],
-    "region": "Europe"
+    ]
   },
   {
     "id": "cl",
     "code": "CL",
     "name": "Чили",
     "tier": 2,
-    "population": "19.8M",
+    "population": "20 млн",
     "phoneCode": "+56 (x) xxx-xxxx",
     "internetPenetration": "83%",
     "timezone": "CLT (UTC-3)",
@@ -5424,17 +5247,15 @@
     "flag": "🇨🇱",
     "aliases": [
       "Чілі",
-      "Chile",
-      "Republic of Chile"
-    ],
-    "region": "Americas"
+      "Chile"
+    ]
   },
   {
     "id": "ec",
     "code": "EC",
     "name": "Эквадор",
     "tier": 2,
-    "population": "18.1M",
+    "population": "18 млн",
     "phoneCode": "+593 (xx) xxx-xxxx",
     "internetPenetration": "66%",
     "timezone": "ECT (UTC-5)",
@@ -5474,20 +5295,18 @@
     "flag": "🇪🇨",
     "aliases": [
       "Еквадор",
-      "Ecuador",
-      "Republic of Ecuador"
-    ],
-    "region": "Americas"
+      "Ecuador"
+    ]
   },
   {
     "id": "ee",
     "code": "EE",
     "name": "Эстония",
     "tier": 2,
-    "population": "1.4M",
+    "population": "1.3 млн",
     "phoneCode": "+372 xxxx-xxxx",
     "internetPenetration": "89%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Эстонский",
     "languageSecondary": "Русский",
     "currency": "Евро",
@@ -5524,20 +5343,18 @@
     "flag": "🇪🇪",
     "aliases": [
       "Естонія",
-      "Estonia",
-      "Republic of Estonia"
-    ],
-    "region": "Europe"
+      "Estonia"
+    ]
   },
   {
     "id": "za",
     "code": "ZA",
     "name": "ЮАР",
     "tier": 2,
-    "population": "64M",
+    "population": "61 млн",
     "phoneCode": "+27 (xx) xxx-xxxx",
     "internetPenetration": "62%",
-    "timezone": "UTC+02:00",
+    "timezone": "SAST (UTC+2)",
     "language": "Английский",
     "languageSecondary": "Африкаанс, Зулу, Коса",
     "currency": "Южноафриканский рэнд",
@@ -5573,20 +5390,18 @@
     "celebrities": [],
     "flag": "🇿🇦",
     "aliases": [
-      "South Africa",
-      "Republic of South Africa"
-    ],
-    "region": "Africa"
+      "South Africa"
+    ]
   },
   {
     "id": "jm",
     "code": "JM",
     "name": "Ямайка",
     "tier": 2,
-    "population": "2.8M",
+    "population": "3 млн",
     "phoneCode": "1 (876) xxx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC-05:00",
+    "timezone": "EST (UTC-5)",
     "language": "Английский",
     "languageSecondary": "Ямайский креольский",
     "currency": "Ямайский доллар",
@@ -5623,24 +5438,23 @@
     "flag": "🇯🇲",
     "aliases": [
       "Jamaica"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "al",
     "code": "AL",
     "name": "Албания",
     "tier": 3,
-    "population": "2.4M",
+    "population": "2.8 млн",
     "phoneCode": "+355 (xx) xxx-xxx",
     "internetPenetration": "79%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Албанский",
     "languageSecondary": "",
     "currency": "Албанский лек",
     "currencyCode": "ALL",
     "currencySymbol": "L",
-    "currencyExample": "L100",
+    "currencyExample": "100L",
     "avgSalaryLocal": "50,000 ALL",
     "avgSalaryUSD": "470 USD",
     "payments": [
@@ -5672,26 +5486,24 @@
     "flag": "🇦🇱",
     "aliases": [
       "Албанія",
-      "Albania",
-      "Republic of Albania"
-    ],
-    "region": "Europe"
+      "Albania"
+    ]
   },
   {
     "id": "dz",
     "code": "DZ",
     "name": "Алжир",
     "tier": 3,
-    "population": "46.8M",
+    "population": "45 млн",
     "phoneCode": "+213 (xx) xxx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC+01:00",
+    "timezone": "CET (UTC+1)",
     "language": "Арабский",
     "languageSecondary": "Французский",
     "currency": "Алжирский динар",
     "currencyCode": "DZD",
-    "currencySymbol": "د.ج",
-    "currencyExample": "د.ج100",
+    "currencySymbol": "دج",
+    "currencyExample": "دج100",
     "avgSalaryLocal": "35,000 DZD",
     "avgSalaryUSD": "260 USD",
     "payments": [
@@ -5721,26 +5533,24 @@
     "celebrities": [],
     "flag": "🇩🇿",
     "aliases": [
-      "Algeria",
-      "People's Democratic Republic of Algeria"
-    ],
-    "region": "Africa"
+      "Algeria"
+    ]
   },
   {
     "id": "ao",
     "code": "AO",
     "name": "Ангола",
     "tier": 3,
-    "population": "37.9M",
+    "population": "36 млн",
     "phoneCode": "+244 (xxx) xxx-xxx",
     "internetPenetration": "36%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Португальский",
     "languageSecondary": "",
     "currency": "Ангольская кванза",
     "currencyCode": "AOA",
     "currencySymbol": "Kz",
-    "currencyExample": "Kz100",
+    "currencyExample": "100Kz",
     "avgSalaryLocal": "150,000 AOA",
     "avgSalaryUSD": "230 USD",
     "payments": [
@@ -5770,26 +5580,24 @@
     "celebrities": [],
     "flag": "🇦🇴",
     "aliases": [
-      "Angola",
-      "Republic of Angola"
-    ],
-    "region": "Africa"
+      "Angola"
+    ]
   },
   {
     "id": "af",
     "code": "AF",
     "name": "Афганистан",
     "tier": 3,
-    "population": "42.6M",
+    "population": "40 млн",
     "phoneCode": "+93 (xx) xxx-xxxx",
     "internetPenetration": "20%",
-    "timezone": "UTC+04:30",
+    "timezone": "AFT (UTC+4:30)",
     "language": "Пушту",
     "languageSecondary": "Дарий",
     "currency": "Афгани",
     "currencyCode": "AFN",
     "currencySymbol": "؋",
-    "currencyExample": "؋100",
+    "currencyExample": "100؋",
     "avgSalaryLocal": "7,500 AFN",
     "avgSalaryUSD": "85 USD",
     "payments": [
@@ -5820,20 +5628,18 @@
     "flag": "🇦🇫",
     "aliases": [
       "Афганістан",
-      "Afghanistan",
-      "Islamic Republic of Afghanistan"
-    ],
-    "region": "Asia"
+      "Afghanistan"
+    ]
   },
   {
     "id": "bd",
     "code": "BD",
     "name": "Бангладеш",
     "tier": 3,
-    "population": "173.6M",
+    "population": "170 млн",
     "phoneCode": "+880 (xxx) xxx-xxx",
     "internetPenetration": "55%",
-    "timezone": "UTC+06:00",
+    "timezone": "BST (UTC+6)",
     "language": "Бенгальский",
     "languageSecondary": "Английский",
     "currency": "Бангладешская така",
@@ -5869,20 +5675,18 @@
     "celebrities": [],
     "flag": "🇧🇩",
     "aliases": [
-      "Bangladesh",
-      "People's Republic of Bangladesh"
-    ],
-    "region": "Asia"
+      "Bangladesh"
+    ]
   },
   {
     "id": "bz",
     "code": "BZ",
     "name": "Белиз",
     "tier": 3,
-    "population": "417.1K",
+    "population": "0.4 млн",
     "phoneCode": "+501 xxx-xxxx",
     "internetPenetration": "53%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Английский",
     "languageSecondary": "Испанский",
     "currency": "Белизский доллар",
@@ -5920,24 +5724,23 @@
     "aliases": [
       "Беліз",
       "Belize"
-    ],
-    "region": "Americas"
+    ]
   },
   {
     "id": "bj",
     "code": "BJ",
     "name": "Бенин",
     "tier": 3,
-    "population": "14.5M",
+    "population": "14 млн",
     "phoneCode": "+229 xx-xx-xxxx",
     "internetPenetration": "27%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "100,000 XOF",
     "avgSalaryUSD": "170 USD",
     "payments": [
@@ -5968,26 +5771,24 @@
     "flag": "🇧🇯",
     "aliases": [
       "Бенін",
-      "Benin",
-      "Republic of Benin"
-    ],
-    "region": "Africa"
+      "Benin"
+    ]
   },
   {
     "id": "bo",
     "code": "BO",
     "name": "Боливия",
     "tier": 3,
-    "population": "12.4M",
+    "population": "12 млн",
     "phoneCode": "+591 (x) xxx-xxxx",
     "internetPenetration": "50%",
-    "timezone": "UTC-04:00",
+    "timezone": "BOT (UTC-4)",
     "language": "Испанский",
     "languageSecondary": "Кечуа",
     "currency": "Боливиано",
     "currencyCode": "BOB",
-    "currencySymbol": "Bs.",
-    "currencyExample": "Bs.100",
+    "currencySymbol": "Bs",
+    "currencyExample": "Bs100",
     "avgSalaryLocal": "2,000 BOB",
     "avgSalaryUSD": "290 USD",
     "payments": [
@@ -6018,26 +5819,24 @@
     "flag": "🇧🇴",
     "aliases": [
       "Болівія",
-      "Bolivia",
-      "Plurinational State of Bolivia"
-    ],
-    "region": "Americas"
+      "Bolivia"
+    ]
   },
   {
     "id": "bf",
     "code": "BF",
     "name": "Буркина-Фасо",
     "tier": 3,
-    "population": "23.5M",
+    "population": "23 млн",
     "phoneCode": "+226 xx-xx-xxxx",
     "internetPenetration": "18%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 XOF",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -6069,24 +5868,23 @@
     "aliases": [
       "Буркіна-Фасо",
       "Burkina Faso"
-    ],
-    "region": "Africa"
+    ]
   },
   {
     "id": "bi",
     "code": "BI",
     "name": "Бурунди",
     "tier": 3,
-    "population": "14M",
+    "population": "13 млн",
     "phoneCode": "+257 xx-xx-xxxx",
     "internetPenetration": "15%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Кирунди",
     "languageSecondary": "Французский",
     "currency": "Бурундийский франк",
     "currencyCode": "BIF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 BIF",
     "avgSalaryUSD": "70 USD",
     "payments": [
@@ -6116,26 +5914,24 @@
     "celebrities": [],
     "flag": "🇧🇮",
     "aliases": [
-      "Burundi",
-      "Republic of Burundi"
-    ],
-    "region": "Africa"
+      "Burundi"
+    ]
   },
   {
     "id": "bt",
     "code": "BT",
     "name": "Бутан",
     "tier": 3,
-    "population": "791.5K",
+    "population": "0.8 млн",
     "phoneCode": "+975 xx-xx-xxxx",
     "internetPenetration": "49%",
-    "timezone": "UTC+06:00",
+    "timezone": "BTT (UTC+6)",
     "language": "Дзонг-кэ",
     "languageSecondary": "",
     "currency": "Нгултрум",
     "currencyCode": "BTN",
-    "currencySymbol": "Nu.",
-    "currencyExample": "Nu.100",
+    "currencySymbol": "Nu",
+    "currencyExample": "Nu100",
     "avgSalaryLocal": "15,000 BTN",
     "avgSalaryUSD": "180 USD",
     "payments": [
@@ -6165,20 +5961,18 @@
     "celebrities": [],
     "flag": "🇧🇹",
     "aliases": [
-      "Bhutan",
-      "Kingdom of Bhutan"
-    ],
-    "region": "Asia"
+      "Bhutan"
+    ]
   },
   {
     "id": "vu",
     "code": "VU",
     "name": "Вануату",
     "tier": 3,
-    "population": "327.8K",
+    "population": "0.3 млн",
     "phoneCode": "+678 xx-xxxxx",
     "internetPenetration": "27%",
-    "timezone": "UTC+11:00",
+    "timezone": "VUT (UTC+11)",
     "language": "Бислама",
     "languageSecondary": "Французский, Английский",
     "currency": "Вату",
@@ -6214,26 +6008,24 @@
     "celebrities": [],
     "flag": "🇻🇺",
     "aliases": [
-      "Vanuatu",
-      "Republic of Vanuatu"
-    ],
-    "region": "Oceania"
+      "Vanuatu"
+    ]
   },
   {
     "id": "ve",
     "code": "VE",
     "name": "Венесуэла",
     "tier": 3,
-    "population": "28.4M",
+    "population": "28 млн",
     "phoneCode": "+58 (xxx) xxx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC-04:00",
+    "timezone": "VET (UTC-4)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Венесуэльский боливар",
     "currencyCode": "VES",
-    "currencySymbol": "Bs.S.",
-    "currencyExample": "Bs.S.100",
+    "currencySymbol": "Bs.S",
+    "currencyExample": "Bs.S100",
     "avgSalaryLocal": "1,500 VES",
     "avgSalaryUSD": "60 USD",
     "payments": [
@@ -6264,20 +6056,18 @@
     "flag": "🇻🇪",
     "aliases": [
       "Венесуела",
-      "Venezuela",
-      "Bolivarian Republic of Venezuela"
-    ],
-    "region": "Americas"
+      "Venezuela"
+    ]
   },
   {
     "id": "tl",
     "code": "TL",
     "name": "Восточный Тимор",
     "tier": 3,
-    "population": "1.4M",
+    "population": "1.4 млн",
     "phoneCode": "+670 xxx-xxxx",
     "internetPenetration": "27%",
-    "timezone": "UTC+09:00",
+    "timezone": "TLT (UTC+9)",
     "language": "Тетум",
     "languageSecondary": "Португальский",
     "currency": "Доллар США",
@@ -6315,20 +6105,18 @@
     "aliases": [
       "Східний Тимор",
       "East Timor",
-      "Timor-Leste",
-      "Democratic Republic of Timor-Leste"
-    ],
-    "region": "Asia"
+      "Timor-Leste"
+    ]
   },
   {
     "id": "ht",
     "code": "HT",
     "name": "Гаити",
     "tier": 3,
-    "population": "11.8M",
+    "population": "12 млн",
     "phoneCode": "+509 xx-xx-xxxx",
     "internetPenetration": "32%",
-    "timezone": "UTC-05:00",
+    "timezone": "EST (UTC-5)",
     "language": "Гаитянский креольский",
     "languageSecondary": "Французский",
     "currency": "Гурд",
@@ -6364,20 +6152,18 @@
     "celebrities": [],
     "flag": "🇭🇹",
     "aliases": [
-      "Haiti",
-      "Republic of Haiti"
-    ],
-    "region": "Americas"
+      "Haiti"
+    ]
   },
   {
     "id": "gy",
     "code": "GY",
     "name": "Гайана",
     "tier": 3,
-    "population": "831.1K",
+    "population": "0.8 млн",
     "phoneCode": "+592 xxx-xxxx",
     "internetPenetration": "40%",
-    "timezone": "UTC-04:00",
+    "timezone": "GYT (UTC-4)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Гайанский доллар",
@@ -6413,20 +6199,18 @@
     "celebrities": [],
     "flag": "🇬🇾",
     "aliases": [
-      "Guyana",
-      "Co-operative Republic of Guyana"
-    ],
-    "region": "Americas"
+      "Guyana"
+    ]
   },
   {
     "id": "gm",
     "code": "GM",
     "name": "Гамбия",
     "tier": 3,
-    "population": "2.8M",
+    "population": "2.6 млн",
     "phoneCode": "+220 (xx) xx-xx-xx",
     "internetPenetration": "25%",
-    "timezone": "UTC+00:00",
+    "timezone": "GMT (UTC+0)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Даласи",
@@ -6463,20 +6247,18 @@
     "flag": "🇬🇲",
     "aliases": [
       "Гамбія",
-      "Gambia",
-      "Republic of the Gambia"
-    ],
-    "region": "Africa"
+      "Gambia"
+    ]
   },
   {
     "id": "gh",
     "code": "GH",
     "name": "Гана",
     "tier": 3,
-    "population": "34.4M",
+    "population": "34 млн",
     "phoneCode": "+233 (xx) xxx-xxxx",
     "internetPenetration": "50%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Ганский седи",
@@ -6512,20 +6294,18 @@
     "celebrities": [],
     "flag": "🇬🇭",
     "aliases": [
-      "Ghana",
-      "Republic of Ghana"
-    ],
-    "region": "Africa"
+      "Ghana"
+    ]
   },
   {
     "id": "gt",
     "code": "GT",
     "name": "Гватемала",
     "tier": 3,
-    "population": "18.4M",
+    "population": "19 млн",
     "phoneCode": "+502 x-xxx-xxxx",
     "internetPenetration": "49%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Кетсаль",
@@ -6560,26 +6340,24 @@
     "celebrities": [],
     "flag": "🇬🇹",
     "aliases": [
-      "Guatemala",
-      "Republic of Guatemala"
-    ],
-    "region": "Americas"
+      "Guatemala"
+    ]
   },
   {
     "id": "gn",
     "code": "GN",
     "name": "Гвинея",
     "tier": 3,
-    "population": "14.8M",
+    "population": "14 млн",
     "phoneCode": "+224 xx-xxx-xxx",
     "internetPenetration": "17%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Гвинейский франк",
     "currencyCode": "GNF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "1,000,000 GNF",
     "avgSalaryUSD": "120 USD",
     "payments": [
@@ -6610,26 +6388,24 @@
     "flag": "🇬🇳",
     "aliases": [
       "Гвінея",
-      "Guinea",
-      "Republic of Guinea"
-    ],
-    "region": "Africa"
+      "Guinea"
+    ]
   },
   {
     "id": "gw",
     "code": "GW",
     "name": "Гвинея-Бисау",
     "tier": 3,
-    "population": "2.2M",
+    "population": "2 млн",
     "phoneCode": "+245 x-xxxxx",
     "internetPenetration": "16%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Португальский",
     "languageSecondary": "Креольский",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "50,000 XOF",
     "avgSalaryUSD": "85 USD",
     "payments": [
@@ -6660,20 +6436,18 @@
     "flag": "🇬🇼",
     "aliases": [
       "Гвінея-Бісау",
-      "Guinea-Bissau",
-      "Republic of Guinea-Bissau"
-    ],
-    "region": "Africa"
+      "Guinea-Bissau"
+    ]
   },
   {
     "id": "hn",
     "code": "HN",
     "name": "Гондурас",
     "tier": 3,
-    "population": "10.8M",
+    "population": "10 млн",
     "phoneCode": "+504 xxxx-xxxx",
     "internetPenetration": "43%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Лемпира",
@@ -6709,26 +6483,24 @@
     "celebrities": [],
     "flag": "🇭🇳",
     "aliases": [
-      "Honduras",
-      "Republic of Honduras"
-    ],
-    "region": "Americas"
+      "Honduras"
+    ]
   },
   {
     "id": "dj",
     "code": "DJ",
     "name": "Джибути",
     "tier": 3,
-    "population": "1.2M",
+    "population": "1 млн",
     "phoneCode": "+253 xx-xx-xx-xx",
     "internetPenetration": "21%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Французский",
     "languageSecondary": "Арабский",
     "currency": "Джибутийский франк",
     "currencyCode": "DJF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "100,000 DJF",
     "avgSalaryUSD": "560 USD",
     "payments": [
@@ -6758,26 +6530,24 @@
     "celebrities": [],
     "flag": "🇩🇯",
     "aliases": [
-      "Djibouti",
-      "Republic of Djibouti"
-    ],
-    "region": "Africa"
+      "Djibouti"
+    ]
   },
   {
     "id": "zm",
     "code": "ZM",
     "name": "Замбия",
     "tier": 3,
-    "population": "21.3M",
+    "population": "20 млн",
     "phoneCode": "+260 xx-xxx-xxxx",
     "internetPenetration": "54%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Замбийская квача",
     "currencyCode": "ZMW",
     "currencySymbol": "ZK",
-    "currencyExample": "ZK100",
+    "currencyExample": "100ZK",
     "avgSalaryLocal": "7,500 ZMW",
     "avgSalaryUSD": "380 USD",
     "payments": [
@@ -6808,26 +6578,24 @@
     "flag": "🇿🇲",
     "aliases": [
       "Замбія",
-      "Zambia",
-      "Republic of Zambia"
-    ],
-    "region": "Africa"
+      "Zambia"
+    ]
   },
   {
     "id": "zw",
     "code": "ZW",
     "name": "Зимбабве",
     "tier": 3,
-    "population": "16.6M",
+    "population": "16 млн",
     "phoneCode": "+263 (xx) xxx-xxx",
     "internetPenetration": "35%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Английский",
     "languageSecondary": "Шона, Ндебеле",
     "currency": "Зимбабвийский золотой",
-    "currencyCode": "ZWL",
-    "currencySymbol": "$",
-    "currencyExample": "$100",
+    "currencyCode": "ZWG",
+    "currencySymbol": "ZiG",
+    "currencyExample": "100 ZIG",
     "avgSalaryLocal": "30,000 ZWG",
     "avgSalaryUSD": "1USD",
     "payments": [
@@ -6857,20 +6625,18 @@
     "celebrities": [],
     "flag": "🇿🇼",
     "aliases": [
-      "Zimbabwe",
-      "Republic of Zimbabwe"
-    ],
-    "region": "Africa"
+      "Zimbabwe"
+    ]
   },
   {
     "id": "iq",
     "code": "IQ",
     "name": "Ирак",
     "tier": 3,
-    "population": "46M",
+    "population": "44 млн",
     "phoneCode": "+964 (xxx) xxx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "Курдский",
     "currency": "Иракский динар",
@@ -6907,26 +6673,24 @@
     "flag": "🇮🇶",
     "aliases": [
       "Ірак",
-      "Iraq",
-      "Republic of Iraq"
-    ],
-    "region": "Asia"
+      "Iraq"
+    ]
   },
   {
     "id": "ye",
     "code": "YE",
     "name": "Йемен",
     "tier": 3,
-    "population": "40.6M",
+    "population": "34 млн",
     "phoneCode": "+967 (xx) xxx-xxx",
     "internetPenetration": "27%",
-    "timezone": "UTC+03:00",
+    "timezone": "AST (UTC+3)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Йеменский риал",
     "currencyCode": "YER",
     "currencySymbol": "﷼",
-    "currencyExample": "﷼100",
+    "currencyExample": "100﷼",
     "avgSalaryLocal": "60,000 YER",
     "avgSalaryUSD": "100 USD",
     "payments": [
@@ -6956,26 +6720,24 @@
     "celebrities": [],
     "flag": "🇾🇪",
     "aliases": [
-      "Yemen",
-      "Republic of Yemen"
-    ],
-    "region": "Asia"
+      "Yemen"
+    ]
   },
   {
     "id": "kh",
     "code": "KH",
     "name": "Камбоджа",
     "tier": 3,
-    "population": "17.6M",
+    "population": "17 млн",
     "phoneCode": "+855 (xx) xxx-xxx",
     "internetPenetration": "40%",
-    "timezone": "UTC+07:00",
+    "timezone": "ICT (UTC+7)",
     "language": "Кхмерский",
     "languageSecondary": "",
     "currency": "Камбоджийский риель",
     "currencyCode": "KHR",
     "currencySymbol": "៛",
-    "currencyExample": "៛100",
+    "currencyExample": "100៛",
     "avgSalaryLocal": "1,000,000 KHR",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -7005,26 +6767,24 @@
     "celebrities": [],
     "flag": "🇰🇭",
     "aliases": [
-      "Cambodia",
-      "Kingdom of Cambodia"
-    ],
-    "region": "Asia"
+      "Cambodia"
+    ]
   },
   {
     "id": "cm",
     "code": "CM",
     "name": "Камерун",
     "tier": 3,
-    "population": "29.1M",
+    "population": "28 млн",
     "phoneCode": "+237 (xxx) xxx-xxx",
     "internetPenetration": "35%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "Английский",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 XAF",
     "avgSalaryUSD": "320 USD",
     "payments": [
@@ -7054,26 +6814,24 @@
     "celebrities": [],
     "flag": "🇨🇲",
     "aliases": [
-      "Cameroon",
-      "Republic of Cameroon"
-    ],
-    "region": "Africa"
+      "Cameroon"
+    ]
   },
   {
     "id": "ke",
     "code": "KE",
     "name": "Кения",
     "tier": 3,
-    "population": "56.4M",
+    "population": "58 млн",
     "phoneCode": "+254 (xxx) xxx-xxx",
     "internetPenetration": "40%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Суахили",
     "languageSecondary": "Английский",
     "currency": "Кенийский шиллинг",
     "currencyCode": "KES",
     "currencySymbol": "Sh",
-    "currencyExample": "Sh100",
+    "currencyExample": "100Sh",
     "avgSalaryLocal": "80,000 KES",
     "avgSalaryUSD": "600 USD",
     "payments": [
@@ -7104,26 +6862,24 @@
     "flag": "🇰🇪",
     "aliases": [
       "Кенія",
-      "Kenya",
-      "Republic of Kenya"
-    ],
-    "region": "Africa"
+      "Kenya"
+    ]
   },
   {
     "id": "kg",
     "code": "KG",
     "name": "Киргизия",
     "tier": 3,
-    "population": "7.2M",
+    "population": "6.8 млн",
     "phoneCode": "+996 (xxx) xxx-xxx",
     "internetPenetration": "50%",
-    "timezone": "UTC+06:00",
+    "timezone": "KGT (UTC+6)",
     "language": "Киргизский",
     "languageSecondary": "Русский",
     "currency": "Киргизский сом",
     "currencyCode": "KGS",
     "currencySymbol": "с",
-    "currencyExample": "с100",
+    "currencyExample": "100с",
     "avgSalaryLocal": "30,000 KGS",
     "avgSalaryUSD": "340 USD",
     "payments": [
@@ -7154,17 +6910,15 @@
     "flag": "🇰🇬",
     "aliases": [
       "Киргизстан",
-      "Kyrgyzstan",
-      "Kyrgyz Republic"
-    ],
-    "region": "Asia"
+      "Kyrgyzstan"
+    ]
   },
   {
     "id": "ki",
     "code": "KI",
     "name": "Кирибати",
     "tier": 3,
-    "population": "134.5K",
+    "population": "0.12 млн",
     "phoneCode": "+686 xx-xxx",
     "internetPenetration": "15%",
     "timezone": "GILT (UTC+12), LINT (UTC+14), PONT (UTC+11)",
@@ -7203,26 +6957,24 @@
     "celebrities": [],
     "flag": "🇰🇮",
     "aliases": [
-      "Kiribati",
-      "Independent and Sovereign Republic of Kiribati"
-    ],
-    "region": "Oceania"
+      "Kiribati"
+    ]
   },
   {
     "id": "km",
     "code": "KM",
     "name": "Коморы",
     "tier": 3,
-    "population": "866.6K",
+    "population": "1 млн",
     "phoneCode": "+269 xx-xxxxx",
     "internetPenetration": "19%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Коморский",
     "languageSecondary": "Французский, Арабский",
     "currency": "Коморский франк",
     "currencyCode": "KMF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 KMF",
     "avgSalaryUSD": "340 USD",
     "payments": [
@@ -7253,26 +7005,24 @@
     "flag": "🇰🇲",
     "aliases": [
       "Комори",
-      "Comoros",
-      "Union of the Comoros"
-    ],
-    "region": "Africa"
+      "Comoros"
+    ]
   },
   {
     "id": "cg",
     "code": "CG",
     "name": "Конго",
     "tier": 3,
-    "population": "6.3M",
+    "population": "6 млн",
     "phoneCode": "+242 xx-xxx-xxxx",
     "internetPenetration": "12%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "Лингала",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "300,000 XAF",
     "avgSalaryUSD": "480 USD",
     "payments": [
@@ -7302,26 +7052,24 @@
     "celebrities": [],
     "flag": "🇨🇬",
     "aliases": [
-      "Congo",
-      "Republic of the Congo"
-    ],
-    "region": "Africa"
+      "Congo"
+    ]
   },
   {
     "id": "ci",
     "code": "CI",
     "name": "Кот-д’Ивуар",
     "tier": 3,
-    "population": "31.9M",
+    "population": "28 млн",
     "phoneCode": "+225 xx-xxx-xxx",
     "internetPenetration": "36%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 XOF",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -7353,20 +7101,18 @@
     "aliases": [
       "Кот-д'Ивуар",
       "Кот-д'Івуар",
-      "Ivory Coast",
-      "Republic of Côte d'Ivoire"
-    ],
-    "region": "Africa"
+      "Ivory Coast"
+    ]
   },
   {
     "id": "la",
     "code": "LA",
     "name": "Лаос",
     "tier": 3,
-    "population": "7.8M",
+    "population": "8 млн",
     "phoneCode": "+856 xx-xxx-xxx",
     "internetPenetration": "43%",
-    "timezone": "UTC+07:00",
+    "timezone": "ICT (UTC+7)",
     "language": "Лаосский",
     "languageSecondary": "Французский",
     "currency": "Лаосский кип",
@@ -7402,26 +7148,24 @@
     "celebrities": [],
     "flag": "🇱🇦",
     "aliases": [
-      "Laos",
-      "Lao People's Democratic Republic"
-    ],
-    "region": "Asia"
+      "Laos"
+    ]
   },
   {
     "id": "ls",
     "code": "LS",
     "name": "Лесото",
     "tier": 3,
-    "population": "2.3M",
+    "population": "2.1 млн",
     "phoneCode": "+266 xx-xxxx-xxxx",
     "internetPenetration": "30%",
-    "timezone": "UTC+02:00",
+    "timezone": "SAST (UTC+2)",
     "language": "Сесото",
     "languageSecondary": "Английский",
     "currency": "Лоти",
     "currencyCode": "LSL",
     "currencySymbol": "L",
-    "currencyExample": "L100",
+    "currencyExample": "100L",
     "avgSalaryLocal": "6,000 LSL",
     "avgSalaryUSD": "330 USD",
     "payments": [
@@ -7451,20 +7195,18 @@
     "celebrities": [],
     "flag": "🇱🇸",
     "aliases": [
-      "Lesotho",
-      "Kingdom of Lesotho"
-    ],
-    "region": "Africa"
+      "Lesotho"
+    ]
   },
   {
     "id": "lr",
     "code": "LR",
     "name": "Либерия",
     "tier": 3,
-    "population": "5.6M",
+    "population": "5.5 млн",
     "phoneCode": "+231 xx-xxx-xxx",
     "internetPenetration": "16%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Либерийский доллар",
@@ -7501,26 +7243,24 @@
     "flag": "🇱🇷",
     "aliases": [
       "Ліберія",
-      "Liberia",
-      "Republic of Liberia"
-    ],
-    "region": "Africa"
+      "Liberia"
+    ]
   },
   {
     "id": "lb",
     "code": "LB",
     "name": "Ливан",
     "tier": 3,
-    "population": "5.8M",
+    "population": "5 млн",
     "phoneCode": "+961 (xx) xxx-xxx",
     "internetPenetration": "76%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "Французский, Английский",
     "currency": "Ливанский фунт",
     "currencyCode": "LBP",
     "currencySymbol": "ل.ل",
-    "currencyExample": "ل.ل100",
+    "currencyExample": "100ل.ل",
     "avgSalaryLocal": "1,000,000 LBP",
     "avgSalaryUSD": "40 USD",
     "payments": [
@@ -7551,26 +7291,24 @@
     "flag": "🇱🇧",
     "aliases": [
       "Ліван",
-      "Lebanon",
-      "Lebanese Republic"
-    ],
-    "region": "Asia"
+      "Lebanon"
+    ]
   },
   {
     "id": "ly",
     "code": "LY",
     "name": "Ливия",
     "tier": 3,
-    "population": "7.4M",
+    "population": "7 млн",
     "phoneCode": "+218 (xx) xxx-xxxx",
     "internetPenetration": "54%",
-    "timezone": "UTC+01:00",
+    "timezone": "EET (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Ливийский динар",
     "currencyCode": "LYD",
     "currencySymbol": "ل.د",
-    "currencyExample": "ل.د100",
+    "currencyExample": "100ل.د",
     "avgSalaryLocal": "1,500 LYD",
     "avgSalaryUSD": "310 USD",
     "payments": [
@@ -7601,26 +7339,24 @@
     "flag": "🇱🇾",
     "aliases": [
       "Лівія",
-      "Libya",
-      "State of Libya"
-    ],
-    "region": "Africa"
+      "Libya"
+    ]
   },
   {
     "id": "mr",
     "code": "MR",
     "name": "Мавритания",
     "tier": 3,
-    "population": "5.2M",
+    "population": "5 млн",
     "phoneCode": "+222 xx-xx-xx-xx",
     "internetPenetration": "21%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Мавританская угия",
     "currencyCode": "MRU",
     "currencySymbol": "UM",
-    "currencyExample": "UM100",
+    "currencyExample": "100UM",
     "avgSalaryLocal": "10,000 MRO",
     "avgSalaryUSD": "270 USD",
     "payments": [
@@ -7651,20 +7387,18 @@
     "flag": "🇲🇷",
     "aliases": [
       "Мавританія",
-      "Mauritania",
-      "Islamic Republic of Mauritania"
-    ],
-    "region": "Africa"
+      "Mauritania"
+    ]
   },
   {
     "id": "mg",
     "code": "MG",
     "name": "Мадагаскар",
     "tier": 3,
-    "population": "32M",
+    "population": "30 млн",
     "phoneCode": "+261 xx-xx-xxxx",
     "internetPenetration": "22%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Малагасийский",
     "languageSecondary": "Французский",
     "currency": "Малагасийский ариари",
@@ -7701,20 +7435,18 @@
     "celebrities": [],
     "flag": "🇲🇬",
     "aliases": [
-      "Madagascar",
-      "Republic of Madagascar"
-    ],
-    "region": "Africa"
+      "Madagascar"
+    ]
   },
   {
     "id": "mw",
     "code": "MW",
     "name": "Малави",
     "tier": 3,
-    "population": "21.7M",
+    "population": "21 млн",
     "phoneCode": "+265 x-xxxx-xxxx",
     "internetPenetration": "18%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Английский",
     "languageSecondary": "Чичева",
     "currency": "Малавийская квача",
@@ -7751,26 +7483,24 @@
     "flag": "🇲🇼",
     "aliases": [
       "Малаві",
-      "Malawi",
-      "Republic of Malawi"
-    ],
-    "region": "Africa"
+      "Malawi"
+    ]
   },
   {
     "id": "ml",
     "code": "ML",
     "name": "Мали",
     "tier": 3,
-    "population": "24.5M",
+    "population": "24 млн",
     "phoneCode": "+223 xx-xx-xxxx",
     "internetPenetration": "17%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "Бамбара",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 XOF",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -7801,20 +7531,18 @@
     "flag": "🇲🇱",
     "aliases": [
       "Малі",
-      "Mali",
-      "Republic of Mali"
-    ],
-    "region": "Africa"
+      "Mali"
+    ]
   },
   {
     "id": "mh",
     "code": "MH",
     "name": "Маршалловы Острова",
     "tier": 3,
-    "population": "37.5K",
+    "population": "0.06 млн",
     "phoneCode": "+692 xxx-xxxx",
     "internetPenetration": "20%",
-    "timezone": "UTC+12:00",
+    "timezone": "MHT (UTC+12)",
     "language": "Маршалльский",
     "languageSecondary": "Английский",
     "currency": "Доллар США",
@@ -7851,17 +7579,15 @@
     "flag": "🇲🇭",
     "aliases": [
       "Маршаллові Острови",
-      "Marshall Islands",
-      "Republic of the Marshall Islands"
-    ],
-    "region": "Oceania"
+      "Marshall Islands"
+    ]
   },
   {
     "id": "mx",
     "code": "MX",
     "name": "Мексика",
     "tier": 3,
-    "population": "130.9M",
+    "population": "132 млн",
     "phoneCode": "+52 (xxx) xxx-xxxx",
     "internetPenetration": "75%",
     "timezone": "PST (UTC-8), MST (UTC-7), CST (UTC-6), EST (UTC-5)",
@@ -7900,26 +7626,24 @@
     "celebrities": [],
     "flag": "🇲🇽",
     "aliases": [
-      "Mexico",
-      "United Mexican States"
-    ],
-    "region": "Americas"
+      "Mexico"
+    ]
   },
   {
     "id": "mz",
     "code": "MZ",
     "name": "Мозамбик",
     "tier": 3,
-    "population": "34.6M",
+    "population": "34 млн",
     "phoneCode": "+258 xx-xxx-xxx",
     "internetPenetration": "17%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Португальский",
     "languageSecondary": "",
     "currency": "Мозамбикский метикал",
     "currencyCode": "MZN",
     "currencySymbol": "MT",
-    "currencyExample": "MT100",
+    "currencyExample": "100MT",
     "avgSalaryLocal": "20,000 MZN",
     "avgSalaryUSD": "310 USD",
     "payments": [
@@ -7950,26 +7674,24 @@
     "flag": "🇲🇿",
     "aliases": [
       "Мозамбік",
-      "Mozambique",
-      "Republic of Mozambique"
-    ],
-    "region": "Africa"
+      "Mozambique"
+    ]
   },
   {
     "id": "md",
     "code": "MD",
     "name": "Молдавия",
     "tier": 3,
-    "population": "2.4M",
+    "population": "2.5 млн",
     "phoneCode": "+373 (xx) xxx-xxx",
     "internetPenetration": "76%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Румынский",
     "languageSecondary": "Русский",
     "currency": "Молдавский лей",
     "currencyCode": "MDL",
     "currencySymbol": "L",
-    "currencyExample": "L100",
+    "currencyExample": "100L",
     "avgSalaryLocal": "8,000 MDL",
     "avgSalaryUSD": "440 USD",
     "payments": [
@@ -8000,17 +7722,15 @@
     "flag": "🇲🇩",
     "aliases": [
       "Молдова",
-      "Moldova",
-      "Republic of Moldova"
-    ],
-    "region": "Europe"
+      "Moldova"
+    ]
   },
   {
     "id": "mn",
     "code": "MN",
     "name": "Монголия",
     "tier": 3,
-    "population": "3.5M",
+    "population": "3.4 млн",
     "phoneCode": "+976 xx-xx-xxxx",
     "internetPenetration": "69%",
     "timezone": "ULAT (UTC+8), HOVT (UTC+7)",
@@ -8051,24 +7771,23 @@
     "aliases": [
       "Монголія",
       "Mongolia"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "mm",
     "code": "MM",
     "name": "Мьянма",
     "tier": 3,
-    "population": "54.5M",
+    "population": "54 млн",
     "phoneCode": "+95 (xx) xxx-xxx",
     "internetPenetration": "42%",
-    "timezone": "UTC+06:30",
+    "timezone": "MMT (UTC+6:30)",
     "language": "Бирманский",
     "languageSecondary": "",
     "currency": "Кьят",
     "currencyCode": "MMK",
-    "currencySymbol": "Ks",
-    "currencyExample": "Ks100",
+    "currencySymbol": "K",
+    "currencyExample": "K100",
     "avgSalaryLocal": "300,000 MMK",
     "avgSalaryUSD": "140 USD",
     "payments": [
@@ -8099,20 +7818,18 @@
     "flag": "🇲🇲",
     "aliases": [
       "М'янма",
-      "Myanmar",
-      "Republic of the Union of Myanmar"
-    ],
-    "region": "Asia"
+      "Myanmar"
+    ]
   },
   {
     "id": "na",
     "code": "NA",
     "name": "Намибия",
     "tier": 3,
-    "population": "3M",
+    "population": "2.8 млн",
     "phoneCode": "+264 xx-xxx-xxxx",
     "internetPenetration": "40%",
-    "timezone": "UTC+01:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Английский",
     "languageSecondary": "Африкаанс, Немецкий",
     "currency": "Намибийский доллар",
@@ -8149,20 +7866,18 @@
     "flag": "🇳🇦",
     "aliases": [
       "Намібія",
-      "Namibia",
-      "Republic of Namibia"
-    ],
-    "region": "Africa"
+      "Namibia"
+    ]
   },
   {
     "id": "nr",
     "code": "NR",
     "name": "Науру",
     "tier": 3,
-    "population": "11.9K",
+    "population": "0.01 млн",
     "phoneCode": "+674 xxx-xxxx",
     "internetPenetration": "57%",
-    "timezone": "UTC+12:00",
+    "timezone": "NRT (UTC+12)",
     "language": "Науруанский",
     "languageSecondary": "Английский",
     "currency": "Австралийский доллар",
@@ -8198,20 +7913,18 @@
     "celebrities": [],
     "flag": "🇳🇷",
     "aliases": [
-      "Nauru",
-      "Republic of Nauru"
-    ],
-    "region": "Oceania"
+      "Nauru"
+    ]
   },
   {
     "id": "np",
     "code": "NP",
     "name": "Непал",
     "tier": 3,
-    "population": "29.7M",
+    "population": "31 млн",
     "phoneCode": "+977 (xx) xxx-xxx",
     "internetPenetration": "38%",
-    "timezone": "UTC+05:45",
+    "timezone": "NPT (UTC+5:45)",
     "language": "Непальский",
     "languageSecondary": "",
     "currency": "Непальская рупия",
@@ -8247,26 +7960,24 @@
     "celebrities": [],
     "flag": "🇳🇵",
     "aliases": [
-      "Nepal",
-      "Federal Democratic Republic of Nepal"
-    ],
-    "region": "Asia"
+      "Nepal"
+    ]
   },
   {
     "id": "ne",
     "code": "NE",
     "name": "Нигер",
     "tier": 3,
-    "population": "27M",
+    "population": "27 млн",
     "phoneCode": "+227 xx-xx-xxxx",
     "internetPenetration": "10%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "100,000 XOF",
     "avgSalaryUSD": "170 USD",
     "payments": [
@@ -8297,20 +8008,18 @@
     "flag": "🇳🇪",
     "aliases": [
       "Нігер",
-      "Niger",
-      "Republic of Niger"
-    ],
-    "region": "Africa"
+      "Niger"
+    ]
   },
   {
     "id": "ng",
     "code": "NG",
     "name": "Нигерия",
     "tier": 3,
-    "population": "232.7M",
+    "population": "223 млн",
     "phoneCode": "+234 (xx) xxx-xxxx",
     "internetPenetration": "50%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Английский",
     "languageSecondary": "Хауса, Йоруба, Игбо",
     "currency": "Нигерийская найра",
@@ -8347,20 +8056,18 @@
     "flag": "🇳🇬",
     "aliases": [
       "Нігерія",
-      "Nigeria",
-      "Federal Republic of Nigeria"
-    ],
-    "region": "Africa"
+      "Nigeria"
+    ]
   },
   {
     "id": "ni",
     "code": "NI",
     "name": "Никарагуа",
     "tier": 3,
-    "population": "6.9M",
+    "population": "7 млн",
     "phoneCode": "+505 xxxx-xxxx",
     "internetPenetration": "32%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Никарагуанская кордоба",
@@ -8397,20 +8104,18 @@
     "flag": "🇳🇮",
     "aliases": [
       "Нікарагуа",
-      "Nicaragua",
-      "Republic of Nicaragua"
-    ],
-    "region": "Americas"
+      "Nicaragua"
+    ]
   },
   {
     "id": "pk",
     "code": "PK",
     "name": "Пакистан",
     "tier": 3,
-    "population": "251.3M",
+    "population": "240 млн",
     "phoneCode": "+92 (xx) xxx-xxxx",
     "internetPenetration": "25%",
-    "timezone": "UTC+05:00",
+    "timezone": "PKT (UTC+5)",
     "language": "Урду",
     "languageSecondary": "Английский",
     "currency": "Пакистанская рупия",
@@ -8446,20 +8151,18 @@
     "celebrities": [],
     "flag": "🇵🇰",
     "aliases": [
-      "Pakistan",
-      "Islamic Republic of Pakistan"
-    ],
-    "region": "Asia"
+      "Pakistan"
+    ]
   },
   {
     "id": "pg",
     "code": "PG",
     "name": "Папуа — Новая Гвинея",
     "tier": 3,
-    "population": "10.6M",
+    "population": "9.5 млн",
     "phoneCode": "+675 xxx-xxxx",
     "internetPenetration": "13%",
-    "timezone": "UTC+10:00",
+    "timezone": "PGT (UTC+10)",
     "language": "Английский",
     "languageSecondary": "Ток-Писин, Хири-Моту",
     "currency": "Кина",
@@ -8496,20 +8199,18 @@
     "flag": "🇵🇬",
     "aliases": [
       "Папуа Нова Гвінея",
-      "Papua New Guinea",
-      "Independent State of Papua New Guinea"
-    ],
-    "region": "Oceania"
+      "Papua New Guinea"
+    ]
   },
   {
     "id": "py",
     "code": "PY",
     "name": "Парагвай",
     "tier": 3,
-    "population": "6.9M",
+    "population": "7.4 млн",
     "phoneCode": "+595 (xx) xxx-xxx",
     "internetPenetration": "59%",
-    "timezone": "UTC-04:00",
+    "timezone": "PYST (UTC-3)",
     "language": "Испанский",
     "languageSecondary": "Гуарани",
     "currency": "Парагвайский гуарани",
@@ -8545,26 +8246,24 @@
     "celebrities": [],
     "flag": "🇵🇾",
     "aliases": [
-      "Paraguay",
-      "Republic of Paraguay"
-    ],
-    "region": "Americas"
+      "Paraguay"
+    ]
   },
   {
     "id": "cd",
     "code": "CD",
     "name": "Республика Конго",
     "tier": 3,
-    "population": "109.3M",
+    "population": "6 млн",
     "phoneCode": "242 xx-xxx-xx",
     "internetPenetration": "9%",
     "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "Лингала",
     "currency": "Франк КФА",
-    "currencyCode": "CDF",
-    "currencySymbol": "FC",
-    "currencyExample": "FC100",
+    "currencyCode": "XAF",
+    "currencySymbol": "Fr",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 XAF",
     "avgSalaryUSD": "320 USD",
     "payments": [
@@ -8596,27 +8295,24 @@
     "aliases": [
       "ДРК",
       "DRC",
-      "Congo DR",
-      "DR Congo",
-      "Democratic Republic of the Congo"
-    ],
-    "region": "Africa"
+      "Congo DR"
+    ]
   },
   {
     "id": "rw",
     "code": "RW",
     "name": "Руанда",
     "tier": 3,
-    "population": "14.3M",
+    "population": "14 млн",
     "phoneCode": "+250 xxx-xxxx",
     "internetPenetration": "29%",
-    "timezone": "UTC+02:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Киньяруанда",
     "languageSecondary": "Французский, Английский",
     "currency": "Руандийский франк",
     "currencyCode": "RWF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 RWF",
     "avgSalaryUSD": "180 USD",
     "payments": [
@@ -8646,20 +8342,18 @@
     "celebrities": [],
     "flag": "🇷🇼",
     "aliases": [
-      "Rwanda",
-      "Republic of Rwanda"
-    ],
-    "region": "Africa"
+      "Rwanda"
+    ]
   },
   {
     "id": "sv",
     "code": "SV",
     "name": "Сальвадор",
     "tier": 3,
-    "population": "6.3M",
+    "population": "6.5 млн",
     "phoneCode": "+503 xxxx-xxxx",
     "internetPenetration": "60%",
-    "timezone": "UTC-06:00",
+    "timezone": "CST (UTC-6)",
     "language": "Испанский",
     "languageSecondary": "",
     "currency": "Доллар США",
@@ -8695,20 +8389,18 @@
     "celebrities": [],
     "flag": "🇸🇻",
     "aliases": [
-      "El Salvador",
-      "Republic of El Salvador"
-    ],
-    "region": "Americas"
+      "El Salvador"
+    ]
   },
   {
     "id": "ws",
     "code": "WS",
     "name": "Самоа",
     "tier": 3,
-    "population": "218K",
+    "population": "0.2 млн",
     "phoneCode": "+685 xx-xxxx",
     "internetPenetration": "30%",
-    "timezone": "UTC+13:00",
+    "timezone": "WST (UTC+13)",
     "language": "Самоанский",
     "languageSecondary": "Английский",
     "currency": "Тала",
@@ -8744,26 +8436,24 @@
     "celebrities": [],
     "flag": "🇼🇸",
     "aliases": [
-      "Samoa",
-      "Independent State of Samoa"
-    ],
-    "region": "Oceania"
+      "Samoa"
+    ]
   },
   {
     "id": "st",
     "code": "ST",
     "name": "Сан-Томе и Принсипи",
     "tier": 3,
-    "population": "235.5K",
+    "population": "0.22 млн",
     "phoneCode": "+239 xx-xx-xx",
     "internetPenetration": "39%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Португальский",
     "languageSecondary": "",
     "currency": "Добра",
     "currencyCode": "STN",
     "currencySymbol": "Db",
-    "currencyExample": "Db100",
+    "currencyExample": "100Db",
     "avgSalaryLocal": "2,500 STN",
     "avgSalaryUSD": "100 USD",
     "payments": [
@@ -8795,27 +8485,24 @@
     "flag": "🇸🇹",
     "aliases": [
       "Сан-Томе і Принсіпі",
-      "Sao Tome and Principe",
-      "São Tomé and Príncipe",
-      "Democratic Republic of São Tomé and Príncipe"
-    ],
-    "region": "Africa"
+      "Sao Tome and Principe"
+    ]
   },
   {
     "id": "sz",
     "code": "SZ",
     "name": "Свазиленд",
     "tier": 3,
-    "population": "1.2M",
+    "population": "1.2 млн",
     "phoneCode": "+268 xx-xx-xxxx",
     "internetPenetration": "31%",
-    "timezone": "UTC+02:00",
+    "timezone": "SAST (UTC+2)",
     "language": "Свати",
     "languageSecondary": "Английский",
     "currency": "Свазилендский лилангени",
     "currencyCode": "SZL",
-    "currencySymbol": "L",
-    "currencyExample": "L100",
+    "currencySymbol": "E",
+    "currencyExample": "100E",
     "avgSalaryLocal": "5,000 SZL",
     "avgSalaryUSD": "270 USD",
     "payments": [
@@ -8846,26 +8533,24 @@
     "flag": "🇸🇿",
     "aliases": [
       "Свазіленд",
-      "Eswatini",
-      "Kingdom of Eswatini"
-    ],
-    "region": "Africa"
+      "Eswatini"
+    ]
   },
   {
     "id": "sn",
     "code": "SN",
     "name": "Сенегал",
     "tier": 3,
-    "population": "18.5M",
+    "population": "19 млн",
     "phoneCode": "+221 xx-xxx-xxxx",
     "internetPenetration": "34%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 XOF",
     "avgSalaryUSD": "340 USD",
     "payments": [
@@ -8895,20 +8580,18 @@
     "celebrities": [],
     "flag": "🇸🇳",
     "aliases": [
-      "Senegal",
-      "Republic of Senegal"
-    ],
-    "region": "Africa"
+      "Senegal"
+    ]
   },
   {
     "id": "sy",
     "code": "SY",
     "name": "Сирия",
     "tier": 3,
-    "population": "24.7M",
+    "population": "18 млн",
     "phoneCode": "+963 (xx) xxx-xxxx",
     "internetPenetration": "46%",
-    "timezone": "UTC+02:00",
+    "timezone": "EET (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "",
     "currency": "Сирийский фунт",
@@ -8945,20 +8628,18 @@
     "flag": "🇸🇾",
     "aliases": [
       "Сирія",
-      "Syria",
-      "Syrian Arab Republic"
-    ],
-    "region": "Asia"
+      "Syria"
+    ]
   },
   {
     "id": "sb",
     "code": "SB",
     "name": "Соломоновы Острова",
     "tier": 3,
-    "population": "819.2K",
+    "population": "0.7 млн",
     "phoneCode": "+677 xxx-xxxx",
     "internetPenetration": "16%",
-    "timezone": "UTC+11:00",
+    "timezone": "SBT (UTC+11)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Соломонов острова доллар",
@@ -8996,24 +8677,23 @@
     "aliases": [
       "Соломонові Острови",
       "Solomon Islands"
-    ],
-    "region": "Oceania"
+    ]
   },
   {
     "id": "so",
     "code": "SO",
     "name": "Сомали",
     "tier": 3,
-    "population": "19M",
+    "population": "18 млн",
     "phoneCode": "+252 (xx) xxx-xxx",
     "internetPenetration": "12%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Сомалийский",
     "languageSecondary": "Арабский",
     "currency": "Сомалийский шиллинг",
     "currencyCode": "SOS",
     "currencySymbol": "Sh",
-    "currencyExample": "Sh100",
+    "currencyExample": "100Sh",
     "avgSalaryLocal": "1,000,000 SOS",
     "avgSalaryUSD": "90 USD",
     "payments": [
@@ -9043,26 +8723,24 @@
     "celebrities": [],
     "flag": "🇸🇴",
     "aliases": [
-      "Somalia",
-      "Federal Republic of Somalia"
-    ],
-    "region": "Africa"
+      "Somalia"
+    ]
   },
   {
     "id": "sd",
     "code": "SD",
     "name": "Судан",
     "tier": 3,
-    "population": "50.4M",
+    "population": "48 млн",
     "phoneCode": "+249 (xx) xxx-xxxx",
     "internetPenetration": "28%",
-    "timezone": "UTC+03:00",
+    "timezone": "CAT (UTC+2)",
     "language": "Арабский",
     "languageSecondary": "Английский",
     "currency": "Суданский фунт",
     "currencyCode": "SDG",
-    "currencySymbol": "ج.س",
-    "currencyExample": "ج.س100",
+    "currencySymbol": "£",
+    "currencyExample": "100£",
     "avgSalaryLocal": "100,000 SDG",
     "avgSalaryUSD": "170 USD",
     "payments": [
@@ -9092,24 +8770,22 @@
     "celebrities": [],
     "flag": "🇸🇩",
     "aliases": [
-      "Sudan",
-      "Republic of the Sudan"
-    ],
-    "region": "Africa"
+      "Sudan"
+    ]
   },
   {
     "id": "sl",
     "code": "SL",
     "name": "Сьерра-Леоне",
     "tier": 3,
-    "population": "8.6M",
+    "population": "8.4 млн",
     "phoneCode": "+232 (xx) xxx-xxx",
     "internetPenetration": "16%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Английский",
     "languageSecondary": "",
     "currency": "Леоне",
-    "currencyCode": "SLE",
+    "currencyCode": "SLL",
     "currencySymbol": "Le",
     "currencyExample": "Le100",
     "avgSalaryLocal": "500,000 SLL",
@@ -9142,20 +8818,18 @@
     "flag": "🇸🇱",
     "aliases": [
       "Сьєрра-Леоне",
-      "Sierra Leone",
-      "Republic of Sierra Leone"
-    ],
-    "region": "Africa"
+      "Sierra Leone"
+    ]
   },
   {
     "id": "tj",
     "code": "TJ",
     "name": "Таджикистан",
     "tier": 3,
-    "population": "10.6M",
+    "population": "10 млн",
     "phoneCode": "+992 (xx) xxx-xxxx",
     "internetPenetration": "26%",
-    "timezone": "UTC+05:00",
+    "timezone": "TJT (UTC+5)",
     "language": "Таджикский",
     "languageSecondary": "Русский",
     "currency": "Таджикский сомони",
@@ -9191,26 +8865,24 @@
     "celebrities": [],
     "flag": "🇹🇯",
     "aliases": [
-      "Tajikistan",
-      "Republic of Tajikistan"
-    ],
-    "region": "Asia"
+      "Tajikistan"
+    ]
   },
   {
     "id": "tz",
     "code": "TZ",
     "name": "Танзания",
     "tier": 3,
-    "population": "68.6M",
+    "population": "67 млн",
     "phoneCode": "+255 (xx) xxx-xxxx",
     "internetPenetration": "28%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Суахили",
     "languageSecondary": "Английский",
     "currency": "Танзанийский шиллинг",
     "currencyCode": "TZS",
     "currencySymbol": "Sh",
-    "currencyExample": "Sh100",
+    "currencyExample": "100Sh",
     "avgSalaryLocal": "1,000,000 TZS",
     "avgSalaryUSD": "430 USD",
     "payments": [
@@ -9241,26 +8913,24 @@
     "flag": "🇹🇿",
     "aliases": [
       "Танзанія",
-      "Tanzania",
-      "United Republic of Tanzania"
-    ],
-    "region": "Africa"
+      "Tanzania"
+    ]
   },
   {
     "id": "tg",
     "code": "TG",
     "name": "Того",
     "tier": 3,
-    "population": "9.5M",
+    "population": "9.5 млн",
     "phoneCode": "+228 xx-xxx-xxx",
     "internetPenetration": "23%",
-    "timezone": "UTC",
+    "timezone": "GMT (UTC+0)",
     "language": "Французский",
     "languageSecondary": "",
     "currency": "Франк КФА",
     "currencyCode": "XOF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 XOF",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -9290,20 +8960,18 @@
     "celebrities": [],
     "flag": "🇹🇬",
     "aliases": [
-      "Togo",
-      "Togolese Republic"
-    ],
-    "region": "Africa"
+      "Togo"
+    ]
   },
   {
     "id": "to",
     "code": "TO",
     "name": "Тонга",
     "tier": 3,
-    "population": "104.2K",
+    "population": "0.1 млн",
     "phoneCode": "+676 xx-xxx",
     "internetPenetration": "41%",
-    "timezone": "UTC+13:00",
+    "timezone": "TOT (UTC+13)",
     "language": "Тонганский",
     "languageSecondary": "Английский",
     "currency": "Паанга",
@@ -9339,20 +9007,18 @@
     "celebrities": [],
     "flag": "🇹🇴",
     "aliases": [
-      "Tonga",
-      "Kingdom of Tonga"
-    ],
-    "region": "Oceania"
+      "Tonga"
+    ]
   },
   {
     "id": "tv",
     "code": "TV",
     "name": "Тувалу",
     "tier": 3,
-    "population": "9.6K",
+    "population": "0.01 млн",
     "phoneCode": "+688 xx-xxx",
     "internetPenetration": "48%",
-    "timezone": "UTC+12:00",
+    "timezone": "TVT (UTC+12)",
     "language": "Тувалуанский",
     "languageSecondary": "Английский",
     "currency": "Австралийский доллар",
@@ -9389,24 +9055,23 @@
     "flag": "🇹🇻",
     "aliases": [
       "Tuvalu"
-    ],
-    "region": "Oceania"
+    ]
   },
   {
     "id": "tm",
     "code": "TM",
     "name": "Туркмения",
     "tier": 3,
-    "population": "7.5M",
+    "population": "7 млн",
     "phoneCode": "+993 xx-xxx-xxx",
     "internetPenetration": "21%",
-    "timezone": "UTC+05:00",
+    "timezone": "TMT (UTC+5)",
     "language": "Туркменский",
     "languageSecondary": "Русский",
     "currency": "Туркменский манат",
     "currencyCode": "TMT",
     "currencySymbol": "m",
-    "currencyExample": "m100",
+    "currencyExample": "100m",
     "avgSalaryLocal": "1,000 TMT",
     "avgSalaryUSD": "280 USD",
     "payments": [
@@ -9438,24 +9103,23 @@
     "aliases": [
       "Туркменістан",
       "Turkmenistan"
-    ],
-    "region": "Asia"
+    ]
   },
   {
     "id": "ug",
     "code": "UG",
     "name": "Уганда",
     "tier": 3,
-    "population": "50M",
+    "population": "49 млн",
     "phoneCode": "+256 (xxx) xxx-xxx",
     "internetPenetration": "26%",
-    "timezone": "UTC+03:00",
+    "timezone": "Угандийский шиллинг (UGX) Символ: Sh",
     "language": "Английский",
     "languageSecondary": "Суахили",
     "currency": "Угандийский шиллинг",
     "currencyCode": "UGX",
     "currencySymbol": "Sh",
-    "currencyExample": "Sh100",
+    "currencyExample": "100Sh",
     "avgSalaryLocal": "1,500,000 UGX",
     "avgSalaryUSD": "400 USD",
     "payments": [
@@ -9485,26 +9149,24 @@
     "celebrities": [],
     "flag": "🇺🇬",
     "aliases": [
-      "Uganda",
-      "Republic of Uganda"
-    ],
-    "region": "Africa"
+      "Uganda"
+    ]
   },
   {
     "id": "uz",
     "code": "UZ",
     "name": "Узбекистан",
     "tier": 3,
-    "population": "36.4M",
+    "population": "36 млн",
     "phoneCode": "+998 xx-xxx-xx-xx",
     "internetPenetration": "61%",
-    "timezone": "UTC+05:00",
+    "timezone": "UZT (UTC+5)",
     "language": "Узбекский",
     "languageSecondary": "Русский",
     "currency": "Узбекский сум",
     "currencyCode": "UZS",
-    "currencySymbol": "so'm",
-    "currencyExample": "so'm100",
+    "currencySymbol": "сўм",
+    "currencyExample": "100сўм",
     "avgSalaryLocal": "2,000,000 UZS",
     "avgSalaryUSD": "170 USD",
     "payments": [
@@ -9534,17 +9196,15 @@
     "celebrities": [],
     "flag": "🇺🇿",
     "aliases": [
-      "Uzbekistan",
-      "Republic of Uzbekistan"
-    ],
-    "region": "Asia"
+      "Uzbekistan"
+    ]
   },
   {
     "id": "fm",
     "code": "FM",
     "name": "Федеративные Штаты Микронезии",
     "tier": 3,
-    "population": "113.2K",
+    "population": "0.1 млн",
     "phoneCode": "+691 xxx-xxxx",
     "internetPenetration": "33%",
     "timezone": "UTC+10, UTC+11",
@@ -9583,20 +9243,18 @@
     "celebrities": [],
     "flag": "🇫🇲",
     "aliases": [
-      "Micronesia",
-      "Federated States of Micronesia"
-    ],
-    "region": "Oceania"
+      "Micronesia"
+    ]
   },
   {
     "id": "fj",
     "code": "FJ",
     "name": "Фиджи",
     "tier": 3,
-    "population": "928.8K",
+    "population": "0.9 млн",
     "phoneCode": "+679 xx-xxxxx",
     "internetPenetration": "54%",
-    "timezone": "UTC+12:00",
+    "timezone": "FJT (UTC+12)",
     "language": "Английский",
     "languageSecondary": "Фиджийский, Хинди",
     "currency": "Фиджийский доллар",
@@ -9632,26 +9290,24 @@
     "celebrities": [],
     "flag": "🇫🇯",
     "aliases": [
-      "Fiji",
-      "Republic of Fiji"
-    ],
-    "region": "Oceania"
+      "Fiji"
+    ]
   },
   {
     "id": "cf",
     "code": "CF",
     "name": "Центральноафриканская Республика",
     "tier": 3,
-    "population": "5.3M",
+    "population": "5 млн",
     "phoneCode": "+236 xx-xx-xxxx",
     "internetPenetration": "8%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "Санго",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "100,000 XAF",
     "avgSalaryUSD": "160 USD",
     "payments": [
@@ -9683,26 +9339,24 @@
     "aliases": [
       "ЦАР",
       "Центральноафриканська Республіка",
-      "CAR",
-      "Central African Republic"
-    ],
-    "region": "Africa"
+      "CAR"
+    ]
   },
   {
     "id": "td",
     "code": "TD",
     "name": "Чад",
     "tier": 3,
-    "population": "20.3M",
+    "population": "18 млн",
     "phoneCode": "+235 xx-xx-xx-xx",
     "internetPenetration": "6%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Французский",
     "languageSecondary": "Арабский",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "150,000 XAF",
     "avgSalaryUSD": "250 USD",
     "payments": [
@@ -9732,26 +9386,24 @@
     "celebrities": [],
     "flag": "🇹🇩",
     "aliases": [
-      "Chad",
-      "Republic of Chad"
-    ],
-    "region": "Africa"
+      "Chad"
+    ]
   },
   {
     "id": "lk",
     "code": "LK",
     "name": "Шри-Ланка",
     "tier": 3,
-    "population": "21.9M",
+    "population": "22 млн",
     "phoneCode": "+94 (xx) xxx-xxxx",
     "internetPenetration": "52%",
-    "timezone": "UTC+05:30",
+    "timezone": "IST (UTC+5:30)",
     "language": "Сингальский",
     "languageSecondary": "Тамильский",
     "currency": "Шри-ланкийская рупия",
     "currencyCode": "LKR",
-    "currencySymbol": "Rs  රු",
-    "currencyExample": "Rs  රු100",
+    "currencySymbol": "₨",
+    "currencyExample": "₨100",
     "avgSalaryLocal": "50,000 LKR",
     "avgSalaryUSD": "150 USD",
     "payments": [
@@ -9782,26 +9434,24 @@
     "flag": "🇱🇰",
     "aliases": [
       "Шрі-Ланка",
-      "Sri Lanka",
-      "Democratic Socialist Republic of Sri Lanka"
-    ],
-    "region": "Asia"
+      "Sri Lanka"
+    ]
   },
   {
     "id": "gq",
     "code": "GQ",
     "name": "Экваториальная Гвинея",
     "tier": 3,
-    "population": "1.9M",
+    "population": "1.5 млн",
     "phoneCode": "+240 xx-xxx-xxxx",
     "internetPenetration": "26%",
-    "timezone": "UTC+01:00",
+    "timezone": "WAT (UTC+1)",
     "language": "Испанский",
     "languageSecondary": "Французский, Португальский",
     "currency": "Франк КФА",
     "currencyCode": "XAF",
     "currencySymbol": "Fr",
-    "currencyExample": "Fr100",
+    "currencyExample": "100Fr",
     "avgSalaryLocal": "200,000 XAF",
     "avgSalaryUSD": "320 USD",
     "payments": [
@@ -9832,26 +9482,24 @@
     "flag": "🇬🇶",
     "aliases": [
       "Екваторіальна Гвінея",
-      "Equatorial Guinea",
-      "Republic of Equatorial Guinea"
-    ],
-    "region": "Africa"
+      "Equatorial Guinea"
+    ]
   },
   {
     "id": "er",
     "code": "ER",
     "name": "Эритрея",
     "tier": 3,
-    "population": "3.5M",
+    "population": "6 млн",
     "phoneCode": "+291 x-xxx-xxx",
     "internetPenetration": "8%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Тигринья",
     "languageSecondary": "Арабский",
     "currency": "Накфа",
     "currencyCode": "ERN",
     "currencySymbol": "Nfk",
-    "currencyExample": "Nfk100",
+    "currencyExample": "100Nfk",
     "avgSalaryLocal": "10,000 ERN",
     "avgSalaryUSD": "660 USD",
     "payments": [
@@ -9882,26 +9530,24 @@
     "flag": "🇪🇷",
     "aliases": [
       "Еритрея",
-      "Eritrea",
-      "State of Eritrea"
-    ],
-    "region": "Africa"
+      "Eritrea"
+    ]
   },
   {
     "id": "et",
     "code": "ET",
     "name": "Эфиопия",
     "tier": 3,
-    "population": "132.1M",
+    "population": "126 млн",
     "phoneCode": "+251 (xx) xxx-xxxx",
     "internetPenetration": "23%",
-    "timezone": "UTC+03:00",
+    "timezone": "EAT (UTC+3)",
     "language": "Амхарский",
     "languageSecondary": "",
     "currency": "Эфиопский быр",
     "currencyCode": "ETB",
     "currencySymbol": "Br",
-    "currencyExample": "Br100",
+    "currencyExample": "100Br",
     "avgSalaryLocal": "5,000 ETB",
     "avgSalaryUSD": "90 USD",
     "payments": [
@@ -9932,10 +9578,8 @@
     "flag": "🇪🇹",
     "aliases": [
       "Ефіопія",
-      "Ethiopia",
-      "Federal Democratic Republic of Ethiopia"
-    ],
-    "region": "Africa"
+      "Ethiopia"
+    ]
   },
   {
     "id": "kp",
@@ -9952,17 +9596,7 @@
       "КНДР",
       "Северная Корея",
       "Північна Корея",
-      "North Korea",
-      "Democratic People's Republic of Korea"
-    ],
-    "region": "Asia",
-    "population": "26.5M",
-    "currencyCode": "KPW",
-    "currencySymbol": "₩",
-    "currencyExample": "₩100",
-    "timezone": "UTC+09:00",
-    "capital": "Pyongyang",
-    "language": "Korean",
-    "currency": "North Korean won"
+      "North Korea"
+    ]
   }
 ]
