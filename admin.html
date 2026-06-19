@@ -364,6 +364,11 @@
             <label class="form-label">Capital</label>
             <input class="form-input" id="f-capital" placeholder="London">
           </div>
+          <div class="form-group full">
+            <label class="form-label">Search Aliases / Alternative Names</label>
+            <input class="form-input" id="f-aliases" placeholder="e.g. Великобритания, Великобританія, UK, England">
+            <span class="form-hint">Comma separated. Used for Cyrillic and abbreviation search support.</span>
+          </div>
 
           <div class="form-section">💰 Economy</div>
 
@@ -644,12 +649,18 @@ function renderExport() {
   document.getElementById('export-area').textContent = JSON.stringify(geos, null, 2);
 }
 
+function cleanStr(s) {
+  return (s || '').toLowerCase().replace(/[\.\-\s,]/g, '');
+}
+
 function filterTable(val) {
-  const q = val.toLowerCase();
+  const cleanQ = cleanStr(val);
   const filtered = geos.filter(g =>
-    g.name.toLowerCase().includes(q) ||
-    g.code.toLowerCase().includes(q) ||
-    (g.region || '').toLowerCase().includes(q)
+    cleanStr(g.name).includes(cleanQ) ||
+    cleanStr(g.code).includes(cleanQ) ||
+    cleanStr(g.id || '').includes(cleanQ) ||
+    cleanStr(g.region || '').includes(cleanQ) ||
+    (g.aliases && g.aliases.some(alias => cleanStr(alias).includes(cleanQ)))
   );
   renderTable(filtered);
 }
@@ -723,6 +734,7 @@ function saveGeo() {
     restrictions: getRestrictions(),
     trafficSources: csv(document.getElementById('f-trafficSources').value),
     adNetworks: csv(document.getElementById('f-adNetworks').value),
+    aliases: csv(document.getElementById('f-aliases').value),
   };
 
   if (isEditing) {
@@ -747,7 +759,7 @@ function clearForm() {
     'f-currencyCode','f-currencySymbol','f-population','f-avgSalary','f-midCost',
     'f-internetPenetration','f-smartphoneUsage','f-avgCpm','f-fbCpm','f-googleCpm',
     'f-tiktokCpm','f-banks','f-operators','f-globalPayments','f-localPayments',
-    'f-verticals','f-trafficSources','f-adNetworks'];
+    'f-verticals','f-trafficSources','f-adNetworks','f-aliases'];
   ids.forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
   document.getElementById('f-tier').value = '1';
   document.getElementById('save-btn').dataset.editing = '';

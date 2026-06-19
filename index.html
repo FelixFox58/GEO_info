@@ -1256,174 +1256,1057 @@ function populateSelects() {
 
 // ---- original hardcoded data kept as fallback inside GEO_DATA ----
 const _FALLBACK = {
-  us: {
-    name: 'United States', code: 'US', flag: '🇺🇸', tier: 1, region: 'North America',
-    language: 'English', capital: 'Washington D.C.',
-    currency: 'US Dollar', currencyCode: 'USD', currencySymbol: '$',
-    population: '331M', avgSalary: '$60,000', midCost: '$2,000',
-    internetPenetration: '93%', smartphoneUsage: '81%',
-    avgCpm: '$5.50', fbCpm: '$5.50', googleCpm: '$8.20', tiktokCpm: '$3.10',
-    banks: ['Chase', 'Bank of America', 'Wells Fargo', 'Citibank'],
-    operators: ['Verizon', 'AT&T', 'T-Mobile', 'Sprint'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
-    localPayments: ['Venmo', 'Zelle', 'Cash App'],
-    verticals: ['Nutra', 'Finance', 'Dating', 'E-commerce', 'Crypto'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'limited' },
-      { name: 'Crypto Ads', status: 'limited' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+  "au": {
+    "id": "au",
+    "name": "Australia",
+    "code": "AU",
+    "flag": "🇦🇺",
+    "tier": 1,
+    "region": "Oceania",
+    "language": "English",
+    "capital": "Canberra",
+    "currency": "Australian Dollar",
+    "currencyCode": "AUD",
+    "currencySymbol": "$",
+    "population": "27.2M",
+    "avgSalary": "$52,000",
+    "midCost": "$1,900",
+    "internetPenetration": "91%",
+    "smartphoneUsage": "84%",
+    "avgCpm": "$11.04",
+    "fbCpm": "$11.04",
+    "googleCpm": "$15.50",
+    "tiktokCpm": "$3.20",
+    "banks": [
+      "Commonwealth",
+      "Westpac",
+      "ANZ",
+      "NAB"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads', 'Push Networks'],
-    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'RichAds', 'MGID'],
-  },
-  gb: {
-    name: 'United Kingdom', code: 'GB', flag: '🇬🇧', tier: 1, region: 'Europe',
-    language: 'English', capital: 'London',
-    currency: 'British Pound', currencyCode: 'GBP', currencySymbol: '£',
-    population: '67M', avgSalary: '$35,000', midCost: '$1,500',
-    internetPenetration: '95%', smartphoneUsage: '88%',
-    avgCpm: '$4.50', fbCpm: '$4.50', googleCpm: '$7.10', tiktokCpm: '$2.80',
-    banks: ['HSBC', 'Barclays', 'Lloyds', 'NatWest'],
-    operators: ['EE', 'Vodafone', 'O2', 'Three'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
-    localPayments: ['Open Banking', 'Revolut', 'Monzo'],
-    verticals: ['Gambling', 'Nutra', 'Finance', 'Dating', 'Crypto'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'limited' },
-      { name: 'Crypto Ads', status: 'allowed' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'limited' },
+    "operators": [
+      "Telstra",
+      "Optus",
+      "Vodafone"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads', 'Push Networks'],
-    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'RichAds', 'MGID'],
-  },
-  de: {
-    name: 'Germany', code: 'DE', flag: '🇩🇪', tier: 1, region: 'Europe',
-    language: 'German', capital: 'Berlin',
-    currency: 'Euro', currencyCode: 'EUR', currencySymbol: '€',
-    population: '84M', avgSalary: '$45,000', midCost: '$1,800',
-    internetPenetration: '92%', smartphoneUsage: '80%',
-    avgCpm: '$5.20', fbCpm: '$5.20', googleCpm: '$7.80', tiktokCpm: '$3.50',
-    banks: ['Deutsche Bank', 'Commerzbank', 'DZ Bank', 'N26'],
-    operators: ['T-Mobile', 'Vodafone', 'O2', 'E-Plus'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
-    localPayments: ['SEPA', 'Klarna', 'Sofort'],
-    verticals: ['Nutra', 'Finance', 'E-commerce', 'Dating'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'limited' },
-      { name: 'Crypto Ads', status: 'limited' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Apple Pay"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'Native Ads', 'Display'],
-    adNetworks: ['Taboola', 'Outbrain', 'MGID', 'Ströer'],
-  },
-  pl: {
-    name: 'Poland', code: 'PL', flag: '🇵🇱', tier: 2, region: 'Europe',
-    language: 'Polish', capital: 'Warsaw',
-    currency: 'Polish Zloty', currencyCode: 'PLN', currencySymbol: 'zł',
-    population: '38M', avgSalary: '$17,000', midCost: '$700',
-    internetPenetration: '84%', smartphoneUsage: '72%',
-    avgCpm: '$2.80', fbCpm: '$2.80', googleCpm: '$3.90', tiktokCpm: '$1.60',
-    banks: ['PKO Bank Polski', 'Bank Pekao', 'mBank', 'ING Bank Śląski'],
-    operators: ['Orange', 'Play', 'T-Mobile', 'Plus'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
-    localPayments: ['BLIK', 'Przelewy24', 'PayU'],
-    verticals: ['Nutra', 'Dating', 'Finance', 'Gambling'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'limited' },
-      { name: 'Crypto Ads', status: 'allowed' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "localPayments": [
+      "BPAY",
+      "PayID",
+      "Afterpay",
+      "POLi"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Push Networks'],
-    adNetworks: ['Taboola', 'PropellerAds', 'MGID', 'Zedo'],
-  },
-  br: {
-    name: 'Brazil', code: 'BR', flag: '🇧🇷', tier: 2, region: 'South America',
-    language: 'Portuguese', capital: 'Brasília',
-    currency: 'Brazilian Real', currencyCode: 'BRL', currencySymbol: 'R$',
-    population: '215M', avgSalary: '$8,000', midCost: '$600',
-    internetPenetration: '75%', smartphoneUsage: '71%',
-    avgCpm: '$2.10', fbCpm: '$2.10', googleCpm: '$3.20', tiktokCpm: '$1.20',
-    banks: ['Itaú', 'Bradesco', 'Caixa', 'Nubank'],
-    operators: ['Claro', 'Vivo', 'TIM', 'Oi'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
-    localPayments: ['Pix', 'Boleto', 'PicPay'],
-    verticals: ['Nutra', 'Dating', 'Finance', 'E-commerce'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'limited' },
-      { name: 'Crypto Ads', status: 'allowed' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "verticals": [
+      "Gambling",
+      "Nutra",
+      "Finance",
+      "Crypto",
+      "Dating"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Push Networks', 'Native Ads'],
-    adNetworks: ['Taboola', 'PropellerAds', 'MGID', 'RichAds'],
-  },
-  ca: {
-    name: 'Canada', code: 'CA', flag: '🇨🇦', tier: 1, region: 'North America',
-    language: 'English / French', capital: 'Ottawa',
-    currency: 'Canadian Dollar', currencyCode: 'CAD', currencySymbol: 'CA$',
-    population: '38M', avgSalary: '$48,000', midCost: '$1,700',
-    internetPenetration: '94%', smartphoneUsage: '82%',
-    avgCpm: '$4.80', fbCpm: '$4.80', googleCpm: '$7.40', tiktokCpm: '$3.00',
-    banks: ['RBC', 'TD Bank', 'Scotiabank', 'BMO'],
-    operators: ['Rogers', 'Bell', 'Telus', 'Shaw'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
-    localPayments: ['Interac', 'Koho'],
-    verticals: ['Gambling', 'Nutra', 'Finance', 'Crypto'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'allowed' },
-      { name: 'Crypto Ads', status: 'limited' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'Native Ads', 'Push Networks'],
-    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'MGID'],
-  },
-  au: {
-    name: 'Australia', code: 'AU', flag: '🇦🇺', tier: 1, region: 'Oceania',
-    language: 'English', capital: 'Canberra',
-    currency: 'Australian Dollar', currencyCode: 'AUD', currencySymbol: 'A$',
-    population: '26M', avgSalary: '$52,000', midCost: '$1,900',
-    internetPenetration: '91%', smartphoneUsage: '84%',
-    avgCpm: '$5.20', fbCpm: '$5.20', googleCpm: '$7.60', tiktokCpm: '$3.20',
-    banks: ['Commonwealth', 'Westpac', 'ANZ', 'NAB'],
-    operators: ['Telstra', 'Optus', 'Vodafone'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal', 'Apple Pay'],
-    localPayments: ['BPAY', 'PayID', 'Afterpay'],
-    verticals: ['Gambling', 'Nutra', 'Finance', 'Crypto', 'Dating'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'allowed' },
-      { name: 'Crypto Ads', status: 'limited' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Native Ads"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'TikTok Ads', 'Native Ads'],
-    adNetworks: ['Taboola', 'Outbrain', 'PropellerAds', 'MGID'],
-  },
-  in: {
-    name: 'India', code: 'IN', flag: '🇮🇳', tier: 2, region: 'Asia',
-    language: 'Hindi / English', capital: 'New Delhi',
-    currency: 'Indian Rupee', currencyCode: 'INR', currencySymbol: '₹',
-    population: '1.4B', avgSalary: '$3,000', midCost: '$300',
-    internetPenetration: '52%', smartphoneUsage: '54%',
-    avgCpm: '$0.80', fbCpm: '$0.80', googleCpm: '$1.20', tiktokCpm: '$0.50',
-    banks: ['SBI', 'HDFC', 'ICICI', 'Axis Bank'],
-    operators: ['Jio', 'Airtel', 'BSNL', 'Vi'],
-    globalPayments: ['Visa', 'Mastercard', 'PayPal'],
-    localPayments: ['UPI', 'Paytm', 'PhonePe', 'Google Pay'],
-    verticals: ['Nutra', 'Finance', 'Dating', 'E-commerce'],
-    restrictions: [
-      { name: 'Gambling Ads', status: 'banned' },
-      { name: 'Crypto Ads', status: 'limited' },
-      { name: 'Dating Ads', status: 'allowed' },
-      { name: 'Finance Ads', status: 'allowed' },
+    "adNetworks": [
+      "Taboola",
+      "Outbrain",
+      "PropellerAds",
+      "MGID"
     ],
-    trafficSources: ['Facebook Ads', 'Google Ads', 'Push Networks', 'Native Ads'],
-    adNetworks: ['PropellerAds', 'MGID', 'RichAds', 'Taboola'],
+    "phoneCode": "+61 (xxx) xxx-xxx",
+    "timezone": "AEST (UTC+10)",
+    "languageSecondary": "",
+    "currencyExample": "$100",
+    "avgSalaryLocal": "6,500 AUD",
+    "avgSalaryUSD": "4,200 USD",
+    "payments": [
+      "BPAY",
+      "PayID",
+      "Afterpay",
+      "POLi",
+      "PayPal",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Сидней",
+      "Мельбурн",
+      "Брисбен"
+    ],
+    "desktopShare": "58%",
+    "mobileShare": "42%",
+    "iosShare": "40%",
+    "androidShare": "60%",
+    "messengers": [
+      "Facebook Messenger",
+      "WhatsApp",
+      "iMessage",
+      "Snapchat"
+    ],
+    "socialNetworks": [
+      "Facebook",
+      "YouTube",
+      "Instagram",
+      "TikTok",
+      "Reddit",
+      "X",
+      "Pinterest"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Австралия",
+      "Австралія",
+      "Australia",
+      "Commonwealth of Australia"
+    ]
   },
+  "gb": {
+    "id": "gb",
+    "name": "United Kingdom",
+    "code": "GB",
+    "flag": "🇬🇧",
+    "tier": 1,
+    "region": "Europe",
+    "language": "English",
+    "capital": "London",
+    "currency": "British Pound",
+    "currencyCode": "GBP",
+    "currencySymbol": "£",
+    "population": "69.2M",
+    "avgSalary": "$35,000",
+    "midCost": "$1,500",
+    "internetPenetration": "95%",
+    "smartphoneUsage": "88%",
+    "avgCpm": "$10.85",
+    "fbCpm": "$10.85",
+    "googleCpm": "$15.00",
+    "tiktokCpm": "$2.80",
+    "banks": [
+      "HSBC",
+      "Barclays",
+      "Lloyds",
+      "NatWest"
+    ],
+    "operators": [
+      "EE",
+      "Vodafone",
+      "O2",
+      "Three"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Apple Pay"
+    ],
+    "localPayments": [
+      "Open Banking",
+      "Revolut",
+      "Monzo",
+      "Klarna",
+      "Clearpay"
+    ],
+    "verticals": [
+      "Gambling",
+      "Nutra",
+      "Finance",
+      "Dating",
+      "Crypto"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "limited"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Native Ads",
+      "Push Networks"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "Outbrain",
+      "PropellerAds",
+      "RichAds",
+      "MGID"
+    ],
+    "phoneCode": "+44 xxxx-xxxxxx",
+    "timezone": "GMT (UTC+0)",
+    "languageSecondary": "",
+    "currencyExample": "£100",
+    "avgSalaryLocal": "2,500 GBP",
+    "avgSalaryUSD": "3,100 USD",
+    "payments": [
+      "PayPal",
+      "Apple Pay",
+      "Google Pay",
+      "Revolut",
+      "Monzo",
+      "Klarna",
+      "Clearpay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Бирмингем",
+      "Манчестер",
+      "Ливерпуль"
+    ],
+    "desktopShare": "47%",
+    "mobileShare": "47%",
+    "iosShare": "45%",
+    "androidShare": "55%",
+    "messengers": [
+      "WhatsApp",
+      "Facebook Messenger",
+      "iMessage",
+      "Snapchat"
+    ],
+    "socialNetworks": [
+      "Facebook",
+      "YouTube",
+      "Instagram",
+      "TikTok",
+      "X",
+      "LinkedIn",
+      "Reddit"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Великобритания",
+      "Великобританія",
+      "UK",
+      "England",
+      "United Kingdom",
+      "United Kingdom of Great Britain and Northern Ireland"
+    ]
+  },
+  "de": {
+    "id": "de",
+    "name": "Germany",
+    "code": "DE",
+    "flag": "🇩🇪",
+    "tier": 1,
+    "region": "Europe",
+    "language": "German",
+    "capital": "Berlin",
+    "currency": "Euro",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "population": "83.5M",
+    "avgSalary": "$45,000",
+    "midCost": "$1,800",
+    "internetPenetration": "92%",
+    "smartphoneUsage": "80%",
+    "avgCpm": "$9.24",
+    "fbCpm": "$9.24",
+    "googleCpm": "$13.50",
+    "tiktokCpm": "$3.50",
+    "banks": [
+      "Deutsche Bank",
+      "Commerzbank",
+      "DZ Bank",
+      "N26"
+    ],
+    "operators": [
+      "T-Mobile",
+      "Vodafone",
+      "O2",
+      "E-Plus"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Apple Pay"
+    ],
+    "localPayments": [
+      "SEPA",
+      "Klarna",
+      "Sofort",
+      "Giropay"
+    ],
+    "verticals": [
+      "Nutra",
+      "Finance",
+      "E-commerce",
+      "Dating"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "Native Ads",
+      "Display"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "Outbrain",
+      "MGID",
+      "Ströer"
+    ],
+    "phoneCode": "+49 (xxx) xxx-xxxx",
+    "timezone": "UTC+01:00",
+    "languageSecondary": "",
+    "currencyExample": "€100",
+    "avgSalaryLocal": "3,200 EUR",
+    "avgSalaryUSD": "3,520 USD",
+    "payments": [
+      "PayPal",
+      "Klarna",
+      "Sofort",
+      "Giropay",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Гамбург",
+      "Мюнхен",
+      "Кёльн"
+    ],
+    "desktopShare": "51%",
+    "mobileShare": "46%",
+    "iosShare": "38.95%",
+    "androidShare": "60.07%",
+    "messengers": [
+      "WhatsApp",
+      "Facebook Messenger",
+      "Signal",
+      "Telegram"
+    ],
+    "socialNetworks": [
+      "Instagram",
+      "Facebook",
+      "TikTok",
+      "YouTube",
+      "Pinterest",
+      "Reddit"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Германия",
+      "Німеччина",
+      "Germany",
+      "Federal Republic of Germany"
+    ]
+  },
+  "ca": {
+    "id": "ca",
+    "name": "Canada",
+    "code": "CA",
+    "flag": "🇨🇦",
+    "tier": 1,
+    "region": "Americas",
+    "language": "English / French",
+    "capital": "Ottawa",
+    "currency": "Canadian Dollar",
+    "currencyCode": "CAD",
+    "currencySymbol": "$",
+    "population": "41.3M",
+    "avgSalary": "$48,000",
+    "midCost": "$1,700",
+    "internetPenetration": "94%",
+    "smartphoneUsage": "82%",
+    "avgCpm": "$14.03",
+    "fbCpm": "$14.03",
+    "googleCpm": "$19.50",
+    "tiktokCpm": "$3.00",
+    "banks": [
+      "RBC",
+      "TD Bank",
+      "Scotiabank",
+      "BMO"
+    ],
+    "operators": [
+      "Rogers",
+      "Bell",
+      "Telus",
+      "Shaw"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Apple Pay"
+    ],
+    "localPayments": [
+      "Interac",
+      "Koho"
+    ],
+    "verticals": [
+      "Gambling",
+      "Nutra",
+      "Finance",
+      "Crypto"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "Native Ads",
+      "Push Networks"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "Outbrain",
+      "PropellerAds",
+      "MGID"
+    ],
+    "phoneCode": "+1 (xxx) xxx-xxxx",
+    "timezone": "PST (UTC-8), MST (UTC-7), CST (UTC-6), EST (UTC-5), AST (UTC-4), NST (UTC-3:30)",
+    "languageSecondary": "Французский",
+    "currencyExample": "$100",
+    "avgSalaryLocal": "4,000 CAD",
+    "avgSalaryUSD": "2,940 USD",
+    "payments": [
+      "Interac",
+      "Koho",
+      "PayPal",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Торонто",
+      "Монреаль",
+      "Ванкувер"
+    ],
+    "desktopShare": "56%",
+    "mobileShare": "39%",
+    "iosShare": "45%",
+    "androidShare": "55%",
+    "messengers": [
+      "Facebook Messenger",
+      "iMessage",
+      "WhatsApp",
+      "Snapchat"
+    ],
+    "socialNetworks": [
+      "Facebook",
+      "YouTube",
+      "Instagram",
+      "TikTok",
+      "Reddit",
+      "X",
+      "Pinterest"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Канада",
+      "Canada"
+    ]
+  },
+  "us": {
+    "id": "us",
+    "name": "United States",
+    "code": "US",
+    "flag": "🇺🇸",
+    "tier": 1,
+    "region": "Americas",
+    "language": "English",
+    "capital": "Washington D.C.",
+    "currency": "US Dollar",
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "population": "340.1M",
+    "avgSalary": "$60,000",
+    "midCost": "$2,000",
+    "internetPenetration": "93%",
+    "smartphoneUsage": "81%",
+    "avgCpm": "$20.48",
+    "fbCpm": "$20.48",
+    "googleCpm": "$28.50",
+    "tiktokCpm": "$3.10",
+    "banks": [
+      "Chase",
+      "Bank of America",
+      "Wells Fargo",
+      "Citibank"
+    ],
+    "operators": [
+      "Verizon",
+      "AT&T",
+      "T-Mobile",
+      "Sprint"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal",
+      "Apple Pay"
+    ],
+    "localPayments": [
+      "Venmo",
+      "Zelle",
+      "Cash App",
+      "Apple Pay",
+      "Google Pay"
+    ],
+    "verticals": [
+      "Nutra",
+      "Finance",
+      "Dating",
+      "E-commerce",
+      "Crypto"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Native Ads",
+      "Push Networks"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "Outbrain",
+      "PropellerAds",
+      "RichAds",
+      "MGID"
+    ],
+    "phoneCode": "+1 (xxx) xxx-xxxx",
+    "timezone": "PST (UTC-8), MST (UTC-7), CST (UTC-6), EST (UTC-5)",
+    "languageSecondary": "",
+    "currencyExample": "$100",
+    "avgSalaryLocal": "4,500 USD",
+    "avgSalaryUSD": "4,500 USD",
+    "payments": [
+      "PayPal",
+      "Venmo",
+      "Zelle",
+      "Cash App",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Нью-Йорк",
+      "Лос-Анджелес",
+      "Чикаго"
+    ],
+    "desktopShare": "50%",
+    "mobileShare": "50%",
+    "iosShare": "40%",
+    "androidShare": "60%",
+    "messengers": [
+      "iMessage",
+      "Facebook Messenger",
+      "WhatsApp",
+      "Snapchat"
+    ],
+    "socialNetworks": [
+      "Facebook",
+      "YouTube",
+      "Instagram",
+      "TikTok",
+      "Reddit",
+      "Pinterest",
+      "X"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "США",
+      "USA",
+      "America",
+      "United States",
+      "United States of America"
+    ]
+  },
+  "br": {
+    "id": "br",
+    "name": "Brazil",
+    "code": "BR",
+    "flag": "🇧🇷",
+    "tier": 2,
+    "region": "Americas",
+    "language": "Portuguese",
+    "capital": "Brasília",
+    "currency": "Brazilian Real",
+    "currencyCode": "BRL",
+    "currencySymbol": "R$",
+    "population": "212M",
+    "avgSalary": "$8,000",
+    "midCost": "$600",
+    "internetPenetration": "75%",
+    "smartphoneUsage": "71%",
+    "avgCpm": "$2.10",
+    "fbCpm": "$2.10",
+    "googleCpm": "$3.20",
+    "tiktokCpm": "$1.20",
+    "banks": [
+      "Itaú",
+      "Bradesco",
+      "Caixa",
+      "Nubank"
+    ],
+    "operators": [
+      "Claro",
+      "Vivo",
+      "TIM",
+      "Oi"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal"
+    ],
+    "localPayments": [
+      "Pix",
+      "Boleto",
+      "PicPay",
+      "Mercado Pago"
+    ],
+    "verticals": [
+      "Nutra",
+      "Dating",
+      "Finance",
+      "E-commerce"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Push Networks",
+      "Native Ads"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "PropellerAds",
+      "MGID",
+      "RichAds"
+    ],
+    "phoneCode": "+55 (xx) xxxx-xxxx",
+    "timezone": "BRT (UTC-3)",
+    "languageSecondary": "",
+    "currencyExample": "R$100",
+    "avgSalaryLocal": "2,500 BRL",
+    "avgSalaryUSD": "480 USD",
+    "payments": [
+      "Pix",
+      "Boleto",
+      "PicPay",
+      "Mercado Pago",
+      "PayPal",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Сан-Паулу",
+      "Рио-де-Жанейро",
+      "Салвадор"
+    ],
+    "desktopShare": "50%",
+    "mobileShare": "50%",
+    "iosShare": "15%",
+    "androidShare": "85%",
+    "messengers": [
+      "WhatsApp",
+      "Facebook Messenger",
+      "Telegram"
+    ],
+    "socialNetworks": [
+      "Instagram",
+      "Facebook",
+      "TikTok",
+      "YouTube",
+      "Kwai",
+      "X",
+      "Pinterest"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Бразилия",
+      "Бразилія",
+      "Brazil",
+      "Federative Republic of Brazil"
+    ]
+  },
+  "in": {
+    "id": "in",
+    "name": "India",
+    "code": "IN",
+    "flag": "🇮🇳",
+    "tier": 2,
+    "region": "Asia",
+    "language": "Hindi / English",
+    "capital": "New Delhi",
+    "currency": "Indian Rupee",
+    "currencyCode": "INR",
+    "currencySymbol": "₹",
+    "population": "1.5B",
+    "avgSalary": "$3,000",
+    "midCost": "$300",
+    "internetPenetration": "52%",
+    "smartphoneUsage": "54%",
+    "avgCpm": "$0.85",
+    "fbCpm": "$0.85",
+    "googleCpm": "$1.20",
+    "tiktokCpm": "$0.50",
+    "banks": [
+      "SBI",
+      "HDFC",
+      "ICICI",
+      "Axis Bank"
+    ],
+    "operators": [
+      "Jio",
+      "Airtel",
+      "BSNL",
+      "Vi"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal"
+    ],
+    "localPayments": [
+      "UPI",
+      "Paytm",
+      "PhonePe",
+      "Google Pay",
+      "RuPay"
+    ],
+    "verticals": [
+      "Nutra",
+      "Finance",
+      "Dating",
+      "E-commerce"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "banned"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "Push Networks",
+      "Native Ads"
+    ],
+    "adNetworks": [
+      "PropellerAds",
+      "MGID",
+      "RichAds",
+      "Taboola"
+    ],
+    "phoneCode": "+91 (xxxx) xxx-xxx",
+    "timezone": "UTC+05:30",
+    "languageSecondary": "Английский, Хинглиш",
+    "currencyExample": "₹100",
+    "avgSalaryLocal": "25,000 INR",
+    "avgSalaryUSD": "300 USD",
+    "payments": [
+      "UPI",
+      "Paytm",
+      "PhonePe",
+      "Google Pay",
+      "RuPay",
+      "PayPal",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Мумбаи",
+      "Бангалор",
+      "Хайдарабад"
+    ],
+    "desktopShare": "26%",
+    "mobileShare": "74%",
+    "iosShare": "5%",
+    "androidShare": "95%",
+    "messengers": [
+      "WhatsApp",
+      "Telegram",
+      "Facebook Messenger"
+    ],
+    "socialNetworks": [
+      "Instagram",
+      "YouTube",
+      "Facebook",
+      "ShareChat",
+      "Moj",
+      "LinkedIn",
+      "X"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Индия",
+      "Індія",
+      "India",
+      "Republic of India"
+    ]
+  },
+  "pl": {
+    "id": "pl",
+    "name": "Poland",
+    "code": "PL",
+    "flag": "🇵🇱",
+    "tier": 2,
+    "region": "Europe",
+    "language": "Polish",
+    "capital": "Warsaw",
+    "currency": "Polish Zloty",
+    "currencyCode": "PLN",
+    "currencySymbol": "zł",
+    "population": "36.6M",
+    "avgSalary": "$17,000",
+    "midCost": "$700",
+    "internetPenetration": "84%",
+    "smartphoneUsage": "72%",
+    "avgCpm": "$4.50",
+    "fbCpm": "$4.50",
+    "googleCpm": "$6.00",
+    "tiktokCpm": "$1.60",
+    "banks": [
+      "PKO Bank Polski",
+      "Bank Pekao",
+      "mBank",
+      "ING Bank Śląski"
+    ],
+    "operators": [
+      "Orange",
+      "Play",
+      "T-Mobile",
+      "Plus"
+    ],
+    "globalPayments": [
+      "Visa",
+      "Mastercard",
+      "PayPal"
+    ],
+    "localPayments": [
+      "BLIK",
+      "Przelewy24",
+      "PayU"
+    ],
+    "verticals": [
+      "Nutra",
+      "Dating",
+      "Finance",
+      "Gambling"
+    ],
+    "restrictions": [
+      {
+        "name": "Gambling Ads",
+        "status": "limited"
+      },
+      {
+        "name": "Crypto Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Dating Ads",
+        "status": "allowed"
+      },
+      {
+        "name": "Finance Ads",
+        "status": "allowed"
+      }
+    ],
+    "trafficSources": [
+      "Facebook Ads",
+      "Google Ads",
+      "TikTok Ads",
+      "Push Networks"
+    ],
+    "adNetworks": [
+      "Taboola",
+      "PropellerAds",
+      "MGID",
+      "Zedo"
+    ],
+    "phoneCode": "+48 (xx) xxx-xx-xx",
+    "timezone": "UTC+01:00",
+    "languageSecondary": "",
+    "currencyExample": "zł100",
+    "avgSalaryLocal": "5,000 PLN",
+    "avgSalaryUSD": "1,200 USD",
+    "payments": [
+      "BLIK",
+      "Przelewy24",
+      "PayU",
+      "PayPal",
+      "Apple Pay",
+      "Google Pay",
+      "Visa",
+      "Mastercard"
+    ],
+    "majorCities": [
+      "Краков",
+      "Лодзь",
+      "Вроцлав"
+    ],
+    "desktopShare": "51%",
+    "mobileShare": "46%",
+    "iosShare": "30%",
+    "androidShare": "70%",
+    "messengers": [
+      "Facebook Messenger",
+      "WhatsApp",
+      "Discord",
+      "Telegram"
+    ],
+    "socialNetworks": [
+      "Facebook",
+      "YouTube",
+      "Instagram",
+      "TikTok",
+      "Pinterest",
+      "X"
+    ],
+    "yellowPress": [],
+    "youtubeChannels": [],
+    "celebrities": [],
+    "aliases": [
+      "Польша",
+      "Польща",
+      "Poland",
+      "Republic of Poland"
+    ]
+  }
 };
 // _FALLBACK loaded — id injected by initData()
 
@@ -1687,18 +2570,24 @@ function gotoGeo(id) {
   window.open(`geo.html?id=${id}`, '_blank');
 }
 
+function cleanStr(s) {
+  return (s || '').toLowerCase().replace(/[\.\-\s,]/g, '');
+}
+
 function onSearchInput(val) {
-  const q = val.trim().toLowerCase();
+  const cleanQ = cleanStr(val);
   const drop = document.getElementById('search-dropdown');
   searchFocusIdx = -1;
 
-  if (!q) { drop.classList.remove('open'); return; }
+  if (!cleanQ) { drop.classList.remove('open'); return; }
 
-  const results = GEOS_ARRAY.filter(g =>
-    g.name.toLowerCase().includes(q) ||
-    g.code.toLowerCase().startsWith(q) ||
-    g.id.toLowerCase().startsWith(q)
-  ).slice(0, 8);
+  const results = GEOS_ARRAY.filter(g => {
+    const nameMatch = cleanStr(g.name).includes(cleanQ);
+    const codeMatch = cleanStr(g.code).startsWith(cleanQ);
+    const idMatch = cleanStr(g.id).startsWith(cleanQ);
+    const aliasMatch = g.aliases && g.aliases.some(alias => cleanStr(alias).includes(cleanQ));
+    return nameMatch || codeMatch || idMatch || aliasMatch;
+  }).slice(0, 8);
 
   if (!results.length) {
     drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
@@ -1706,17 +2595,26 @@ function onSearchInput(val) {
     return;
   }
 
-  drop.innerHTML = results.map((g, i) => `
-    <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
-      <span class="search-drop-flag">${g.flag}</span>
-      <div class="search-drop-info">
-        <div class="search-drop-name">${hlMatch(g.name, q)}</div>
-        <div class="search-drop-meta">${g.region} · ${g.language}</div>
-      </div>
-      <span class="search-drop-code">${hlMatch(g.code, q.toUpperCase())}</span>
-      <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier}</span>
-    </a>
-  `).join('') + `
+  drop.innerHTML = results.map((g, i) => {
+    // Show matching alias as secondary name if it's not already in the main name
+    let matchedAlias = "";
+    if (g.aliases && !cleanStr(g.name).includes(cleanQ)) {
+      const found = g.aliases.find(alias => cleanStr(alias).includes(cleanQ));
+      if (found) matchedAlias = ` (${found})`;
+    }
+
+    return `
+      <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
+        <span class="search-drop-flag">${g.flag}</span>
+        <div class="search-drop-info">
+          <div class="search-drop-name">${hlMatch(g.name, val)}${matchedAlias ? `<span style="font-weight: 400; font-size: 12px; color: var(--text-secondary);">${hlMatch(matchedAlias, val)}</span>` : ''}</div>
+          <div class="search-drop-meta">${g.region} · ${g.language}</div>
+        </div>
+        <span class="search-drop-code">${hlMatch(g.code, val.toUpperCase())}</span>
+        <span class="search-drop-tier tier-badge t${g.tier}">T${g.tier}</span>
+      </a>
+    `;
+  }).join('') + `
     <div class="search-drop-footer">
       <span><kbd>↑↓</kbd> navigate</span>
       <span><kbd>Enter</kbd> open</span>
@@ -1726,11 +2624,42 @@ function onSearchInput(val) {
 }
 
 function hlMatch(text, q) {
+  if (!q) return text;
   const idx = text.toLowerCase().indexOf(q.toLowerCase());
-  if (idx === -1) return text;
-  return text.slice(0, idx) +
-    `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+q.length)}</mark>` +
-    text.slice(idx + q.length);
+  if (idx !== -1) {
+    return text.slice(0, idx) +
+      `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+q.length)}</mark>` +
+      text.slice(idx + q.length);
+  }
+  const cleanQ = cleanStr(q);
+  if (cleanQ.length > 0) {
+    for (let i = 0; i < text.length; i++) {
+      let textIdx = i;
+      let qIdx = 0;
+      while (textIdx < text.length && qIdx < cleanQ.length) {
+        const char = text[textIdx].toLowerCase();
+        if (/[\.\-\s,]/.test(char)) {
+          textIdx++;
+          continue;
+        }
+        if (char === cleanQ[qIdx]) {
+          textIdx++;
+          qIdx++;
+        } else {
+          break;
+        }
+      }
+      if (qIdx === cleanQ.length) {
+        while (textIdx < text.length && /[\.\-\s,]/.test(text[textIdx])) {
+          textIdx++;
+        }
+        return text.slice(0, i) +
+          `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(i, textIdx)}</mark>` +
+          text.slice(textIdx);
+      }
+    }
+  }
+  return text;
 }
 
 function onSearchKey(e) {
@@ -1757,15 +2686,49 @@ function onSearchKey(e) {
 }
 
 function doSearch() {
-  const val = document.getElementById('search-input').value.trim().toLowerCase();
+  const val = document.getElementById('search-input').value.trim();
   if (!val) return;
-  const match = GEOS_ARRAY.find(g =>
-    g.id === val || g.code.toLowerCase() === val ||
-    g.name.toLowerCase() === val || g.name.toLowerCase().startsWith(val)
+  const cleanQ = cleanStr(val);
+
+  // Try exact match first (by id, code, name, or alias)
+  let match = GEOS_ARRAY.find(g =>
+    g.id.toLowerCase() === cleanQ ||
+    g.code.toLowerCase() === cleanQ ||
+    cleanStr(g.name) === cleanQ ||
+    (g.aliases && g.aliases.some(alias => cleanStr(alias) === cleanQ))
   );
-  if (match) window.open(`geo.html?id=${match.id}`, '_blank');
+
+  // If no exact match, try prefix match
+  if (!match) {
+    match = GEOS_ARRAY.find(g =>
+      cleanStr(g.name).startsWith(cleanQ) ||
+      cleanStr(g.code).startsWith(cleanQ) ||
+      cleanStr(g.id).startsWith(cleanQ) ||
+      (g.aliases && g.aliases.some(alias => cleanStr(alias).startsWith(cleanQ)))
+    );
+  }
+
+  // If no prefix match, try contains match
+  if (!match) {
+    match = GEOS_ARRAY.find(g =>
+      cleanStr(g.name).includes(cleanQ) ||
+      cleanStr(g.code).includes(cleanQ) ||
+      cleanStr(g.id).includes(cleanQ) ||
+      (g.aliases && g.aliases.some(alias => cleanStr(alias).includes(cleanQ)))
+    );
+  }
+
+  if (match) {
+    gotoGeo(match.id);
+  } else {
+    const firstItem = document.querySelector('#search-dropdown .search-drop-item');
+    if (firstItem) {
+      firstItem.click();
+    }
+  }
   document.getElementById('search-dropdown').classList.remove('open');
 }
+
 
 function filterSearch(val) {} // compat stub
 
