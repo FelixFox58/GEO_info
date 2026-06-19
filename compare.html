@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare GEOs — GeoInfo Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --bg: #F5F4F1;
+    --surface: #FFFFFF;
+    --surface-2: #EDECE9;
+    --border: #E2E0DB;
+    --text-primary: #0F0E0C;
+    --text-secondary: #6B6860;
+    --text-muted: #9B9890;
+    --accent: #5B4FE8;
+    --accent-light: #EBE9FC;
+    --accent-hover: #4A3FD4;
+    --green: #1A9E5C;
+    --green-light: #E3F5EC;
+    --orange: #E07A30;
+    --orange-light: #FDF0E5;
+    --red: #D94040;
+    --red-light: #FDE8E8;
+    --tier1: #8854d0;
+    --tier2: #00d2d3;
+    --tier3: #ff9f43;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding-top: 70px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(245, 244, 241, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .logo-icon {
+    font-size: 22px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+  }
+  .nav-actions { display: flex; gap: 12px; }
+  .btn-ghost {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .btn-ghost:hover {
+    background: var(--border);
+    color: var(--text-primary);
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+
+  .header-section {
+    margin-bottom: 32px;
+  }
+  .header-section h1 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .header-section p {
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  /* SELECTORS BAR */
+  .selectors-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+  }
+  .selectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .selectors-grid { grid-template-columns: 1fr; }
+  }
+  .select-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .select-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+  .geo-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .geo-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+  }
+
+  /* CHARTS SECTION */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 900px) {
+    .charts-grid { grid-template-columns: 1fr; }
+  }
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .chart-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+  }
+  .chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+
+  /* DEVICE SHARE RING CONTAINER */
+  .device-share-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .device-card {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .device-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+  }
+  .ring-svg-wrap {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 12px;
+  }
+  .ring-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .device-stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .stat-label-ios { color: #555; }
+  .stat-label-android { color: #888; }
+
+  /* DETAILS TABLE */
+  .table-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .compare-table th, .compare-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .compare-table th {
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: var(--bg);
+  }
+  .compare-table th:first-child, .compare-table td:first-child {
+    font-weight: 700;
+    color: var(--text-secondary);
+    width: 200px;
+  }
+  .compare-table tr:last-child td {
+    border-bottom: none;
+  }
+  .compare-table td.col-val {
+    width: calc((100% - 200px) / 3);
+  }
+  .compare-val-flag {
+    font-size: 24px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .compare-val-name {
+    font-weight: 700;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  .tier-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tier-badge.t1 { background: #EBE9FC; color: #8854d0; }
+  .tier-badge.t2 { background: #E3F5EC; color: #00d2d3; }
+  .tier-badge.t3 { background: #FDF0E5; color: #ff9f43; }
+
+  .tag-pill {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">🌍</div>
+      Geo<span>Info</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">GEO Database</a></li>
+      <li><a href="compare.html" class="active">Compare Dashboard</a></li>
+      <li><a href="index.html#rankings">Rankings</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-ghost" title="Account">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="header-section">
+    <h1>Compare GEOs</h1>
+    <p>Compare marketing parameters, traffic tiers, device shares, and rates side-by-side for up to 3 countries.</p>
+  </div>
+
+  <div class="selectors-card">
+    <div class="selectors-grid">
+      <div class="select-wrap">
+        <label class="select-label" for="select-a">Country A</label>
+        <select id="select-a" class="geo-select" onchange="onSelectChange()"></select>
+      </div>
+      <div class="select-wrap">
+        <label class="select-label" for="select-b">Country B</label>
+        <select id="select-b" class="geo-select" onchange="onSelectChange()"></select>
+      </div>
+      <div class="select-wrap">
+        <label class="select-label" for="select-c">Country C</label>
+        <select id="select-c" class="geo-select" onchange="onSelectChange()"></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-title">Ad Networks CPM Comparison (USD)</div>
+      <div class="chart-container">
+        <canvas id="cpmChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Avg Salary vs Cost of Living (USD / mo)</div>
+      <div class="chart-container">
+        <canvas id="salaryCostChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-bottom: 32px;">
+    <div class="chart-title">Mobile OS Share (iOS vs Android)</div>
+    <div class="device-share-row" id="device-share-row">
+      <!-- Device progress indicators injected here -->
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="chart-title">Side-by-Side Specifications</div>
+    <table class="compare-table">
+      <thead>
+        <tr id="table-head">
+          <th>Metric</th>
+          <th>Country A</th>
+          <th>Country B</th>
+          <th>Country C</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Specs injected here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+let GEOS_ARRAY = [];
+let GEO_DATA = {};
+let cpmChartInstance = null;
+let salaryChartInstance = null;
+
+// Standard fallback entries
+const _FALLBACK = {
+  "es": { "name": "Spain", "code": "ES", "flag": "🇪🇸", "tier": 1, "region": "Europe", "language": "Spanish", "population": "47.5M", "currencyCode": "EUR", "avgSalary": "$2,300", "midCost": "$1,400", "internetPenetration": "94%", "smartphoneUsage": "80%", "fbCpm": "$3.85", "googleCpm": "$4.50", "tiktokCpm": "$1.20", "banks": ["Santander","BBVA","CaixaBank"], "operators": ["Movistar","Vodafone","Orange"], "payments": ["Bizum","Visa","Mastercard","PayPal"], "verticals": ["E-commerce","Finance","Sweepstakes"], "restrictions": [{"name":"Gambling Ads","status":"limited"}] },
+  "ua": { "name": "Ukraine", "code": "UA", "flag": "🇺🇦", "tier": 3, "region": "Europe", "language": "Ukrainian", "population": "38.0M", "currencyCode": "UAH", "avgSalary": "$450", "midCost": "$350", "internetPenetration": "86%", "smartphoneUsage": "74%", "fbCpm": "$0.90", "googleCpm": "$1.10", "tiktokCpm": "$0.30", "banks": ["PrivatBank","Monobank","Oschadbank"], "operators": ["Kyivstar","Vodafone","Lifecell"], "payments": ["MonoPay","LiqPay","Visa","Mastercard","Privat24"], "verticals": ["Nutra","Finance","Crypto","Utilities"], "restrictions": [] },
+  "us": { "name": "United States", "code": "US", "flag": "🇺🇸", "tier": 1, "region": "Americas", "language": "English", "population": "340.1M", "currencyCode": "USD", "avgSalary": "$5,000", "midCost": "$2,000", "internetPenetration": "93%", "smartphoneUsage": "81%", "fbCpm": "$20.48", "googleCpm": "$28.50", "tiktokCpm": "$3.10", "banks": ["Chase","Bank of America","Wells Fargo"], "operators": ["Verizon","AT&T","T-Mobile"], "payments": ["Venmo","Zelle","Apple Pay","PayPal","Visa"], "verticals": ["Finance","Nutra","Sweepstakes","LeadGen"], "restrictions": [{"name":"Gambling Ads","status":"limited"}] }
+};
+
+async function initPage() {
+  Object.entries(_FALLBACK).forEach(([key, g]) => { g.id = key; });
+  Object.assign(GEO_DATA, _FALLBACK);
+  GEOS_ARRAY = Object.values(GEO_DATA);
+
+  try {
+    const res = await fetch('geos.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const fetched = await res.json();
+    if (Array.isArray(fetched) && fetched.length) {
+      fetched.forEach(g => { if (!g.id && g.code) g.id = g.code.toLowerCase(); });
+      GEOS_ARRAY = fetched;
+      GEO_DATA = Object.fromEntries(fetched.map(g => [g.id, g]));
+    }
+  } catch(e) {
+    console.warn('Could not load geos.json, using fallback:', e.message);
+  }
+
+  // Populate Dropdowns
+  const selectA = document.getElementById('select-a');
+  const selectB = document.getElementById('select-b');
+  const selectC = document.getElementById('select-c');
+
+  const optionsHtml = GEOS_ARRAY.map(g => `<option value="${g.id}">${g.flag} ${g.name}</option>`).join('');
+  
+  selectA.innerHTML = '<option value="">Select Country A</option>' + optionsHtml;
+  selectB.innerHTML = '<option value="">Select Country B</option>' + optionsHtml;
+  selectC.innerHTML = '<option value="">Select Country C</option>' + optionsHtml;
+
+  // Defaults
+  selectA.value = 'us';
+  selectB.value = 'es';
+  selectC.value = 'ua';
+
+  updateDashboard();
+}
+
+function onSelectChange() {
+  updateDashboard();
+}
+
+function parseVal(str) {
+  if (!str) return 0;
+  return parseFloat(str.replace(/[^0-9\.]/g, '')) || 0;
+}
+
+function updateDashboard() {
+  const codeA = document.getElementById('select-a').value;
+  const codeB = document.getElementById('select-b').value;
+  const codeC = document.getElementById('select-c').value;
+
+  const geoA = GEO_DATA[codeA] || null;
+  const geoB = GEO_DATA[codeB] || null;
+  const geoC = GEO_DATA[codeC] || null;
+
+  // 1. Update Charts
+  updateCpmChart(geoA, geoB, geoC);
+  updateSalaryCostChart(geoA, geoB, geoC);
+  updateDeviceShareRings(geoA, geoB, geoC);
+
+  // 2. Update Table
+  updateTable(geoA, geoB, geoC);
+}
+
+function updateCpmChart(geoA, geoB, geoC) {
+  const datasets = [];
+  const labels = ['Facebook', 'Google', 'TikTok'];
+
+  if (geoA) {
+    datasets.push({
+      label: geoA.name,
+      backgroundColor: '#8854d0',
+      data: [parseVal(geoA.fbCpm || geoA.avgCpm), parseVal(geoA.googleCpm), parseVal(geoA.tiktokCpm)]
+    });
+  }
+  if (geoB) {
+    datasets.push({
+      label: geoB.name,
+      backgroundColor: '#00d2d3',
+      data: [parseVal(geoB.fbCpm || geoB.avgCpm), parseVal(geoB.googleCpm), parseVal(geoB.tiktokCpm)]
+    });
+  }
+  if (geoC) {
+    datasets.push({
+      label: geoC.name,
+      backgroundColor: '#ff9f43',
+      data: [parseVal(geoC.fbCpm || geoC.avgCpm), parseVal(geoC.googleCpm), parseVal(geoC.tiktokCpm)]
+    });
+  }
+
+  if (cpmChartInstance) {
+    cpmChartInstance.destroy();
+  }
+
+  const ctx = document.getElementById('cpmChart').getContext('2d');
+  cpmChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { font: { family: 'Inter', weight: 600 } } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: value => '$' + value }
+        }
+      }
+    }
+  });
+}
+
+function updateSalaryCostChart(geoA, geoB, geoC) {
+  const labels = [];
+  const salaryData = [];
+  const costData = [];
+
+  if (geoA) {
+    labels.push(geoA.name);
+    salaryData.push(parseVal(geoA.avgSalaryUSD || geoA.avgSalary));
+    costData.push(parseVal(geoA.midCost));
+  }
+  if (geoB) {
+    labels.push(geoB.name);
+    salaryData.push(parseVal(geoB.avgSalaryUSD || geoB.avgSalary));
+    costData.push(parseVal(geoB.midCost));
+  }
+  if (geoC) {
+    labels.push(geoC.name);
+    salaryData.push(parseVal(geoC.avgSalaryUSD || geoC.avgSalary));
+    costData.push(parseVal(geoC.midCost));
+  }
+
+  if (salaryChartInstance) {
+    salaryChartInstance.destroy();
+  }
+
+  const ctx = document.getElementById('salaryCostChart').getContext('2d');
+  salaryChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Avg Salary',
+          backgroundColor: '#1A9E5C',
+          data: salaryData
+        },
+        {
+          label: 'Cost of Living',
+          backgroundColor: '#D94040',
+          data: costData
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { font: { family: 'Inter', weight: 600 } } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: value => '$' + value }
+        }
+      }
+    }
+  });
+}
+
+function updateDeviceShareRings(geoA, geoB, geoC) {
+  const row = document.getElementById('device-share-row');
+  row.innerHTML = '';
+
+  [geoA, geoB, geoC].forEach((g, i) => {
+    if (!g) return;
+    const ios = parseVal(g.iosShare || '40%');
+    const android = parseVal(g.androidShare || '60%');
+
+    // Circumference of 90px diameter ring is 2 * PI * R
+    // R = 35 -> C = 220
+    const circ = 220;
+    const strokeDash = (ios / 100) * circ;
+
+    const div = document.createElement('div');
+    div.className = 'device-card';
+    div.innerHTML = `
+      <div class="device-card-title">${g.flag} ${g.name}</div>
+      <div class="ring-svg-wrap">
+        <svg width="90" height="90" viewBox="0 0 90 90" style="transform: rotate(-90deg);">
+          <!-- Track (Android color, let's use Amber/Orange or Gray) -->
+          <circle cx="45" cy="45" r="35" fill="transparent" stroke="#E2E0DB" stroke-width="10" />
+          <!-- Animated Ring (iOS - let's color it Accent Blue/Purple) -->
+          <circle cx="45" cy="45" r="35" fill="transparent" stroke="var(--accent)" stroke-width="10" 
+            stroke-dasharray="${circ}" stroke-dashoffset="${circ - strokeDash}" style="transition: stroke-dashoffset 0.8s ease;" />
+        </svg>
+        <div class="ring-text">${ios}% iOS</div>
+      </div>
+      <div class="device-stats">
+        <span class="stat-label-ios">iOS: ${ios}%</span>
+        <span class="stat-label-android">Android: ${android}%</span>
+      </div>
+    `;
+    row.appendChild(div);
+  });
+}
+
+function updateTable(geoA, geoB, geoC) {
+  // Update head
+  const headRow = document.getElementById('table-head');
+  headRow.innerHTML = `
+    <th>Metric</th>
+    <th class="col-val">${geoA ? `<span class="compare-val-flag">${geoA.flag}</span> <span class="compare-val-name">${geoA.name}</span>` : '—'}</th>
+    <th class="col-val">${geoB ? `<span class="compare-val-flag">${geoB.flag}</span> <span class="compare-val-name">${geoB.name}</span>` : '—'}</th>
+    <th class="col-val">${geoC ? `<span class="compare-val-flag">${geoC.flag}</span> <span class="compare-val-name">${geoC.name}</span>` : '—'}</th>
+  `;
+
+  // Specs Rows definitions
+  const rows = [
+    { label: 'Traffic Tier', fn: g => g ? `<span class="tier-badge t${g.tier}">Tier ${g.tier}</span>` : '—' },
+    { label: 'Region', fn: g => g ? g.region : '—' },
+    { label: 'Language', fn: g => g ? g.language : '—' },
+    { label: 'Secondary Language', fn: g => g ? (g.languageSecondary || '—') : '—' },
+    { label: 'Population', fn: g => g ? g.population : '—' },
+    { label: 'Currency', fn: g => g ? `${g.currency || g.currencyCode} (${g.currencySymbol || ''})` : '—' },
+    { label: 'Local Currency Code', fn: g => g ? g.currencyCode : '—' },
+    { label: 'Internet Penetration', fn: g => g ? g.internetPenetration : '—' },
+    { label: 'Smartphone Usage', fn: g => g ? g.smartphoneUsage : '—' },
+    { label: 'Local Payments', fn: g => g ? (g.localPayments || g.payments || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Global Payments', fn: g => g ? (g.globalPayments || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Major Banks', fn: g => g ? (g.banks || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Mobile Operators', fn: g => g ? (g.operators || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Top Verticals', fn: g => g ? (g.verticals || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Traffic Sources', fn: g => g ? (g.trafficSources || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' },
+    { label: 'Ad Networks', fn: g => g ? (g.adNetworks || []).map(p => `<span class="tag-pill">${p}</span>`).join('') : '—' }
+  ];
+
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.label}</td>
+      <td>${r.fn(geoA)}</td>
+      <td>${r.fn(geoB)}</td>
+      <td>${r.fn(geoC)}</td>
+    </tr>
+  `).join('');
+}
+
+window.onload = initPage;
+</script>
+</body>
+</html>

@@ -396,12 +396,38 @@ async function init() {
 
 let exchangeRates = null;
 async function fetchRates(baseCurrency) {
+  const cacheKey = 'rates_cache_' + baseCurrency;
   try {
+    // Check localStorage cache
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      // 2 hours = 7200000 ms
+      if (parsed && parsed.rates && parsed.timestamp && (Date.now() - parsed.timestamp < 7200000)) {
+        exchangeRates = parsed.rates;
+        const rateInfo = document.getElementById('conv-rate-info');
+        if (rateInfo) {
+          rateInfo.innerHTML = `Live rates via ExchangeRate-API (Cached, Updated: ${parsed.time_last_update_utc ? parsed.time_last_update_utc.substring(5, 16) : 'recently'})`;
+        }
+        calculateConversion();
+        return;
+      }
+    }
+
     const res = await fetch(`https://open.er-api.com/v6/latest/${baseCurrency}`);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     if (data && data.rates) {
       exchangeRates = data.rates;
+      
+      // Store in cache
+      const cacheData = {
+        rates: data.rates,
+        timestamp: Date.now(),
+        time_last_update_utc: data.time_last_update_utc
+      };
+      localStorage.setItem(cacheKey, JSON.stringify(cacheData));
+
       const rateInfo = document.getElementById('conv-rate-info');
       if (rateInfo) {
         rateInfo.innerHTML = `Live rates via ExchangeRate-API (Updated: ${data.time_last_update_utc ? data.time_last_update_utc.substring(5, 16) : 'recently'})`;
@@ -410,6 +436,26 @@ async function fetchRates(baseCurrency) {
     }
   } catch(e) {
     console.error('Exchange rate fetch failed:', e);
+    
+    // Check if we have expired cache to use as a better fallback than static ones
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.rates) {
+          exchangeRates = parsed.rates;
+          const rateInfo = document.getElementById('conv-rate-info');
+          if (rateInfo) {
+            rateInfo.innerHTML = `⚠️ Using expired cached rates (Internet connection failed)`;
+          }
+          calculateConversion();
+          return;
+        }
+      } catch(cacheErr) {
+        console.error('Failed to parse expired cache:', cacheErr);
+      }
+    }
+
     exchangeRates = { USD: 1.0, EUR: 0.92, GBP: 0.78, PLN: 4.0, UAH: 40.5 };
     const rateInfo = document.getElementById('conv-rate-info');
     if (rateInfo) {
@@ -418,6 +464,7 @@ async function fetchRates(baseCurrency) {
     calculateConversion();
   }
 }
+
 
 function calculateConversion() {
   const amtInput = document.getElementById('conv-amount');

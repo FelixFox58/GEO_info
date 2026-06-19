@@ -874,10 +874,48 @@
   }
   .section-note:first-child { margin-top: 0; }
 
-  @media (max-width: 900px) {
-    .detail-layout { grid-template-columns: 1fr; }
+  /* jsVectorMap customizations */
+  .jvm-tooltip {
+    background: rgba(15, 14, 12, 0.95) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 10px 14px !important;
+    font-family: var(--font-body) !important;
+    font-size: 13px !important;
+    color: #FFFFFF !important;
+    box-shadow: var(--shadow-md) !important;
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+    z-index: 10000;
+  }
+  .jvm-series-container {
+    display: none !important;
+  }
+  .jvm-zoom-btn {
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    font-family: var(--font-body) !important;
+    font-weight: 600 !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.15s !important;
+    box-shadow: var(--shadow) !important;
+  }
+  .jvm-zoom-btn:hover {
+    background: var(--accent) !important;
+    color: #FFFFFF !important;
+    border-color: var(--accent) !important;
   }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/css/jsvectormap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
 </head>
 <body>
 
@@ -889,8 +927,8 @@
       Geo<span>Info</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#" class="active" onclick="showPage('home')">GEO Database</a></li>
-      <li><a href="#" onclick="scrollToCompare()">Compare GEO</a></li>
+      <li><a href="index.html" class="active">GEO Database</a></li>
+      <li><a href="compare.html">Compare Dashboard</a></li>
       <li><a href="#rankings">Rankings</a></li>
       <li><a href="#">API</a></li>
     </ul>
@@ -953,6 +991,36 @@
           <div class="stat-number">Free</div>
           <div class="stat-desc">Always free to use</div>
         </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE MAP -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Interactive SVG World Map</h2>
+        <span style="color: var(--text-secondary); font-size: 14px;">Hover to explore rates and click to open a country's profile. Color-coded by Traffic Tiers.</span>
+      </div>
+      <div class="card animate-in" style="padding: 24px; position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);">
+        <!-- Map Legend -->
+        <div class="map-legend" style="display: flex; gap: 24px; margin-bottom: 20px; font-size: 13px; font-weight: 600; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 14px; height: 14px; border-radius: 4px; background: #8854d0; display: inline-block;"></span>
+            <span style="color: var(--text-primary);">Tier 1 (Purple)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 14px; height: 14px; border-radius: 4px; background: #00d2d3; display: inline-block;"></span>
+            <span style="color: var(--text-primary);">Tier 2 (Turquoise)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 14px; height: 14px; border-radius: 4px; background: #ff9f43; display: inline-block;"></span>
+            <span style="color: var(--text-primary);">Tier 3 (Amber)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 14px; height: 14px; border-radius: 4px; background: #e2e0db; display: inline-block;"></span>
+            <span style="color: var(--text-muted);">Not Tracked</span>
+          </div>
+        </div>
+        <div id="world-map" style="height: 480px; width: 100%; background: transparent; border-radius: var(--radius-sm); overflow: hidden;"></div>
       </div>
     </div>
 
@@ -1236,7 +1304,95 @@ async function initData() {
   renderGeoCards();
   populateSelects();
   updateCompare();
+  initWorldMap();
 }
+
+function initWorldMap() {
+  const mapContainer = document.getElementById('world-map');
+  if (!mapContainer) return;
+  
+  mapContainer.innerHTML = '';
+
+  const values = {};
+  const dataMap = {};
+  GEOS_ARRAY.forEach(g => {
+    if (g.code) {
+      const code = g.code.toUpperCase();
+      values[code] = g.tier;
+      dataMap[code] = g;
+    }
+  });
+
+  try {
+    const map = new jsVectorMap({
+      selector: '#world-map',
+      map: 'world',
+      backgroundColor: 'transparent',
+      draggable: true,
+      zoomButtons: true,
+      zoomOnScroll: false,
+      regionStyle: {
+        initial: {
+          fill: '#e2e0db',
+          fillOpacity: 1,
+          stroke: '#ffffff',
+          strokeWidth: 1.2,
+          strokeOpacity: 1
+        },
+        hover: {
+          fillOpacity: 0.8,
+          cursor: 'pointer'
+        }
+      },
+      series: {
+        regions: [{
+          attribute: 'fill',
+          values: values,
+          scale: {
+            1: '#8854d0', // Tier 1 (Purple)
+            2: '#00d2d3', // Tier 2 (Turquoise)
+            3: '#ff9f43'  // Tier 3 (Amber)
+          }
+        }]
+      },
+      onRegionTooltipShow(event, tooltip, code) {
+        const g = dataMap[code.toUpperCase()];
+        if (g) {
+          const salary = g.avgSalaryUSD || g.avgSalary || '—';
+          const cpm = g.avgCpm || g.fbCpm || '—';
+          tooltip.text(`
+            <div style="font-family: var(--font-body); text-align: left; line-height: 1.4;">
+              <div style="font-weight: 700; font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                <span>${g.flag}</span> <span>${g.name}</span>
+              </div>
+              <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Tier:</strong> <span class="tier-badge t${g.tier}">Tier ${g.tier}</span></div>
+              <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Region:</strong> ${g.region}</div>
+              <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Currency:</strong> ${g.currencyCode}</div>
+              <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Avg Salary:</strong> ${salary}</div>
+              <div><strong style="color: #bbb;">Avg CPM:</strong> ${cpm}</div>
+            </div>
+          `, true);
+        } else {
+          tooltip.text(`
+            <div style="font-family: var(--font-body); font-weight: 600;">
+              ${tooltip.text()} (No details available)
+            </div>
+          `, true);
+        }
+      },
+      onRegionClick(event, code) {
+        const g = dataMap[code.toUpperCase()];
+        if (g) {
+          gotoGeo(g.id);
+        }
+      }
+    });
+  } catch(e) {
+    console.error('jsVectorMap initialization failed:', e);
+    mapContainer.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-secondary);font-size:14px;">⚠️ Failed to load world map (offline or CDN blocked)</div>';
+  }
+}
+
 
 // Хелпер: зарплата сумісна з обома форматами полів
 function getSalary(g) {
@@ -2570,23 +2726,71 @@ function gotoGeo(id) {
   window.open(`geo.html?id=${id}`, '_blank');
 }
 
+function convertKeyboardLayout(str) {
+  const enChars = "qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?";
+  const cyChars = "йцукенгшщзхїфівапролджєячсмитьбю.ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ,";
+  const ruChars = "йцукенгшщзхъфывапролджэячсмитьбю.ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,";
+
+  const enToCy = {};
+  const cyToEn = {};
+
+  for (let i = 0; i < enChars.length; i++) {
+    enToCy[enChars[i]] = cyChars[i];
+    cyToEn[cyChars[i]] = enChars[i];
+  }
+  for (let i = 0; i < enChars.length; i++) {
+    cyToEn[ruChars[i]] = enChars[i];
+  }
+
+  const hasCyrillic = /[а-яіїєґёъыэ]/i.test(str);
+  
+  let converted = '';
+  if (hasCyrillic) {
+    for (let char of str) {
+      converted += cyToEn[char] || char;
+    }
+  } else {
+    for (let char of str) {
+      converted += enToCy[char] || char;
+    }
+  }
+  return converted;
+}
+
 function cleanStr(s) {
   return (s || '').toLowerCase().replace(/[\.\-\s,]/g, '');
 }
 
 function onSearchInput(val) {
   const cleanQ = cleanStr(val);
+  const layoutQ = cleanStr(convertKeyboardLayout(val));
   const drop = document.getElementById('search-dropdown');
   searchFocusIdx = -1;
 
   if (!cleanQ) { drop.classList.remove('open'); return; }
 
   const results = GEOS_ARRAY.filter(g => {
+    // Check against original query
     const nameMatch = cleanStr(g.name).includes(cleanQ);
     const codeMatch = cleanStr(g.code).startsWith(cleanQ);
     const idMatch = cleanStr(g.id).startsWith(cleanQ);
     const aliasMatch = g.aliases && g.aliases.some(alias => cleanStr(alias).includes(cleanQ));
-    return nameMatch || codeMatch || idMatch || aliasMatch;
+    if (nameMatch || codeMatch || idMatch || aliasMatch) return true;
+
+    // Check against layout-converted query
+    if (layoutQ && layoutQ !== cleanQ) {
+      const nameL = cleanStr(g.name).includes(layoutQ);
+      const codeL = cleanStr(g.code).startsWith(layoutQ);
+      const idL = cleanStr(g.id).startsWith(layoutQ);
+      const aliasL = g.aliases && g.aliases.some(alias => cleanStr(alias).includes(layoutQ));
+      if (nameL || codeL || idL || aliasL) return true;
+    }
+
+    // Special hybrid check (e.g. typing 'гс' -> layoutQ is 'uc', which maps to 'us')
+    if (layoutQ && layoutQ.replace(/c/g, 's') === 'us' && g.id === 'us') return true;
+    if (cleanQ.replace(/c/g, 's') === 'us' && g.id === 'us') return true;
+
+    return false;
   }).slice(0, 8);
 
   if (!results.length) {
@@ -2599,7 +2803,7 @@ function onSearchInput(val) {
     // Show matching alias as secondary name if it's not already in the main name
     let matchedAlias = "";
     if (g.aliases && !cleanStr(g.name).includes(cleanQ)) {
-      const found = g.aliases.find(alias => cleanStr(alias).includes(cleanQ));
+      const found = g.aliases.find(alias => cleanStr(alias).includes(cleanQ) || (layoutQ && cleanStr(alias).includes(layoutQ)));
       if (found) matchedAlias = ` (${found})`;
     }
 
@@ -2625,37 +2829,45 @@ function onSearchInput(val) {
 
 function hlMatch(text, q) {
   if (!q) return text;
-  const idx = text.toLowerCase().indexOf(q.toLowerCase());
-  if (idx !== -1) {
-    return text.slice(0, idx) +
-      `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+q.length)}</mark>` +
-      text.slice(idx + q.length);
+  const queries = [q, convertKeyboardLayout(q)].filter((v, i, self) => v && self.indexOf(v) === i);
+  
+  for (let qVal of queries) {
+    const idx = text.toLowerCase().indexOf(qVal.toLowerCase());
+    if (idx !== -1) {
+      return text.slice(0, idx) +
+        `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(idx, idx+qVal.length)}</mark>` +
+        text.slice(idx + qVal.length);
+    }
   }
+
   const cleanQ = cleanStr(q);
-  if (cleanQ.length > 0) {
-    for (let i = 0; i < text.length; i++) {
-      let textIdx = i;
-      let qIdx = 0;
-      while (textIdx < text.length && qIdx < cleanQ.length) {
-        const char = text[textIdx].toLowerCase();
-        if (/[\.\-\s,]/.test(char)) {
-          textIdx++;
-          continue;
+  const cleanQueries = [cleanQ, cleanStr(convertKeyboardLayout(q))].filter((v, i, self) => v && self.indexOf(v) === i);
+  for (let cq of cleanQueries) {
+    if (cq.length > 0) {
+      for (let i = 0; i < text.length; i++) {
+        let textIdx = i;
+        let qIdx = 0;
+        while (textIdx < text.length && qIdx < cq.length) {
+          const char = text[textIdx].toLowerCase();
+          if (/[\.\-\s,]/.test(char)) {
+            textIdx++;
+            continue;
+          }
+          if (char === cq[qIdx]) {
+            textIdx++;
+            qIdx++;
+          } else {
+            break;
+          }
         }
-        if (char === cleanQ[qIdx]) {
-          textIdx++;
-          qIdx++;
-        } else {
-          break;
+        if (qIdx === cq.length) {
+          while (textIdx < text.length && /[\.\-\s,]/.test(text[textIdx])) {
+            textIdx++;
+          }
+          return text.slice(0, i) +
+            `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(i, textIdx)}</mark>` +
+            text.slice(textIdx);
         }
-      }
-      if (qIdx === cleanQ.length) {
-        while (textIdx < text.length && /[\.\-\s,]/.test(text[textIdx])) {
-          textIdx++;
-        }
-        return text.slice(0, i) +
-          `<mark style="background:var(--accent-light);color:var(--accent);border-radius:2px;padding:0 1px">${text.slice(i, textIdx)}</mark>` +
-          text.slice(textIdx);
       }
     }
   }
@@ -2689,33 +2901,58 @@ function doSearch() {
   const val = document.getElementById('search-input').value.trim();
   if (!val) return;
   const cleanQ = cleanStr(val);
+  const layoutQ = cleanStr(convertKeyboardLayout(val));
 
-  // Try exact match first (by id, code, name, or alias)
-  let match = GEOS_ARRAY.find(g =>
-    g.id.toLowerCase() === cleanQ ||
-    g.code.toLowerCase() === cleanQ ||
-    cleanStr(g.name) === cleanQ ||
-    (g.aliases && g.aliases.some(alias => cleanStr(alias) === cleanQ))
-  );
-
-  // If no exact match, try prefix match
-  if (!match) {
-    match = GEOS_ARRAY.find(g =>
-      cleanStr(g.name).startsWith(cleanQ) ||
-      cleanStr(g.code).startsWith(cleanQ) ||
-      cleanStr(g.id).startsWith(cleanQ) ||
-      (g.aliases && g.aliases.some(alias => cleanStr(alias).startsWith(cleanQ)))
-    );
+  // Find matches using a priority-based list of queries
+  const queries = [cleanQ];
+  if (layoutQ && layoutQ !== cleanQ) {
+    queries.push(layoutQ);
+  }
+  // Add hybrid typo replacement (like c -> s for uc -> us)
+  const len = queries.length;
+  for (let i = 0; i < len; i++) {
+    const q = queries[i];
+    if (q.includes('uc')) {
+      queries.push(q.replace(/uc/g, 'us'));
+    }
   }
 
-  // If no prefix match, try contains match
-  if (!match) {
+  let match = null;
+  // 1. Exact match
+  for (let q of queries) {
     match = GEOS_ARRAY.find(g =>
-      cleanStr(g.name).includes(cleanQ) ||
-      cleanStr(g.code).includes(cleanQ) ||
-      cleanStr(g.id).includes(cleanQ) ||
-      (g.aliases && g.aliases.some(alias => cleanStr(alias).includes(cleanQ)))
+      g.id.toLowerCase() === q ||
+      g.code.toLowerCase() === q ||
+      cleanStr(g.name) === q ||
+      (g.aliases && g.aliases.some(alias => cleanStr(alias) === q))
     );
+    if (match) break;
+  }
+
+  // 2. Prefix match
+  if (!match) {
+    for (let q of queries) {
+      match = GEOS_ARRAY.find(g =>
+        cleanStr(g.name).startsWith(q) ||
+        cleanStr(g.code).startsWith(q) ||
+        cleanStr(g.id).startsWith(q) ||
+        (g.aliases && g.aliases.some(alias => cleanStr(alias).startsWith(q)))
+      );
+      if (match) break;
+    }
+  }
+
+  // 3. Contains match
+  if (!match) {
+    for (let q of queries) {
+      match = GEOS_ARRAY.find(g =>
+        cleanStr(g.name).includes(q) ||
+        cleanStr(g.code).includes(q) ||
+        cleanStr(g.id).includes(q) ||
+        (g.aliases && g.aliases.some(alias => cleanStr(alias).includes(q)))
+      );
+      if (match) break;
+    }
   }
 
   if (match) {
