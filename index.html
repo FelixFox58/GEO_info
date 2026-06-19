@@ -226,6 +226,7 @@
     border: 1px solid var(--border);
   }
   .hint-tag:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+  .hint-tag-link { text-decoration: none; display: inline-flex; }
 
   /* SEARCH DROPDOWN */
   .search-wrap { position: relative; max-width: 520px; margin: 0 auto; }
@@ -459,6 +460,11 @@
     color: var(--text-primary);
   }
   .tier-country:hover { background: var(--bg); }
+  .tier-country.disabled {
+    color: var(--text-muted);
+    cursor: default;
+  }
+  .tier-country.disabled:hover { background: transparent; }
   .tier-flag { font-size: 18px; }
 
   /* COMPARE SECTION */
@@ -962,11 +968,11 @@
       <div class="search-dropdown" id="search-dropdown"></div>
     </div>
     <div class="search-hints">
-      <span class="hint-tag" onclick="gotoGeo('us')">🇺🇸 USA</span>
-      <span class="hint-tag" onclick="gotoGeo('gb')">🇬🇧 United Kingdom</span>
-      <span class="hint-tag" onclick="gotoGeo('de')">🇩🇪 Germany</span>
-      <span class="hint-tag" onclick="gotoGeo('br')">🇧🇷 Brazil</span>
-      <span class="hint-tag" onclick="gotoGeo('in')">🇮🇳 India</span>
+      <a class="hint-tag hint-tag-link" href="geo.html?id=us">🇺🇸 USA</a>
+      <a class="hint-tag hint-tag-link" href="geo.html?id=gb">🇬🇧 United Kingdom</a>
+      <a class="hint-tag hint-tag-link" href="geo.html?id=de">🇩🇪 Germany</a>
+      <a class="hint-tag hint-tag-link" href="geo.html?id=br">🇧🇷 Brazil</a>
+      <a class="hint-tag hint-tag-link" href="geo.html?id=in">🇮🇳 India</a>
     </div>
   </div>
 
@@ -1053,7 +1059,7 @@
             </div>
           </div>
           <div style="margin-left: auto;">
-            <button onclick="gotoGeo('gb')" style="background: var(--accent); color: white; border: none; padding: 8px 18px; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">Full Profile →</button>
+            <a href="geo.html?id=gb" style="display: inline-flex; align-items: center; background: var(--accent); color: white; text-decoration: none; padding: 8px 18px; border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.15s;" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">Full Profile →</a>
           </div>
         </div>
         <div class="geo-detail-grid">
@@ -1107,40 +1113,40 @@
         <div class="tier-column">
           <div class="tier-column-header t1">Tier 1 — Premium GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" onclick="gotoGeo('us')"><span class="tier-flag">🇺🇸</span> USA</a>
-            <a class="tier-country" onclick="gotoGeo('gb')"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
-            <a class="tier-country" onclick="gotoGeo('de')"><span class="tier-flag">🇩🇪</span> Germany</a>
-            <a class="tier-country" onclick="gotoGeo('ca')"><span class="tier-flag">🇨🇦</span> Canada</a>
-            <a class="tier-country" onclick="gotoGeo('au')"><span class="tier-flag">🇦🇺</span> Australia</a>
-            <a class="tier-country"><span class="tier-flag">🇫🇷</span> France</a>
-            <a class="tier-country"><span class="tier-flag">🇯🇵</span> Japan</a>
-            <a class="tier-country"><span class="tier-flag">🇳🇴</span> Norway</a>
+            <a class="tier-country" href="geo.html?id=us"><span class="tier-flag">🇺🇸</span> USA</a>
+            <a class="tier-country" href="geo.html?id=gb"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
+            <a class="tier-country" href="geo.html?id=de"><span class="tier-flag">🇩🇪</span> Germany</a>
+            <a class="tier-country" href="geo.html?id=ca"><span class="tier-flag">🇨🇦</span> Canada</a>
+            <a class="tier-country" href="geo.html?id=au"><span class="tier-flag">🇦🇺</span> Australia</a>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇫🇷</span> France</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇯🇵</span> Japan</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇳🇴</span> Norway</span>
           </div>
         </div>
         <div class="tier-column">
           <div class="tier-column-header t2">Tier 2 — Mid GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" onclick="gotoGeo('pl')"><span class="tier-flag">🇵🇱</span> Poland</a>
-            <a class="tier-country" onclick="gotoGeo('br')"><span class="tier-flag">🇧🇷</span> Brazil</a>
-            <a class="tier-country"><span class="tier-flag">🇮🇹</span> Italy</a>
-            <a class="tier-country"><span class="tier-flag">🇪🇸</span> Spain</a>
-            <a class="tier-country"><span class="tier-flag">🇷🇺</span> Russia</a>
-            <a class="tier-country"><span class="tier-flag">🇲🇽</span> Mexico</a>
-            <a class="tier-country"><span class="tier-flag">🇰🇷</span> South Korea</a>
-            <a class="tier-country"><span class="tier-flag">🇮🇳</span> India</a>
+            <a class="tier-country" href="geo.html?id=pl"><span class="tier-flag">🇵🇱</span> Poland</a>
+            <a class="tier-country" href="geo.html?id=br"><span class="tier-flag">🇧🇷</span> Brazil</a>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇮🇹</span> Italy</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇪🇸</span> Spain</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇷🇺</span> Russia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇲🇽</span> Mexico</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇰🇷</span> South Korea</span>
+            <a class="tier-country" href="geo.html?id=in"><span class="tier-flag">🇮🇳</span> India</a>
           </div>
         </div>
         <div class="tier-column">
           <div class="tier-column-header t3">Tier 3 — Volume GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country"><span class="tier-flag">🇳🇬</span> Nigeria</a>
-            <a class="tier-country"><span class="tier-flag">🇪🇬</span> Egypt</a>
-            <a class="tier-country"><span class="tier-flag">🇻🇳</span> Vietnam</a>
-            <a class="tier-country"><span class="tier-flag">🇵🇰</span> Pakistan</a>
-            <a class="tier-country"><span class="tier-flag">🇧🇩</span> Bangladesh</a>
-            <a class="tier-country"><span class="tier-flag">🇮🇩</span> Indonesia</a>
-            <a class="tier-country"><span class="tier-flag">🇨🇴</span> Colombia</a>
-            <a class="tier-country"><span class="tier-flag">🇵🇭</span> Philippines</a>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇳🇬</span> Nigeria</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇪🇬</span> Egypt</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇻🇳</span> Vietnam</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇵🇰</span> Pakistan</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇧🇩</span> Bangladesh</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇮🇩</span> Indonesia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇨🇴</span> Colombia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇵🇭</span> Philippines</span>
           </div>
         </div>
       </div>
@@ -2473,7 +2479,7 @@ function renderGeoCards() {
   grid.innerHTML = FEATURED_GEOS.map(id => {
     const g = GEO_DATA[id];
     return `
-    <a class="geo-card" onclick="gotoGeo('${id}')">
+    <a class="geo-card" href="geo.html?id=${id}">
       <div class="geo-card-header">
         <div class="geo-card-flag">${g.flag}</div>
         <div class="geo-card-info">
@@ -2723,7 +2729,7 @@ function scrollToCompare() {
 let searchFocusIdx = -1;
 
 function gotoGeo(id) {
-  window.open(`geo.html?id=${id}`, '_blank');
+  window.location.href = `geo.html?id=${id}`;
 }
 
 function convertKeyboardLayout(str) {
@@ -2808,7 +2814,7 @@ function onSearchInput(val) {
     }
 
     return `
-      <a class="search-drop-item" href="geo.html?id=${g.id}" target="_blank" data-idx="${i}">
+      <a class="search-drop-item" href="geo.html?id=${g.id}" data-idx="${i}">
         <span class="search-drop-flag">${g.flag}</span>
         <div class="search-drop-info">
           <div class="search-drop-name">${hlMatch(g.name, val)}${matchedAlias ? `<span style="font-weight: 400; font-size: 12px; color: var(--text-secondary);">${hlMatch(matchedAlias, val)}</span>` : ''}</div>

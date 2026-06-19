@@ -26,9 +26,9 @@
     --orange-light: #FDF0E5;
     --red: #D94040;
     --red-light: #FDE8E8;
-    --tier1: #8854d0;
-    --tier2: #00d2d3;
-    --tier3: #ff9f43;
+    --tier1: #5B4FE8;
+    --tier2: #E07A30;
+    --tier3: #6B6860;
     --radius: 12px;
     --radius-sm: 8px;
     --radius-lg: 20px;
@@ -317,9 +317,15 @@
     border-radius: 4px;
     text-transform: uppercase;
   }
-  .tier-badge.t1 { background: #EBE9FC; color: #8854d0; }
-  .tier-badge.t2 { background: #E3F5EC; color: #00d2d3; }
-  .tier-badge.t3 { background: #FDF0E5; color: #ff9f43; }
+  .tier-badge.t1 { background: #EBE9FC; color: var(--tier1); }
+  .tier-badge.t2 { background: #FDF0E5; color: var(--tier2); }
+  .tier-badge.t3 { background: #EDECE9; color: var(--tier3); }
+  .compare-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .compare-link:hover { color: var(--accent); }
 
   .tag-pill {
     display: inline-block;
@@ -477,6 +483,10 @@ function parseVal(str) {
   return parseFloat(str.replace(/[^0-9\.]/g, '')) || 0;
 }
 
+function geoDetailHref(geo) {
+  return geo ? `geo.html?id=${geo.id}` : '#';
+}
+
 function updateDashboard() {
   const codeA = document.getElementById('select-a').value;
   const codeB = document.getElementById('select-b').value;
@@ -502,21 +512,21 @@ function updateCpmChart(geoA, geoB, geoC) {
   if (geoA) {
     datasets.push({
       label: geoA.name,
-      backgroundColor: '#8854d0',
+      backgroundColor: '#5B4FE8',
       data: [parseVal(geoA.fbCpm || geoA.avgCpm), parseVal(geoA.googleCpm), parseVal(geoA.tiktokCpm)]
     });
   }
   if (geoB) {
     datasets.push({
       label: geoB.name,
-      backgroundColor: '#00d2d3',
+      backgroundColor: '#E07A30',
       data: [parseVal(geoB.fbCpm || geoB.avgCpm), parseVal(geoB.googleCpm), parseVal(geoB.tiktokCpm)]
     });
   }
   if (geoC) {
     datasets.push({
       label: geoC.name,
-      backgroundColor: '#ff9f43',
+      backgroundColor: '#6B6860',
       data: [parseVal(geoC.fbCpm || geoC.avgCpm), parseVal(geoC.googleCpm), parseVal(geoC.tiktokCpm)]
     });
   }
@@ -646,9 +656,9 @@ function updateTable(geoA, geoB, geoC) {
   const headRow = document.getElementById('table-head');
   headRow.innerHTML = `
     <th>Metric</th>
-    <th class="col-val">${geoA ? `<span class="compare-val-flag">${geoA.flag}</span> <span class="compare-val-name">${geoA.name}</span>` : '—'}</th>
-    <th class="col-val">${geoB ? `<span class="compare-val-flag">${geoB.flag}</span> <span class="compare-val-name">${geoB.name}</span>` : '—'}</th>
-    <th class="col-val">${geoC ? `<span class="compare-val-flag">${geoC.flag}</span> <span class="compare-val-name">${geoC.name}</span>` : '—'}</th>
+    <th class="col-val">${geoA ? `<a class="compare-link" href="${geoDetailHref(geoA)}"><span class="compare-val-flag">${geoA.flag}</span> <span class="compare-val-name">${geoA.name}</span></a>` : '—'}</th>
+    <th class="col-val">${geoB ? `<a class="compare-link" href="${geoDetailHref(geoB)}"><span class="compare-val-flag">${geoB.flag}</span> <span class="compare-val-name">${geoB.name}</span></a>` : '—'}</th>
+    <th class="col-val">${geoC ? `<a class="compare-link" href="${geoDetailHref(geoC)}"><span class="compare-val-flag">${geoC.flag}</span> <span class="compare-val-name">${geoC.name}</span></a>` : '—'}</th>
   `;
 
   // Specs Rows definitions
