@@ -798,7 +798,7 @@ function renderPage(g) {
         <!-- RESTRICTIONS -->
         ${g.restrictions && g.restrictions.length ? `
         <div class="info-card fade-in-2">
-          <div class="section-note">Advertising Restrictions</div>
+          <div class="section-note">Advertising Restrictions / Обмеження на рекламу</div>
           <div class="restriction-list">
             ${g.restrictions.map(r => `
               <div class="restriction-item">
@@ -812,14 +812,14 @@ function renderPage(g) {
         <!-- TRAFFIC SOURCES -->
         ${g.trafficSources && g.trafficSources.length ? `
         <div class="info-card fade-in-3">
-          <div class="section-note">Popular Traffic Sources</div>
+          <div class="section-note">Popular Traffic Sources / Популярні джерела трафіку</div>
           <div class="tags">${g.trafficSources.map(t => `<span class="tag">${t}</span>`).join('')}</div>
         </div>` : ''}
 
         <!-- AD NETWORKS -->
         ${g.adNetworks && g.adNetworks.length ? `
         <div class="info-card fade-in-3">
-          <div class="section-note">Top Ad Networks</div>
+          <div class="section-note">Top Ad Networks / Топові рекламні мережі</div>
           <div class="tags">${g.adNetworks.map(n => `<span class="tag">${n}</span>`).join('')}</div>
         </div>` : ''}
 
