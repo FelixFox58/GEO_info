@@ -40,6 +40,26 @@
     --font-body: 'Inter', sans-serif;
   }
 
+  body.dark-mode {
+    --bg: #0F0E0C;
+    --surface: #181715;
+    --surface-2: #242220;
+    --border: #2F2D2A;
+    --text-primary: #F5F4F1;
+    --text-secondary: #A5A29A;
+    --text-muted: #7A7770;
+    --accent-light: #241D5E;
+    --accent-hover: #756AF0;
+    --tier1: #8854d0;
+    --tier1-bg: #241D5E;
+    --tier2: #00d2d3;
+    --tier2-bg: #103233;
+    --tier3: #ff9f43;
+    --tier3-bg: #332415;
+    --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.4);
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
@@ -924,6 +944,11 @@
 <script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
 </head>
 <body>
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
 
 <!-- NAV -->
 <nav>
@@ -939,8 +964,8 @@
       <li><a href="#">API</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="btn-ghost" title="Search">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <button class="btn-ghost" id="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <!-- SVG injected by JS -->
       </button>
       <button class="btn-ghost" title="Account">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -1329,6 +1354,7 @@ function initWorldMap() {
     }
   });
 
+  const isDark = document.body.classList.contains('dark-mode');
   try {
     const map = new jsVectorMap({
       selector: '#world-map',
@@ -1339,9 +1365,9 @@ function initWorldMap() {
       zoomOnScroll: false,
       regionStyle: {
         initial: {
-          fill: '#e2e0db',
+          fill: isDark ? '#2f2d2a' : '#e2e0db',
           fillOpacity: 1,
-          stroke: '#ffffff',
+          stroke: isDark ? '#181715' : '#ffffff',
           strokeWidth: 1.2,
           strokeOpacity: 1
         },
@@ -19675,7 +19701,33 @@ function onSearchInput(val) {
     if (cleanQ.replace(/c/g, 's') === 'us' && g.id === 'us') return true;
 
     return false;
-  }).slice(0, 8);
+  })
+  .map(g => {
+    let score = 0;
+    const codeClean = cleanStr(g.code);
+    const idClean = cleanStr(g.id);
+    const nameClean = cleanStr(g.name);
+    
+    if (codeClean === cleanQ || idClean === cleanQ) score += 100;
+    else if (codeClean.startsWith(cleanQ) || idClean.startsWith(cleanQ)) score += 50;
+    else if (nameClean.startsWith(cleanQ)) score += 30;
+    else if (nameClean.includes(cleanQ)) score += 10;
+    
+    if (layoutQ && layoutQ !== cleanQ) {
+      if (codeClean === layoutQ || idClean === layoutQ) score += 90;
+      else if (codeClean.startsWith(layoutQ) || idClean.startsWith(layoutQ)) score += 45;
+      else if (nameClean.startsWith(layoutQ)) score += 25;
+      else if (nameClean.includes(layoutQ)) score += 5;
+    }
+    
+    if (cleanQ.replace(/c/g, 's') === 'us' && g.id === 'us') score += 95;
+    if (layoutQ && layoutQ.replace(/c/g, 's') === 'us' && g.id === 'us') score += 85;
+    
+    g._searchScore = score;
+    return g;
+  })
+  .sort((a, b) => b._searchScore - a._searchScore)
+  .slice(0, 8);
 
   if (!results.length) {
     drop.innerHTML = `<div class="search-no-results">No GEO found for "<strong>${val}</strong>"</div>`;
@@ -19859,7 +19911,35 @@ document.addEventListener('click', e => {
     document.getElementById('search-dropdown').classList.remove('open');
 });
 
+// THEME
+function toggleTheme() {
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateThemeIcon();
+  if (typeof initWorldMap === 'function') {
+    initWorldMap();
+  }
+}
+
+function updateThemeIcon() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const isDark = document.body.classList.contains('dark-mode');
+  if (isDark) {
+    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+  } else {
+    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  }
+}
+
+function initTheme() {
+  const isDark = localStorage.getItem('theme') === 'dark';
+  document.body.classList.toggle('dark-mode', isDark);
+  updateThemeIcon();
+}
+
 // INIT
+initTheme();
 initData();
 </script>
 </body>
