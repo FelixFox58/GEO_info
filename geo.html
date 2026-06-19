@@ -588,21 +588,21 @@ function renderPage(g) {
         <div class="converter-card fade-in-2">
           <div class="converter-left">
             <div>
-              <div class="converter-title">Primary Language</div>
+              <div class="converter-title">Primary Language / Основна мова</div>
               <div style="font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 6px;">
                 💬 ${g.language || '—'}
                 ${g.languageSecondary ? `<span style="font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--text-secondary);">(${g.languageSecondary})</span>` : ''}
               </div>
             </div>
             <div>
-              <div class="converter-title">Local Currency</div>
+              <div class="converter-title">Local Currency / Локальна валюта</div>
               <div style="font-family: var(--font-body); font-size: 16px; font-weight: 600; color: var(--text-primary);">
                 🪙 ${g.currency || '—'} <span style="font-weight: 700; color: var(--accent);">${g.currencyCode || '—'} (${g.currencySymbol || ''})</span>
               </div>
             </div>
           </div>
           <div class="converter-right">
-            <div class="converter-title">Currency Calculator</div>
+            <div class="converter-title">Currency Calculator / Калькулятор валют</div>
             <div class="conv-row">
               <div class="conv-input-wrap">
                 <input type="number" id="conv-amount" class="conv-input" value="100" oninput="calculateConversion()">
@@ -630,7 +630,7 @@ function renderPage(g) {
 
         <!-- BASIC INFO -->
         <div class="info-card fade-in-2">
-          <div class="card-title">Basic Information</div>
+          <div class="card-title">Basic Information / Основна інформація</div>
           <div class="info-grid">
             ${g.capital ? `<div class="info-item">
               <div class="info-label">Capital</div>
@@ -662,13 +662,13 @@ function renderPage(g) {
         <!-- BANKS -->
         ${g.banks && g.banks.length ? `
         <div class="info-card fade-in-2">
-          <div class="card-title">Banks</div>
+          <div class="card-title">Banks / Банки</div>
           <div class="tags">${g.banks.map(b => `<span class="tag">${b}</span>`).join('')}</div>
         </div>` : ''}
 
         <!-- PAYMENTS -->
         <div class="info-card fade-in-2">
-          <div class="card-title">Payment Methods</div>
+          <div class="card-title">Payment Methods / Методи оплати</div>
           ${g.globalPayments && g.globalPayments.length ? `
           <div class="payment-section">
             <div class="payment-group-label">Global</div>
@@ -687,7 +687,7 @@ function renderPage(g) {
 
         <!-- CPM TABLE -->
         <div class="info-card fade-in-3">
-          <div class="card-title">CPM by Platform</div>
+          <div class="card-title">CPM by Platform / CPM за платформами</div>
           <table class="cpm-table">
             ${g.fbCpm ? `<tr><td>📱 Facebook Ads</td><td>${g.fbCpm}</td></tr>` : ''}
             ${g.googleCpm ? `<tr><td>🔍 Google Ads</td><td>${g.googleCpm}</td></tr>` : ''}
@@ -699,14 +699,14 @@ function renderPage(g) {
         <!-- MOBILE OPERATORS -->
         ${g.operators && g.operators.length ? `
         <div class="info-card fade-in-3">
-          <div class="card-title">Mobile Operators</div>
+          <div class="card-title">Mobile Operators / Мобільні оператори</div>
           <div class="tags">${g.operators.map(o => `<span class="tag">${o}</span>`).join('')}</div>
         </div>` : ''}
 
         <!-- DEVICE STATS -->
         ${(g.desktopShare || g.mobileShare || g.iosShare || g.androidShare) ? `
         <div class="info-card fade-in-3">
-          <div class="card-title">Device & OS Stats</div>
+          <div class="card-title">Device & OS Stats / Статистика пристроїв та ОС</div>
           <div class="info-grid">
             ${g.desktopShare ? `<div class="info-item"><div class="info-label">🖥 Desktop</div><div class="info-value">${g.desktopShare}</div></div>` : ''}
             ${g.mobileShare ? `<div class="info-item"><div class="info-label">📱 Mobile</div><div class="info-value">${g.mobileShare}</div></div>` : ''}
@@ -718,13 +718,13 @@ function renderPage(g) {
         <!-- MESSENGERS & SOCIAL -->
         ${g.messengers && g.messengers.length ? `
         <div class="info-card fade-in-3">
-          <div class="card-title">Popular Messengers</div>
+          <div class="card-title">Popular Messengers / Популярні месенджери</div>
           <div class="tags">${g.messengers.map(m => `<span class="tag">${m}</span>`).join('')}</div>
         </div>` : ''}
 
         ${g.socialNetworks && g.socialNetworks.length ? `
         <div class="info-card fade-in-3">
-          <div class="card-title">Social Networks</div>
+          <div class="card-title">Social Networks / Соціальні мережі</div>
           <div class="tags">${g.socialNetworks.map(s => `<span class="tag">${s}</span>`).join('')}</div>
         </div>` : ''}
 
@@ -754,7 +754,7 @@ function renderPage(g) {
         ${g.verticals && g.verticals.length ? `
         <div class="info-card fade-in-2">
           <div class="section-note">Best Affiliate Verticals</div>
-          <div class="card-title" style="margin-bottom:10px;">Top Verticals</div>
+          <div class="card-title" style="margin-bottom:10px;">Top Verticals / Популярні вертикалі</div>
           <div class="tags">${g.verticals.map(v => `<span class="tag">${v}</span>`).join('')}</div>
         </div>` : ''}
 
