@@ -900,6 +900,61 @@
   }
   .section-note:first-child { margin-top: 0; }
 
+  /* flag-wrapper & flag-img styling */
+  .flag-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .flag-img {
+    width: 1.35em;
+    height: 0.95em;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .geo-card-flag .flag-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    box-shadow: none;
+  }
+  .detail-flag-lg .flag-img {
+    width: 64px;
+    height: 48px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .hero-flag .flag-img {
+    width: 72px;
+    height: 54px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .search-drop-flag .flag-img {
+    width: 20px;
+    height: 15px;
+  }
+  .tier-flag .flag-img {
+    width: 20px;
+    height: 14px;
+    margin-right: 4px;
+  }
+  .ranking-flag .flag-img {
+    width: 18px;
+    height: 13px;
+    margin-right: 4px;
+  }
+
   /* jsVectorMap customizations */
   .jvm-tooltip {
     background: rgba(15, 14, 12, 0.95) !important;
@@ -1073,7 +1128,7 @@
       </div>
       <div class="geo-detail-card animate-in">
         <div class="geo-detail-header">
-          <div class="geo-detail-flag">🇬🇧</div>
+          <div class="geo-detail-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" alt="GB" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇬🇧</span></span></div>
           <div>
             <div class="geo-detail-name">United Kingdom</div>
             <div class="geo-detail-meta">
@@ -1138,40 +1193,40 @@
         <div class="tier-column">
           <div class="tier-column-header t1">Tier 1 — Premium GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" href="geo.html?id=us"><span class="tier-flag">🇺🇸</span> USA</a>
-            <a class="tier-country" href="geo.html?id=gb"><span class="tier-flag">🇬🇧</span> United Kingdom</a>
-            <a class="tier-country" href="geo.html?id=de"><span class="tier-flag">🇩🇪</span> Germany</a>
-            <a class="tier-country" href="geo.html?id=ca"><span class="tier-flag">🇨🇦</span> Canada</a>
-            <a class="tier-country" href="geo.html?id=au"><span class="tier-flag">🇦🇺</span> Australia</a>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇫🇷</span> France</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇯🇵</span> Japan</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇳🇴</span> Norway</span>
+            <a class="tier-country" href="geo.html?id=us"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="US" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇺🇸</span></span></span> USA</a>
+            <a class="tier-country" href="geo.html?id=gb"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" alt="GB" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇬🇧</span></span></span> United Kingdom</a>
+            <a class="tier-country" href="geo.html?id=de"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="DE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇩🇪</span></span></span> Germany</a>
+            <a class="tier-country" href="geo.html?id=ca"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ca.png" srcset="https://flagcdn.com/w80/ca.png 2x" alt="CA" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇨🇦</span></span></span> Canada</a>
+            <a class="tier-country" href="geo.html?id=au"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/au.png" srcset="https://flagcdn.com/w80/au.png 2x" alt="AU" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇦🇺</span></span></span> Australia</a>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/fr.png" srcset="https://flagcdn.com/w80/fr.png 2x" alt="FR" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇫🇷</span></span></span> France</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/jp.png" srcset="https://flagcdn.com/w80/jp.png 2x" alt="JP" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇯🇵</span></span></span> Japan</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/no.png" srcset="https://flagcdn.com/w80/no.png 2x" alt="NO" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇳🇴</span></span></span> Norway</span>
           </div>
         </div>
         <div class="tier-column">
           <div class="tier-column-header t2">Tier 2 — Mid GEOs</div>
           <div class="tier-country-list">
-            <a class="tier-country" href="geo.html?id=pl"><span class="tier-flag">🇵🇱</span> Poland</a>
-            <a class="tier-country" href="geo.html?id=br"><span class="tier-flag">🇧🇷</span> Brazil</a>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇮🇹</span> Italy</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇪🇸</span> Spain</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇷🇺</span> Russia</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇲🇽</span> Mexico</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇰🇷</span> South Korea</span>
-            <a class="tier-country" href="geo.html?id=in"><span class="tier-flag">🇮🇳</span> India</a>
+            <a class="tier-country" href="geo.html?id=pl"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/pl.png" srcset="https://flagcdn.com/w80/pl.png 2x" alt="PL" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇵🇱</span></span></span> Poland</a>
+            <a class="tier-country" href="geo.html?id=br"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/br.png" srcset="https://flagcdn.com/w80/br.png 2x" alt="BR" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇧🇷</span></span></span> Brazil</a>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/it.png" srcset="https://flagcdn.com/w80/it.png 2x" alt="IT" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇮🇹</span></span></span> Italy</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/es.png" srcset="https://flagcdn.com/w80/es.png 2x" alt="ES" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇪🇸</span></span></span> Spain</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ru.png" srcset="https://flagcdn.com/w80/ru.png 2x" alt="RU" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇷🇺</span></span></span> Russia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" alt="MX" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇲🇽</span></span></span> Mexico</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/kr.png" srcset="https://flagcdn.com/w80/kr.png 2x" alt="KR" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇰🇷</span></span></span> South Korea</span>
+            <a class="tier-country" href="geo.html?id=in"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/in.png" srcset="https://flagcdn.com/w80/in.png 2x" alt="IN" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇮🇳</span></span></span> India</a>
           </div>
         </div>
         <div class="tier-column">
           <div class="tier-column-header t3">Tier 3 — Volume GEOs</div>
           <div class="tier-country-list">
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇳🇬</span> Nigeria</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇪🇬</span> Egypt</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇻🇳</span> Vietnam</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇵🇰</span> Pakistan</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇧🇩</span> Bangladesh</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇮🇩</span> Indonesia</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇨🇴</span> Colombia</span>
-            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag">🇵🇭</span> Philippines</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ng.png" srcset="https://flagcdn.com/w80/ng.png 2x" alt="NG" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇳🇬</span></span></span> Nigeria</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/eg.png" srcset="https://flagcdn.com/w80/eg.png 2x" alt="EG" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇪🇬</span></span></span> Egypt</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/vn.png" srcset="https://flagcdn.com/w80/vn.png 2x" alt="VN" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇻🇳</span></span></span> Vietnam</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/pk.png" srcset="https://flagcdn.com/w80/pk.png 2x" alt="PK" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇵🇰</span></span></span> Pakistan</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/bd.png" srcset="https://flagcdn.com/w80/bd.png 2x" alt="BD" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇧🇩</span></span></span> Bangladesh</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/id.png" srcset="https://flagcdn.com/w80/id.png 2x" alt="ID" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇮🇩</span></span></span> Indonesia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/co.png" srcset="https://flagcdn.com/w80/co.png 2x" alt="CO" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇨🇴</span></span></span> Colombia</span>
+            <span class="tier-country disabled" title="GEO profile is not available yet"><span class="tier-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ph.png" srcset="https://flagcdn.com/w80/ph.png 2x" alt="PH" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇵🇭</span></span></span> Philippines</span>
           </div>
         </div>
       </div>
@@ -1211,8 +1266,8 @@
             <thead>
               <tr>
                 <th></th>
-                <th id="th-a">🇺🇸 USA</th>
-                <th id="th-b">🇬🇧 UK</th>
+                <th id="th-a"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="US" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇺🇸</span></span> USA</th>
+                <th id="th-b"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" alt="GB" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇬🇧</span></span> UK</th>
               </tr>
             </thead>
             <tbody id="compare-body">
@@ -1239,11 +1294,11 @@
             </div>
           </div>
           <div class="ranking-list">
-            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇬🇧</span><span class="ranking-country">United Kingdom</span><span class="ranking-value">$4.50 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇦🇺</span><span class="ranking-country">Australia</span><span class="ranking-value">$5.20 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇨🇦</span><span class="ranking-country">Canada</span><span class="ranking-value">$4.80 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇸🇪</span><span class="ranking-country">Sweden</span><span class="ranking-value">$4.10 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" alt="GB" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇬🇧</span></span></span><span class="ranking-country">United Kingdom</span><span class="ranking-value">$4.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/au.png" srcset="https://flagcdn.com/w80/au.png 2x" alt="AU" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇦🇺</span></span></span><span class="ranking-country">Australia</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ca.png" srcset="https://flagcdn.com/w80/ca.png 2x" alt="CA" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇨🇦</span></span></span><span class="ranking-country">Canada</span><span class="ranking-value">$4.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="DE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇩🇪</span></span></span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/se.png" srcset="https://flagcdn.com/w80/se.png 2x" alt="SE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇸🇪</span></span></span><span class="ranking-country">Sweden</span><span class="ranking-value">$4.10 CPM</span></div>
           </div>
         </div>
         <div class="ranking-card">
@@ -1255,11 +1310,11 @@
             </div>
           </div>
           <div class="ranking-list">
-            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇺🇸</span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇫🇷</span><span class="ranking-country">France</span><span class="ranking-value">$3.80 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇧🇷</span><span class="ranking-country">Brazil</span><span class="ranking-value">$2.10 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇲🇽</span><span class="ranking-country">Mexico</span><span class="ranking-value">$1.90 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="US" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇺🇸</span></span></span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="DE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇩🇪</span></span></span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/fr.png" srcset="https://flagcdn.com/w80/fr.png 2x" alt="FR" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇫🇷</span></span></span><span class="ranking-country">France</span><span class="ranking-value">$3.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/br.png" srcset="https://flagcdn.com/w80/br.png 2x" alt="BR" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇧🇷</span></span></span><span class="ranking-country">Brazil</span><span class="ranking-value">$2.10 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/mx.png" srcset="https://flagcdn.com/w80/mx.png 2x" alt="MX" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇲🇽</span></span></span><span class="ranking-country">Mexico</span><span class="ranking-value">$1.90 CPM</span></div>
           </div>
         </div>
         <div class="ranking-card">
@@ -1271,11 +1326,11 @@
             </div>
           </div>
           <div class="ranking-list">
-            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag">🇸🇬</span><span class="ranking-country">Singapore</span><span class="ranking-value">$6.20 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag">🇦🇪</span><span class="ranking-country">UAE</span><span class="ranking-value">$5.80 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag">🇨🇭</span><span class="ranking-country">Switzerland</span><span class="ranking-value">$6.50 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag">🇺🇸</span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
-            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag">🇩🇪</span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num gold">1</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/sg.png" srcset="https://flagcdn.com/w80/sg.png 2x" alt="SG" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇸🇬</span></span></span><span class="ranking-country">Singapore</span><span class="ranking-value">$6.20 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num silver">2</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ae.png" srcset="https://flagcdn.com/w80/ae.png 2x" alt="AE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇦🇪</span></span></span><span class="ranking-country">UAE</span><span class="ranking-value">$5.80 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num bronze">3</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/ch.png" srcset="https://flagcdn.com/w80/ch.png 2x" alt="CH" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇨🇭</span></span></span><span class="ranking-country">Switzerland</span><span class="ranking-value">$6.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">4</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt="US" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇺🇸</span></span></span><span class="ranking-country">United States</span><span class="ranking-value">$5.50 CPM</span></div>
+            <div class="ranking-item"><span class="ranking-num">5</span><span class="ranking-flag"><span class="flag-wrapper"><img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" alt="DE" class="flag-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">🇩🇪</span></span></span><span class="ranking-country">Germany</span><span class="ranking-value">$5.20 CPM</span></div>
           </div>
         </div>
       </div>
@@ -1395,7 +1450,7 @@ function initWorldMap() {
           tooltip.text(`
             <div style="font-family: var(--font-body); text-align: left; line-height: 1.4;">
               <div style="font-weight: 700; font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
-                <span>${g.flag}</span> <span>${g.name}</span>
+                <span>${getFlagHtml(g.code || code, g.flag)}</span> <span>${g.name}</span>
               </div>
               <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Tier:</strong> <span class="tier-badge t${g.tier}">Tier ${g.tier}</span></div>
               <div style="margin-bottom: 3px;"><strong style="color: #bbb;">Region:</strong> ${g.region}</div>
@@ -19385,7 +19440,7 @@ function renderGeoCards() {
     return `
     <a class="geo-card" href="geo.html?id=${id}">
       <div class="geo-card-header">
-        <div class="geo-card-flag">${g.flag}</div>
+        <div class="geo-card-flag">${getFlagHtml(g.code || id, g.flag)}</div>
         <div class="geo-card-info">
           <div class="geo-card-name">${g.name}</div>
           <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
@@ -19425,7 +19480,7 @@ function openGeo(id) {
       <!-- HERO -->
       <div class="detail-hero animate-in">
         <div class="detail-hero-top">
-          <div class="detail-flag-lg">${g.flag}</div>
+          <div class="detail-flag-lg">${getFlagHtml(g.code || id, g.flag)}</div>
           <div class="detail-title-block">
             <div class="detail-country-name">${g.name}<span class="detail-country-code">${g.code}</span></div>
             <div class="detail-badges">
@@ -19595,8 +19650,12 @@ function updateCompare() {
   const bVal = document.getElementById('compare-b').value || 'gb';
   const a = COMPARE_DATA[aVal] || COMPARE_DATA.us;
   const b = COMPARE_DATA[bVal] || COMPARE_DATA.gb;
-  document.getElementById('th-a').textContent = a.label;
-  document.getElementById('th-b').textContent = b.label;
+  const nameA = a.label.substring(a.label.indexOf(' ') + 1);
+  const nameB = b.label.substring(b.label.indexOf(' ') + 1);
+  const flagA = a.label.split(' ')[0];
+  const flagB = b.label.split(' ')[0];
+  document.getElementById('th-a').innerHTML = `${getFlagHtml(aVal, flagA)} ${nameA}`;
+  document.getElementById('th-b').innerHTML = `${getFlagHtml(bVal, flagB)} ${nameB}`;
   const rows = [
     ['CPM', a.cpm, b.cpm],
     ['Salary', a.salary, b.salary],
@@ -19627,6 +19686,13 @@ function showPage(name) {
 
 function scrollToCompare() {
   document.getElementById('compare-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function getFlagHtml(code, emoji = '', extraClass = '') {
+  if (!code) return emoji;
+  const lowerCode = code.toLowerCase();
+  const classStr = extraClass ? `flag-img ${extraClass}` : 'flag-img';
+  return `<span class="flag-wrapper"><img src="https://flagcdn.com/w40/${lowerCode}.png" srcset="https://flagcdn.com/w80/${lowerCode}.png 2x" alt="${code}" class="${classStr}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">${emoji || code.toUpperCase()}</span></span>`;
 }
 
 // ── SEARCH AUTOCOMPLETE ───────────────────────────────────
@@ -19745,7 +19811,7 @@ function onSearchInput(val) {
 
     return `
       <a class="search-drop-item" href="geo.html?id=${g.id}" data-idx="${i}">
-        <span class="search-drop-flag">${g.flag}</span>
+        <span class="search-drop-flag">${getFlagHtml(g.code || g.id, g.flag)}</span>
         <div class="search-drop-info">
           <div class="search-drop-name">${hlMatch(g.name, val)}${matchedAlias ? `<span style="font-weight: 400; font-size: 12px; color: var(--text-secondary);">${hlMatch(matchedAlias, val)}</span>` : ''}</div>
           <div class="search-drop-meta">${g.region} · ${g.language}</div>

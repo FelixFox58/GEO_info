@@ -315,10 +315,41 @@
   .compare-table td.col-val {
     width: calc((100% - 200px) / 3);
   }
+  /* flag-wrapper & flag-img styling */
+  .flag-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .flag-img {
+    width: 1.35em;
+    height: 0.95em;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    vertical-align: middle;
+  }
   .compare-val-flag {
     font-size: 24px;
     margin-right: 4px;
     vertical-align: middle;
+  }
+  .compare-val-flag .flag-img {
+    width: 32px;
+    height: 24px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    margin-right: 6px;
+  }
+  .device-card-title .flag-img {
+    width: 24px;
+    height: 18px;
+    border-radius: 2px;
+    margin-right: 6px;
   }
   .compare-val-name {
     font-weight: 700;
@@ -449,6 +480,13 @@
 </div>
 
 <script>
+function getFlagHtml(code, emoji = '', extraClass = '') {
+  if (!code) return emoji;
+  const lowerCode = code.toLowerCase();
+  const classStr = extraClass ? `flag-img ${extraClass}` : 'flag-img';
+  return `<span class="flag-wrapper"><img src="https://flagcdn.com/w40/${lowerCode}.png" srcset="https://flagcdn.com/w80/${lowerCode}.png 2x" alt="${code}" class="${classStr}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" /><span class="flag-emoji-fallback" style="display:none;">${emoji || code.toUpperCase()}</span></span>`;
+}
+
 let GEOS_ARRAY = [];
 let GEO_DATA = {};
 let cpmChartInstance = null;
@@ -655,7 +693,7 @@ function updateDeviceShareRings(geoA, geoB, geoC) {
     const div = document.createElement('div');
     div.className = 'device-card';
     div.innerHTML = `
-      <div class="device-card-title">${g.flag} ${g.name}</div>
+      <div class="device-card-title">${getFlagHtml(g.code || g.id, g.flag)} ${g.name}</div>
       <div class="ring-svg-wrap">
         <svg width="90" height="90" viewBox="0 0 90 90" style="transform: rotate(-90deg);">
           <!-- Track (Android color, let's use Amber/Orange or Gray) -->
@@ -680,9 +718,9 @@ function updateTable(geoA, geoB, geoC) {
   const headRow = document.getElementById('table-head');
   headRow.innerHTML = `
     <th>Metric</th>
-    <th class="col-val">${geoA ? `<a class="compare-link" href="${geoDetailHref(geoA)}"><span class="compare-val-flag">${geoA.flag}</span> <span class="compare-val-name">${geoA.name}</span></a>` : '—'}</th>
-    <th class="col-val">${geoB ? `<a class="compare-link" href="${geoDetailHref(geoB)}"><span class="compare-val-flag">${geoB.flag}</span> <span class="compare-val-name">${geoB.name}</span></a>` : '—'}</th>
-    <th class="col-val">${geoC ? `<a class="compare-link" href="${geoDetailHref(geoC)}"><span class="compare-val-flag">${geoC.flag}</span> <span class="compare-val-name">${geoC.name}</span></a>` : '—'}</th>
+    <th class="col-val">${geoA ? `<a class="compare-link" href="${geoDetailHref(geoA)}"><span class="compare-val-flag">${getFlagHtml(geoA.code || geoA.id, geoA.flag)}</span> <span class="compare-val-name">${geoA.name}</span></a>` : '—'}</th>
+    <th class="col-val">${geoB ? `<a class="compare-link" href="${geoDetailHref(geoB)}"><span class="compare-val-flag">${getFlagHtml(geoB.code || geoB.id, geoB.flag)}</span> <span class="compare-val-name">${geoB.name}</span></a>` : '—'}</th>
+    <th class="col-val">${geoC ? `<a class="compare-link" href="${geoDetailHref(geoC)}"><span class="compare-val-flag">${getFlagHtml(geoC.code || geoC.id, geoC.flag)}</span> <span class="compare-val-name">${geoC.name}</span></a>` : '—'}</th>
   `;
 
   // Specs Rows definitions
