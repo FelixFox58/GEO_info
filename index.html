@@ -19443,7 +19443,10 @@ function renderGeoCards() {
         <div class="geo-card-flag">${getFlagHtml(g.code || id, g.flag)}</div>
         <div class="geo-card-info">
           <div class="geo-card-name">${g.name}</div>
-          <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
+          <div>
+            <span class="tier-badge t${g.tier}">Tier ${g.tier}</span>
+            ${g.riskScore ? `<span class="tier-badge" style="background: ${g.riskScore.badgeColor}22; color: ${g.riskScore.badgeColor}; border: 1px solid ${g.riskScore.badgeColor}44; margin-left: 4px;">🛡️ ${g.riskScore.score}/10</span>` : ''}
+          </div>
         </div>
       </div>
       <div class="geo-card-stats">
